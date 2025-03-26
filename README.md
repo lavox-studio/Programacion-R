@@ -12,8 +12,11 @@ Para acceder al material audiovisual desarrollado para este curso haz [clic aqu�
 **Tema ##.** Nombre del tema
 
 ## Referencias
-- R Development Core Team. (2022). *The R Manuals*. https://cran.r-project.org/manuals.html
-- Añadir referencia
+- Gil, C. J. (2018). _R para profesionales de los datos: una introducción_.
+- Grolemund, G. (2014). _Hands-On Programming with R_.
+- Santana, J. S. (2014). _El arte de programar en R: un lenguaje para la estadística_.
+- Teetor, P. (2011). _R Cookbook_.
+- Wickham, H. (2016). _ggplot2. Elegant Graphics for Data Analysis_.
 
 ## Acerca del instructor
 - Añadir información
