@@ -1,7 +1,10 @@
 ---
 title: "Conceptos generales"
-author: "Ingenecia"
-output: html_document
+subtitle: "Tema 01 - Práctica"
+author: "Technica"
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}

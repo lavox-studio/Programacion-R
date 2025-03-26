@@ -1,0 +1,88 @@
+---
+title: "Introducción a RStudio y R Markdown"
+subtitle: "Tema 00 - Práctica"
+author: "Technica"
+output:
+  html_document:
+    df_print: paged
+---
+
+# Introducción a RStudio y R Markdown
+
+## Ejercicio 1
+
+Crea un bloque de texto donde hayan al menos dos párrafos donde comentas sobre tus expectativas respecto al curso. Resalta con cursiva, negrita o ambas, las partes que consideres más importantes.
+
+Luego añade una lista no numerada en la cual enlistes las posibles aplicaciones que tú podrás realizar durante el curso y al finalizarlo.
+
+## Solución
+
+Ingresa tu respuesta aquí 👽
+
+------------------------------------------------------------------------
+
+## Ejercicio 2
+
+De seguro en alguna ocasión has tenido que ir a hacer compras al supermercado. ¿Algunas vez has hecho una lista de las compras que debes hacer? Crea una lista numerada con todas las compras que normalmente haces. Además, clasifica tus compras por grupos añadiendo subniveles a tu lista.
+
+**Por ejemplo:**
+
+1.  Comida
+    1.  Atún
+    2.  Arroz
+    3.  Aceite
+2.  Embutidos
+    1.  Salchichas
+    2.  Jamón
+3.  Golosinas
+    1.  Galletas de chocolate
+    2.  Cereal
+
+Al final añade una imagen del supermercado donde sueles hacer tus compras.
+
+**Observación:** La imagen la puedes descargar de internet.
+
+## Solución
+
+Ingresa tu respuesta aquí 👽
+
+------------------------------------------------------------------------
+
+## Ejercicio 3
+
+Ahora vamos a repasar los hipervínculos. Por lo tanto, vas a crear los siguientes hipervínculos:
+
+-   Un hipervínculo que te lleve al inicio de este archivo de código. *Pista:* Utiliza el título de este archivo como referencia.
+-   Un hipervínculo que te lleve al ejercicio 1.
+-   Un hipervínculo que te lleve al ejercicio 2.
+-   Un hipervínculo que te lleve la página de inicio este curso en Udemy: **R para Ingenierías**.
+-   Consulta en Wikipedia sobre R y crea un hipervínculo que te lleve a la página web consultada.
+
+## Solución
+
+Ingresa tu respuesta aquí 👽
+
+------------------------------------------------------------------------
+
+## Ejercicio 4
+
+Consulta en internet sobre LaTeX (una guía de inicio rápido o un tutorial de introducción es suficiente) y escribe las siguientes expresiones matemáticas:
+
+-   Fórmula para determinar el área de un círculo.
+-   Fórmula para obtener la hipotenusa de un triángulo rectángulo.
+-   Fórmula para calcular el área de un trapecio.
+-   Fórmula para determinar las raíces de un polinomio de segundo grado (conocida como fórmula general de segundo grado).
+
+Y, si te animas a este desafío, también escribe las siguientes expresiones matemáticas:
+
+-   Definición matemática de la derivada (en una variable).
+
+-   Definición matemática de la integral (en una variable).
+
+-   Una ecuación diferencial en derivadas parciales (la que tú quieras).
+
+## Solución
+
+Ingresa tu respuesta aquí 👽
+
+------------------------------------------------------------------------

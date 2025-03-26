@@ -1,0 +1,90 @@
+---
+title: "Introducción a RStudio y R Markdown"
+subtitle: "Tema 00 - Teoría"
+author: "Technica"
+output:
+  html_document:
+    df_print: paged
+---
+
+# Antes de empezar
+
+En este curso vamos a utilizar **R**, **RStudio** y los cuadernos de **R Markdown**.
+
+**Requisitos:**
+
+-   Versión de R 4.4.3 o superior (recomendado).
+
+-   RStudio y algunos de sus paquetes. Los paquetes necesarios se explican en vídeo debido a la cantidad de paquetes y las consideraciones al intalarlos.
+
+    ------------------------------------------------------------------------
+
+# Introducción a RStudio y R Markdown
+
+```{r}
+# Esto es un comentario en un bloque de código.
+```
+
+Esto es un bloque de texto.
+
+# Esto es un Encabezado 1.
+
+## Esto es un Encabezado 2.
+
+### Esto es un Encabezado 3.
+
+#### Esto es un Encabezado 4.
+
+##### Esto es un Enbezado 5.
+
+###### Esto es un Encabezado 6.
+
+*Texto en cursiva.*
+
+**Texto en negrita.**
+
+[Texto subrayado.]{.underline}
+
+`Texto en forma de código.`
+
+-   Elemento 1 de una lista no numerada.
+
+    -   Elemento 1.1 de una lista no numerada.
+
+    -   Elemento 1.2 de una lista no numerada.
+
+-   Elemento 2 de una lista no numerada.
+
+-   Elemento 3 de una lista no numerada.
+
+1.  Elemento 1 de una lista numerada.
+    1.  Elemento 1.1 de una lista numerada.
+    2.  Elemento 1.2 de una lista numerada.
+2.  Elemento 2 de una lista numerada.
+3.  Elemento 3 de una lista numerada.
+
+``` r
+# Esto es un bloque de código de ejemplo.
+numeros <- c(1, 2, 3, 4, 5)
+print(numeros)
+```
+
+Esto es un hipervínculo interno: [Antes de empezar].
+
+Esto es un hipervículo externo: [R para Ingenierías](www.google.com).
+
+Esto es una ecuación de línea: $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$
+
+Esto es una ecuación en bloque: $$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$
+
+Esto es una tabla:
+
+| ID  | Nombre           | Edad | País     |
+|-----|------------------|------|----------|
+| 001 | Iván Reinoso     | 23   | Ecuador  |
+| 002 | Sofía Alvear     | 21   | Colombia |
+| 003 | Marcelo Basantes | 26   | Brasil   |
+
+Esto es una imagen:
+
+![](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2000%20-%20Introducci%C3%B3n%20a%20R%20Markdown/1.png?raw=true){width="600"}
