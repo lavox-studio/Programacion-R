@@ -1,10 +1,9 @@
 ---
 title: "Introducción a RStudio y R Markdown"
-subtitle: "Tema 00 - Teoría"
 author: "Technica"
+subtitle: "Tema 00 - Teoría"
 output:
-  html_document:
-    df_print: paged
+  pdf_document: default
 ---
 
 # Antes de empezar
