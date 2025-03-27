@@ -7,26 +7,384 @@ output:
     df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Tipos de datos: Números
+
+En ingeniería, los números son esenciales para modelar fenómenos físicos, realizar cálculos y analizar datos. En **R**, los números permiten representar mediciones, fuerzas, temperaturas, voltajes y muchas otras magnitudes clave en distintos campos de la ingeniería.
+
+Podemos pensar en los números en **R** como las diferentes herramientas en un taller mecánico: cada tipo tiene un propósito específico. Por ejemplo, los **números enteros** serían como tornillos con medidas exactas, los **número de punto flotante (decimales)** como una regla que permite longitudes con decimales, y los **complejos** como engranajes que permiten representar rotaciones en sistemas eléctricos o mecánicos.
+
+![Tomado de Pexels.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2002%20-%20Tipos%20de%20datos%20-%20N%C3%BAmeros/1.jpeg?raw=true){width="500"}
+
+Al dominar los números en **R**, los ingenieros pueden realizar simulaciones, resolver ecuaciones y analizar datos con precisión, facilitando la toma de decisiones en proyectos reales.
+
+## Números enteros
+
+Los **números enteros** representan valores sin decimales, como 1, -5, 100 o 0. Se utilizan en cálculos donde solo se permiten valores discretos, como el conteo de piezas en un ensamblaje o la cantidad de ciclos en un proceso industrial.
+
+Para definir un número entero en **R**, se añade la letra **`L`** al final del número.
+
+``` r
+x <- 10L    # Número entero
+x
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## Including Plots
+> Los números enteros son útiles en ingeniería para contar elementos discretos, como tornillos en una estructura, pasos en un algoritmo o unidades en un proceso de manufactura.
 
-You can also embed plots, for example:
+### Ejemplo
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+En una fábrica se producen piezas mecánicas en una línea de ensamblaje. Necesitamos almacenar cuántas piezas se han producido en un turno de trabajo. ¿Es adecuado guardar esta información en una variable numérica de tipo entero? ¿Por qué?
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+------------------------------------------------------------------------
+
+## Números de punto flotante
+
+Los **números de punto flotante** representan valores con decimales, como 3.14, -2.5 o 9.81. Se utilizan en cálculos de ingeniería donde la precisión es clave, como mediciones de temperatura, velocidad, presión o resistencia eléctrica.
+
+Por defecto, **R** almacena los números con decimales como **tipo numeric (double)**.
+
+``` r
+x <- 9.81   # Aceleración debido a la gravedad en m/s²
+x
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Los números de punto flotante permiten representar valores continuos, esenciales en simulaciones, cálculos estructurales, modelos matemáticos, entre muchos otros escensarios de ingeniería.
+
+### Ejemplo
+
+En una planta química se necesita medir la cantidad de líquido vertido en un tanque durante un turno de producción. Se debe considerar que los líquidos no siempre se vierten en cantidades exactas.
+
+¿Es adecuado guardar esta información en una variable numérica de tipo de punto flotante? ¿Por qué?
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Notación científica
+
+En ingeniería y ciencia trabajamos con valores extremadamente grandes o pequeños, como la carga de un electrón $(1.6 \times 10^{-19}\ C)$ o la velocidad de la luz $(3.0 \times  10^8\ m/s)$. Para representar estos números de manera más clara se utiliza la **notación científica**.
+
+En **R**, los números en notación científica se escriben con la letra **`e`** o **`E`**, que representa "multiplicado por 10 elevado a".
+
+``` r
+# Masa de un electrón en kilogramos
+masa_electron <- 9.109e-31  
+
+# Velocidad de la luz en metros por segundo
+velocidad_luz <- 3.0e8  
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> La notación científica es útil en cálculos de ingeniería como ingeniería eléctrica, mecánica, aeroespacial, entre otros; donde los valores pueden ser muy grandes o muy pequeños.
+
+### Ejemplo
+
+Dada la siguiente serie de constantes físicas y de ingeniería, conviértelas a notación científica si no la tienen, o quítasela si ya la tienen.
+
+-   Número de Avogadro: $6.022 \times 10^{23}$
+
+-   Constante de gravitación universal: $0.00000000006674\ \frac{m^3}{kg \cdot s^2}$
+
+-   Velocidad de la luz en el vacío: $299792458\ \frac{m}{s}$
+
+-   Constante de Boltzman: $1.380649 \times 10^{-23}\ \frac{J}{K}$
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Números complejos
+
+En ingeniería, los **números complejos** son esenciales para modelar fenómenos como señales eléctricas alternas, circuitos eléctricos o transformadas de Fourier en procesamiento de señales. Un número complejo tiene una **parte real** y una **parte imaginaria**, y se expresa generalmente como:
+
+$$
+a + bi
+$$
+
+Donde:
+
+-   $a$ es la parte real
+
+-   $b$ es la parte imaginaria
+
+-   $i$ es la unidad imaginaria, que cumple $i^2 = -1$
+
+En **R**, los números complejos se definen con la letra **`i`** para la parte imaginaria.
+
+``` r
+# Crear un número complejo
+z <- 3 + 4i     # 3 es la parte real, 4 es la parte imaginaria
+z               # Resultado: 3 + 4i
+```
+
+> Los números complejos son fundamentales para modelar situaciones en **ingeniería eléctrica**, **control de sistemas** y **análisis de señales**, donde las magnitudes y fases de las señales se describen eficazmente con números complejos.
+
+------------------------------------------------------------------------
+
+## Valores especiales
+
+En **R** existen varios **valores especiales** que tienen significados particulares y se utilizan en diversos contextos matemáticos, científicos e ingenieriles. Estos valores representan situaciones especiales o indefinidas que pueden surgir en cálculos y simulaciones. Los principales son:
+
+-   **`pi`**. Constante con el valor de $\pi \approx 3.141592$ .
+
+``` r
+radio <- 1
+area_circulo <- pi * r ^ 2
+```
+
+-   **`Inf` (Infinito).** Representa valores extremadamente grandes o infinitos, como resultados de divisiones que exceden el rango de los números representables en R.
+
+``` r
+# División por cero
+resultado_infinito <- 1 / 0
+print(resultado_infinito)       # Resultado: Inf
+```
+
+-   **`NaN` (Not a Number).** Representa resultados indefinidos o no numéricos que no tienen un valor definido.
+
+``` r
+# Operación no definida
+resultado_nan <- 0 / 0
+print(resultado_nan)            # Resultado: NaN
+```
+
+-   **`NA` (Not Available)**. Representa valores faltantes o desconocidos en un conjunto de datos. Es comúnmente utilizado en análisis de datos cuando faltan observaciones.
+
+``` r
+# Valor faltante
+resultado_na <- NA
+print(resultado_na)             # Resultado: NA
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Función `class()` 
+
+La función `class()` se utiliza para identificar el tipo o clase de un objeto. Cada objeto en **R** tiene una clase que define su estructura y las operaciones que se pueden realizar con él. Las clases en **R** determinan si un objeto es un número, un vector, una matriz, una lista, etc. Esta función es útil para entender la naturaleza de los datos y para asegurarse de que se están utilizando correctamente en el código.
+
+``` r
+# Crear diferentes tipos de objetos
+x <- 5L         # Un número entero
+y <- 3.14       # Un número de punto flotante
+z <- 3 + 2i     # Un número complejo
+
+# Ver las clases de los objetos
+class(x)        # Resultado: "integer"
+class(y)        # Resultado: "numeric"
+class(z)        # Resultado: "complex"
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> En ingeniería, el tipo de un objeto es crucial para los cálculos y simulaciones. Por ejemplo, en simulaciones de circuitos eléctricos, la función `class()` puede ser utilizada para asegurarse de que las variables que representan voltajes o corrientes estén correctamente definidas como números. Además, puede ayudar en la manipulación de grandes conjuntos de datos, como matrices o data frames, para asegurarse de que las operaciones matemáticas o estadísticas se realicen en las clases correctas.
+
+------------------------------------------------------------------------
+
+## Coerción
+
+La **coerción** en **R** se refiere al proceso en el cual **R** convierte automáticamente un tipo de dato en otro cuando es necesario. Esto ocurre cuando realizamos operaciones que involucran diferentes tipos de datos. **R** realiza la coerción para asegurarse de que las operaciones se realicen sin errores, pero a veces es importante saber cómo funciona este proceso, especialmente cuando se trabaja con datos en ingeniería o ciencia.
+
+### Tipos de coerción
+
+-   **Coerción implícita**: **R** automáticamente convierte un tipo de dato a otro cuando es necesario para una operación.
+
+``` r
+resultado <- 5L + 2.5   # Sumar un número entero con un número de punto flotante
+resultado               # R realiza la coerción con el número entero para convertiro en número de punto flotante
+```
+
+-   **Coerción explícita**: El programador puede utilizar funciones para convertir de un tipo de dato a otro, como `as.numeric()`, `as.integer()`, `as.complex()`, etc.
+
+``` r
+numero <- as.numeric(3L)    # Coerción explícita de número entero a número de punto flotante
+numero
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> La coerción es muy útil cuando estamos manejando diferentes tipos de datos, como cuando se trabaja con matrices de datos experimentales. En muchos casos, los datos numéricos pueden ser leídos como cadenas de texto y necesitarán ser convertidos a valores numéricos para realizar cálculos.
+
+### Ejemplo 1
+
+Cargar el archivo `Tema02_Auxiliar_Mediciones.RData`. Recuerda limpiar el espacio de trabajo antes de cargar la información.
+
+Visualiza la información almacenada en el archivo. ¿El tipo de dato es correcto para cada variable? Si no es así, convierte al tipo de dato adecuado.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 2
+
+Con las variables del ejemplo anterior crea un nuevo archivo `.RData` ahora que sí son del tipo de dato adecuado.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Operaciones aritméticas
+
+Las **operaciones aritméticas** permiten realizar cálculos matemáticos básicos, como sumas, restas, multiplicaciones y divisiones. Estas operaciones son fundamentales en cualquier disciplina de ingeniería, ya que se utilizan para modelar, analizar y resolver problemas matemáticos.
+
+## Suma y resta
+
+Operaciones básicas de sumar con el operador `+` y restar con el operador `-`.
+
+``` r
+# Suma
+deformacion_inicial <- 10   # [mm]
+deformacion_residual <- 2   # [mm]
+deformacion_total <- deformacion_inicial + deformacion_residual # [mm]
+
+# Resta
+esfuerzo_total <- 15        # [kg/cm2]
+esfuerzo_residual <- 3      # [kg/cm2]
+esfuerzo_efectivo <- esfuerzo_total - esfuerzo_residual         # [kg/cm2]
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+## Multiplicación, división y potencia
+
+Operaciones básicas de multiplicar con el operador `*`, dividir con el operador `/` y aplicar la potencia con el operador `^`.
+
+``` r
+# Multiplicación
+cantidad_productos <- 15
+precio_unitario <- 1.99             # [$]
+precio_total <- cantidad_productos * precio_unitario    # [$]
+
+# División
+cantidad_horas_trabajadas <- 80     # [horas]
+salario <- 469.99                   # [$]
+precio_hora <- salario / cantidad_horas_trabajadas      # [$]
+
+# Potencia
+radio <- 2.5
+area_circulo <- pi * r ^ 2
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+## Módulo
+
+Operación básica, y bastante útil para ingeniería en particular, de obtener el módulo, resto o residuo de la división entre dos números. Se utiliza el operador `%%`.
+
+![Tomado de ROA.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2002%20-%20Tipos%20de%20datos%20-%20N%C3%BAmeros/2.png?raw=true){width="27%"}
+
+``` r
+# Ejemplo 1
+cantidad_amigos <- 3
+porciones_pizza <- 8
+porciones_pizza_sobrantes <- porciones_pizza %% cantidad_amigos
+```
+
+``` r
+# Ejemplo 2
+base_viga <- 28.3348    # [cm]
+multiplo <- 5           # [cm]
+base_viga <- base_viga - (base_viga %% multiplo) + multiplo     # [cm]
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo
+
+Es probable que pienses que la divisibilidad en realidad no es un problema usual de ingeniería, pero te voy a demostrar que sí lo es.
+
+Dada una variable numérica de punto flotante `h` que viene a representar la altura de las paredes de un canal rectangular (la cual usualmente es obtenida a través de un diseño hidráulico) está en metros.
+
+![Tomado de Modelación numérica y experimental de un canal rectangular abierto con diferentes tipos de vertederos de Víctor Adrián Guamán Sánchez.](https://github.com/aisacc/Programacion-Python/blob/main/_Im%C3%A1genes/Tema%2002%20-%20Tipos%20de%20datos%20-%20N%C3%BAmeros/6.png?raw=true){height="auto" width="30%"}
+
+![Tomado de Civil Excel.](https://github.com/aisacc/Programacion-Python/blob/main/_Im%C3%A1genes/Tema%2002%20-%20Tipos%20de%20datos%20-%20N%C3%BAmeros/5.jpg?raw=true){width="35%"}
+
+El valor de `h`, luego de todos los cálculos involucrados, puede ser 1.378514839. Es decir, el canal tendría una altura de 1.378514839 m. ¿Pero eso es adecuado? ¿Es lógico establecer que la altura de las paredes de un canal rectangular sea exactamente 1.378514839 m? Por supuesto que no. Lo usual y recomendable es tener medidas constructivas como 1.40 m, por ejemplo para este caso (es aconsejable redondear al inmediato superior).
+
+Notemos que estamos aproximando 1.378514839 a 1.40. O, si el canal tuviera la altura de 1.94154782, entonces se redondearía a 2.00. O, si el canal tuviera la altura de 2.13458125, entonces se redondearía a 2.20. Como podemos observar, estamos redondeando las décimas al inmediato superior (de 10 cm en 10 cm).
+
+Pero, ¿qué quiere decir todo esto? Que luego de todo el diseño que realicemos, las medidas siempre se recomienda que sean constructivas. Por lo tanto, dada la variable `h` previamente descrita, y utilizando la operación del módulo, reasignar su valor con su medida constructiva.
+
+> [**Nota:**]{.underline} Recuerda seguir el **enfoque EPS**.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Orden de las operaciones aritméticas
+
+En matemáticas, el **orden de las operaciones** se refiere a la secuencia en la que se deben realizar las operaciones en una expresión matemática para obtener el resultado correcto. Este principio es crucial en programación, ya que asegura que los cálculos se realicen de la manera esperada, evitando errores de interpretación.
+
+### **Jerarquía de Operadores**
+
+El orden de las operaciones aritméticas en **R** sigue el **orden estándar** de la jerarquía matemática, conocido como **PEMDAS** (Paréntesis, Exponentes, Multiplicación y División, Adición y Sustracción). Es decir:
+
+1.  **Paréntesis**: Las operaciones dentro de paréntesis se realizan primero.
+2.  **Exponentes**: Las potencias o exponentes se calculan después de los paréntesis.
+3.  **Multiplicación y División**: Se realizan de izquierda a derecha (son de igual prioridad).
+4.  **Suma y Resta**: Se realizan al final, de izquierda a derecha (también de igual prioridad).
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo
+
+Cuando se tiene una expresión "larga" en el divisor o exponente, por mencionar unos casos, se recomienda indicar explícitamente utilizando paréntesis. ¿Cómo se debería crear la expresión $2^{xy} + 1$?
+
+> [**Nota:**]{.underline} Recuerda seguir el **enfoque EPS**.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------

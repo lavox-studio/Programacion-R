@@ -11,7 +11,9 @@ output:
 
 ## Ejercicio 1
 
-¿Cuáles son las ventajas del **enfoque EPS**? Enumera al menos 3.
+Una ciudad quiere analizar los puentes más largos dentro de su territorio. Para ello, dispone de una tabla con la siguiente información por puente: nombre del puente, longitud del puente (m), año de construcción, cantidad de carriles, altura máxima (m) y número de pilares de soporte.
+
+Determina qué variables deberían almacenarse como números enteros y cuáles no. Justifica tu respuesta.
 
 ## Solución
 
@@ -20,3 +22,197 @@ Ingresa tu respuesta aquí 👽
 ------------------------------------------------------------------------
 
 ## Ejercicio 2
+
+Un aeropuerto está recopilando información sobre las aeronaves que operan en sus instalaciones. La tabla de datos contiene las siguientes columnas: nombre de la aeronave, capacidad de pasajeros, número de motores, año de fabricación, envergadura del ala (m) y peso máximo de despegue (kg).
+
+Analiza qué variables deberían almacenarse como números enteros y cuáles no. Justifica tu respuesta.
+
+## Solución
+
+Ingresa tu respuesta aquí 👽
+
+------------------------------------------------------------------------
+
+## Ejercicio 3
+
+Una empresa de ingeniería civil está evaluando la resistencia de distintos materiales de construcción. La tabla de datos incluye las siguientes columnas: nombre del material, densidad (kg/m³), resistencia a la compresión (MPa), módulo de elasticidad (GPa), coeficiente de expansión térmica (1/°C) y conductividad térmica (W/m·K).
+
+Determina qué variables deberían almacenarse como números de punto flotante y cuáles no. Justifica tu respuesta.
+
+## Solución
+
+Ingresa tu respuesta aquí 👽
+
+------------------------------------------------------------------------
+
+## Ejercicio 4
+
+Un equipo de ingeniería hidráulica está analizando las características de varios ríos para un proyecto de gestión del agua. La tabla de datos incluye las siguientes columnas: nombre del río, caudal promedio (m³/s), longitud del río (km), pendiente media del cauce (m/km), ancho promedio (m) y profundidad media (m).
+
+Analiza qué variables deberían almacenarse como números de punto flotante y cuáles no. Justifica tu respuesta.
+
+## Solución
+
+Ingresa tu respuesta aquí 👽
+
+------------------------------------------------------------------------
+
+## Ejercicio 5
+
+El radio de la Tierra es:
+
+-   Sin notación científica: $6371000$ m
+
+-   Con notación científica: $6.371 \times 10^{6}$ m
+
+Entonces, expresa los siguientes números con notación científica o sin notación científica, según corresponda.
+
+-   Densidad del agua: $1000$ $\text{kg}/\text{m}^3$
+
+-   Permeabilidad magnética del vacío: $1.2566 \times 10^{-6}\ \frac{T \cdot m}{A}$
+
+-   Constante de Stefan-Boltzmann: $5.670 \times 10^{-8}\ W \cdot m^{-2} \cdot K^{-4}$
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 6
+
+Cargar la información del archivo `Tema02_Auxiliar_Everest.RData`. Asegúrate primero de limpiar el espacio de trabajo. Luego visualiza su información responde las siguientes preguntas.
+
+-   ¿Qué variables fueron cargadas?
+
+-   ¿Cuál es el tipo de dato de cada variable?
+
+-   ¿Es el tipo de dato correcto? Si no lo es, realiza la conversión necesaria.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 7
+
+Cargar la información del archivo `Tema02_Auxiliar_Amazonas.RData`. Asegúrate primero de limpiar el espacio de trabajo. Luego visualiza su información responde las siguientes preguntas.
+
+-   ¿Qué variables fueron cargadas?
+
+-   ¿Cuál es el tipo de dato de cada variable?
+
+-   ¿Es el tipo de dato correcto? Si no lo es, realiza la conversión necesaria.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 8
+
+Retomando el ejemplo desarrollado en la parte teórica sobre la altura de las paredes de un canal rectangular, `h`, ahora se tiene lo siguiente.
+
+![](https://github.com/aisacc/Programacion-Python/blob/main/_Im%C3%A1genes/Tema%2002%20-%20Tipos%20de%20datos%20-%20N%C3%BAmeros/6.png?raw=true){style="width: 30%; height: auto;"}
+
+*Tomado de **Modelación numérica y experimental de un canal rectangular abierto con diferentes tipos de vertederos** de Víctor Adrián Guamán Sánchez.*
+
+![](https://github.com/aisacc/Programacion-Python/blob/main/_Im%C3%A1genes/Tema%2002%20-%20Tipos%20de%20datos%20-%20N%C3%BAmeros/5.jpg?raw=true){width="35%"}
+
+*Tomado de [Civil Excel](https://www.civilexcel.com/2013/03/movimiento-permanente-uniforme-mpu.html).*
+
+En lugar de establecer una altura constructiva de 10 cm en 10 cm, ahora se solicita que se establezca una altura constructiva de 5 cm en 5 cm. Por lo tanto, si la altura es de 1.378514839 se redondea a 1.40, o si la altura es de 2.13458125, entonces se redondea a 2.15.
+
+> [**Nota:**]{.underline} Recuerda seguir el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 9
+
+En ingeniería mecánica, al diseñar ejes para maquinaria, es común calcular diámetros teóricos que no siempre corresponden a medidas comerciales de fabricación. Supongamos que tenemos una variable de punto flotante `D`, que representa el diámetro del eje en milímetros, obtenida después de los cálculos de diseño.
+
+Por ejemplo, el valor de `D` podría ser 23.47 mm, pero no es práctico fabricar un eje con ese diámetro exacto. En su lugar, se redondea al diámetro estándar más cercano, como 25 mm. Si el diámetro calculado fuera 47.82 mm, se redondearía a 50 mm. O si fuera 97.15 mm, se aproximaría a 100 mm.
+
+Dada la variable `D`, reasigna su valor con la medida estándar más cercana.
+
+> [**Nota:**]{.underline} Recuerda seguir el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 10
+
+Dada la expresión para la obtención del caudal utilizando la ecuación de Manning:
+
+$$Q = \frac{1}{n} A R^{2/3} S^{1/2}$$
+
+Donde:
+
+-   $Q$ es el caudal (m^3^/s)
+
+-   $n$ es el número de Manning (adimensional)
+
+-   $A$ es el área transversal del flujo (m^2^)
+
+-   $R$ es el radio hidráulico (m)
+
+-   $S$ es la pendiente del canal (adimensional, ó **fracción de porcentaje** 1% = **0.01**)
+
+Proporciona los valores a todas las variables necesarias y obtén el caudal.
+
+> [**Nota 1:**]{.underline} Si no estás familiarizado con esta ecuación empírica, no es recomendable analizar sus unidades.
+>
+> [**Nota 2:**]{.underline} Recuerda seguir el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 11
+
+En ingeniería estructural, la **fuerza de compresión** en una columna se puede calcular utilizando la fórmula de la resistencia de materiales:
+
+$$F = \frac{\pi d^2}{4} \sigma$$
+
+Donde:
+
+-   $F$ es la fuerza de compresión (N)
+
+-   $d$ es el diámetro de la columna (m)
+
+-   $\sigma$ es la resistencia a la compresión del material (N/m²)
+
+Proporciona los valores a todas las variables necesarias y obtén la fuerza de compresión. ¿Qué unidades tiene?
+
+> [**Nota:**]{.underline} Recuerda seguir el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
