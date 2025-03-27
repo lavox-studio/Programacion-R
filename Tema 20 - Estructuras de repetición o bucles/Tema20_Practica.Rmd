@@ -1,10 +1,7 @@
 ---
-title: "R para Ingenierías"
-author: "La Academia"
-subtitle: "Tema 01 - Teoría"
-output:
-  html_document:
-    df_print: paged
+title: "Gráficas"
+author: "Ingenecia"
+output: html_document
 ---
 
 ```{r setup, include=FALSE}

@@ -1,7 +1,7 @@
 ---
-title: "Conceptos generales"
+title: "R para Ingenierías"
+author: "La Academia"
 subtitle: "Tema 01 - Teoría"
-author: "Technica"
 output:
   html_document:
     df_print: paged
@@ -9,20 +9,522 @@ output:
 
 # Conceptos generales
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Enfoque EPS: Entradas - Procedimiento - Salidas
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+El enfoque **Entradas - Procedimiento - Salidas (EPS)**, también llamado **Entradas - Procedimiento - Resultados**, es una forma estructurada de programar en la que se organizan los datos y las operaciones en tres etapas principales:
 
-```{r cars}
-summary(cars)
+1.  **Entradas:** Datos proporcionados al programa. Pueden ser valores numéricos, texto, archivos, sensores, etc.
+2.  **Procedimiento:** Operaciones y cálculos que transforman las entradas en resultados. Incluye funciones, ecuaciones y algoritmos.
+3.  **Salidas:** Resultados generados, que pueden mostrarse en pantalla, guardarse en archivos o enviarse a otros sistemas.
+
+El siguiente ejemplo ilustra la aplicación de este enfoque. *No es necesario entender cada parte del ejemplo en esta etapa de aprendizaje. Todo esto será cubierto en el transcurso del curso.*
+
+### Ejemplo
+
+Calcular el área de un cilindro.
+
+### Solución
+
+``` r
+# Entradas
+radio <- 5          # Radio del cilindro (m)
+altura <- 10        # Altura del cilindro (m)
+
+# Procedimiento
+area_lateral <- 2 * pi * radio * altura             # Área lateral
+area_total <- area_lateral + 2 * pi * radio^2       # Área total
+
+# Salidas
+print(paste("Área lateral:", area_lateral, "m²"))
+print(paste("Área total:", area_total, "m²"))
 ```
 
-## Including Plots
+> Haciendo una analogía a la aplicación en ingeniería, este enfoque es similar a un **proceso de manufactura**:
+>
+> -   **Entradas:** Materias primas (materiales, energía).
+> -   **Procedimiento:** Procesamiento en máquinas y sistemas.
+> -   **Salidas:** Productos terminados y datos de control de calidad.
+>
+> En **R**, estructurar el código con el **enfoque EPS** mejora la claridad, reutilización y facilidad de depuración.
 
-You can also embed plots, for example:
+------------------------------------------------------------------------
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+## Creación de variables
+
+En **R**, una variable es un espacio en memoria donde se almacena un valor que puede cambiar a lo largo del programa. Se crean mediante la asignación con los operadores `<-`, `=` o con la función `assign()`.
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+> Imagina que **una variable en R** es como un **sensor** en un sistema de monitoreo industrial. Cada **sensor (variable)** almacena un valor en un instante dado, como la temperatura de un horno, la presión de un tanque o la velocidad de un motor. Puedes leer esos valores, actualizarlos y utilizarlos para cálculos dentro de un sistema de control.
+
+### Ejemplo
+
+Supongamos que en un sistema mecánico necesitamos calcular la **energía cinética** de un objeto en movimiento. La fórmula es:
+
+$$
+E_k = \frac{1}{2} m v^2
+$$
+
+Donde $E_k$ es la energía cinética (Joules), $m$ es la masa del objeto (kg) y $v$ es la velocidad del objeto (m/s).
+
+**Crear las variables** necesarias para determinar la energía cinética del objeto en movimiento.
+
+> [**Nota 1:**]{.underline} Por el momento no es necesario realizar las operaciones aritméticas involucradas.
+>
+> [**Nota 2:**]{.underline} Recuerda seguir el **enfoque EPS**.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Nombres representativos para variables
+
+En programación, elegir **nombres representativos** para las variables es clave para mejorar la legibilidad y mantenibilidad del código. En **R**, un nombre adecuado debe describir claramente el propósito de la variable dentro del contexto del problema.
+
+A continuación te comparto algunas recomendaciones para nombrar tus variables.
+
+1.  **Usar nombres descriptivos.**
+    -   ❌ `x <- 10`. Poco claro.
+
+    -   ✅ `radio_cilindro <- 10.` Claro y significativo.
+2.  **Evitar abreviaturas excesivas.**
+    -   ❌ `tmpr <- 25`. Confuso.
+
+    -   ✅ `temperatura_ambiente <- 25`. Más claro.
+3.  **Seguir una convención de escritura.**
+    -   **Snake case:** `altura_puente <- 50`. Recomendado en R.
+
+    -   **Camel case:** `alturaPuente <- 50`. Utilizado en otros lenguajes.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+El programar eres tú, así que siéntete libre de seguir estas recomendaciones o no. Lo importante es que tu código funcione, además de ser entendible.
+
+------------------------------------------------------------------------
+
+## Reasignación de variables
+
+En **R**, las variables pueden ser reasignadas en cualquier momento simplemente utilizando el operador de asignación (`<-` o `=`). Esto significa que una variable puede cambiar su valor o incluso su tipo de datos en tiempo de ejecución.
+
+``` r
+x <- 10         # Se asigna el valor 10 a 'x'
+print(x)        # Muestra: 10
+
+x <- x + 15     # Se reasigna un nuevo valor a 'x'
+print(x)        # Muestra: 25
+```
+
+R también permite **reasignar una variable con un tipo de dato diferente**:
+
+``` r
+x <- "Texto"    # Ahora 'x' es un string
+print(x)        # Muestra: "Texto"
+```
+
+Considera lo siguiente al momento de reasignar variables:
+
+1.  **No es necesario declarar tipos**: R es un lenguaje de tipado dinámico.
+2.  **La reasignación sobrescribe el valor anterior**: No hay un historial de cambios a menos que se guarden copias.
+
+### Ejemplo
+
+La canasta familiar básica (conjunto de bienes y servicios que son imprescindibles para satisfacer las necesidades básicas del hogar) en el Ecuador es \$797.69 USD. Esta canasta aumenta aproximadamente \$30.00 USD cada año.
+
+¿Cuál será el valor de la canasta familiar básica dentro de 4 años?
+
+> [**Nota 1:**]{.underline} Recuerda utilizar la asignación aumentada para resolver el ejemplo.
+>
+> [**Nota 2:**]{.underline} Recuerda seguir el **enfoque EPS**.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Reglas para nombrar variables
+
+En **R** tenemos varias reglas para nombrar variables. Si no se siguen estas reglas, no se crea la variable y obtenemos un error.
+
+1.  Deben comenzar con una letra (A-Z, a-z).
+
+2.  Pueden contener letras (A-Z, a-z), números (0-9), guiones bajos (`_`) o puntos (`.`), pero no otros caracteres especiales.
+
+3.  R distingue entre mayúsculas y minúsculas (`Variable` y `variable` son diferentes).
+
+4.  No pueden ser palabras reservadas de R (como `if`, `else`, `function`).
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Palabras reservadas
+
+Las **palabras reservadas** son términos que tienen un significado especial en el lenguaje y no pueden usarse como nombres de variables, funciones o identificadores. Estas palabras están predefinidas en el lenguaje y sirven para realizar funciones esenciales del sistema, como controlar el flujo del programa, declarar funciones o definir estructuras de datos.
+
+Algunas de las palabras reservadas en **R** son las siguientes:
+
+-   `if`
+
+-   `else`
+
+-   `for`
+
+-   `while`
+
+-   `repeat`
+
+-   `break`
+
+-   `next`
+
+-   `function`
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Comentarios
+
+Los **comentarios** son fragmentos de texto que se añaden al código para explicar o aclarar su funcionamiento. Los comentarios no afectan la ejecución del programa, ya que **R** los ignora completamente. Los comentarios son esenciales para hacer que el código sea más **legible** y **comprensible**, especialmente cuando se trabaja en equipo o cuando se necesita mantener el código en el futuro.
+
+En **R**, los comentarios se crean usando el símbolo `#`. Todo lo que siga después de `#` en una línea será considerado un comentario.
+
+``` r
+# Este es un comentario
+x <- 10
+```
+
+Los usos recomendados para los comentarios son los siguientes:
+
+-   **Explicar el propósito del código.** Los comentarios ayudan a otros programadores (o a ti mismo en el futuro) a entender lo que hace un bloque de código.
+
+``` r
+# Calculamos el área de un círculo usando la fórmula A = pi * r^2
+radio <- 5
+area <- pi * radio^2
+```
+
+-   **"Desactivar" temporalmente partes del código.** Los comentarios también se usan para "**desactivar"** temporalmente una línea o bloque de código sin eliminarlo.
+
+``` r
+# Calculamos el área de un círculo usando la fórmula A = pi * r^2
+radio <- 5
+# area <- pi * radio^2
+```
+
+-   **Documentar funciones.** En el caso de las funciones, puedes agregar comentarios antes de la declaración de la función para explicar qué hace, qué parámetros recibe y qué devuelve.
+
+``` r
+# Calcular el área de un círculo
+calcular_area <- function(radio) {
+  pi * radio^2
+}
+```
+
+> Considera que los **comentarios en R** son como **manuales de operación** en equipos de ingeniería. Cuando se diseñan sistemas complejos, se incluyen manuales para que los operadores entiendan cómo funciona la máquina y cómo debe ser utilizada. De manera similar, en un código, los comentarios sirven para **explicar el propósito** y el **funcionamiento** de las partes del programa, ayudando a otros programadores (o a uno mismo en el futuro) a comprender mejor el proceso.
+
+### Ejemplo
+
+Comenta el siguiente código, aunque antes debes deducir y entender qué es lo que está haciendo.
+
+``` r
+a = 2
+b = 4
+P = 2 * a + 2 * b
+print(P)
+```
+
+Además, ¿estás de acuerdo con los nombres de variables utilizados? Si no estás de acuerdo, ¿cuáles utilizarás tú?
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Mostrar y ocultar el valor de una variable
+
+En **R**, hay diferentes maneras de **mostrar** u **ocultar** el valor de una variable, dependiendo de cómo deseas trabajar con esa variable y de las situaciones en las que necesitas ver su valor durante la ejecución del programa.
+
+### Mostrar el valor de una variable
+
+Para **mostrar** el valor de una variable, puedes simplemente escribir el nombre de la variable o usar funciones como `print` para imprimir el valor.
+
+``` r
+x <- 10
+x           # Esto muestra el valor de 'x'
+```
+
+``` r
+y <- 5
+print(y)    # Imprime el valor de 'y'
+```
+
+``` r
+x <- 10
+x           # Esto muestra el valor de 'x'
+
+y <- 5
+print(y)    # Imprime el valor de 'y'
+```
+
+En este último ejemplo de código se visualiza por pantalla tanto el valor de `x` como el valor de `y`.
+
+### Ocultar el valor de una variable
+
+En **R**, cuando asignas un valor a una variable **no es necesario** "ocultar" explícitamente la visualización de su información dado que **R** lo hace por defecto.
+
+``` r
+x <- 10         # El valor se guarda, pero no se imprime
+y <- x + 5      # Realiza el cálculo sin mostrar el valor
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> **Mostrar** y **ocultar** el valor de una variable en **R** es similar a **verificar los parámetros** de un sistema en una planta de producción. Si deseas saber el estado de una máquina (mostrar el valor), puedes revisar sus indicadores. Si no te interesa la lectura constante de ciertos valores (ocultar), puedes optar por realizar ajustes sin necesidad de que los resultados se muestren en el monitor todo el tiempo. En programación, esto se traduce en mostrar u ocultar el valor de las variables según lo necesites para **depuración (debugging)**, **optimización** o **simulaciones**.
+
+------------------------------------------------------------------------
+
+## Separar una línea de código en varias líneas
+
+En **R**, puedes **separar una línea de código** en varias líneas sin que se pierda la funcionalidad del código. Esto es útil para mejorar la **legibilidad** del código o cuando las líneas son demasiado largas. **R** tiene reglas que permiten partir las expresiones en partes más manejables, siempre que se sigan algunas pautas.
+
+-   **Las expresiones pueden ser separadas por operadores**: **R** permite dividir una expresión si el **operador** de la línea está presente al final de la línea.
+
+-   **Paréntesis o corchetes abiertos (`(`, `[`, `{`)**: Si un paréntesis o corchete está abierto, **R** entiende que la expresión sigue en la siguiente línea.
+
+``` r
+# Ejemplo 1
+# Sin separación
+resultado <- 10 + 20 + 30 + 40
+
+# Separando en varias líneas
+resultado <- 10 + 
+             20 + 
+             30 + 
+             40
+```
+
+``` r
+# Ejemplo 2
+# Sin separación
+resultado <- sum(10, 20, 30, 40, 50)
+
+# Separando en varias líneas
+resultado <- sum(
+  10, 
+  20, 
+  30, 
+  40, 
+  50
+)
+```
+
+``` r
+# Ejemplo 3
+# Sin separación
+vector <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+# Separando en varias líneas
+vector <- c(
+  1, 2, 3, 4, 
+  5, 6, 7, 8, 
+  9, 10
+)
+```
+
+``` r
+# Ejemplo 4
+# Sin separación
+resultado <- mean(c(10, 20, 30, 40, 50)) + sd(c(10, 20, 30, 40, 50))
+
+# Separando en varias líneas
+resultado <- mean(
+  c(10, 20, 30, 40, 50)
+) + sd(
+  c(10, 20, 30, 40, 50)
+)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Separar una línea de código en varias líneas es similar a **dividir un proceso de ensamblaje** en partes más pequeñas y manejables. Imagina que estás montando una máquina compleja. Si intentas hacerlo todo de una vez, el proceso podría ser confuso o difícil de seguir. Pero si divides las tareas en pasos más pequeños y claros, será mucho más fácil de entender, depurar y ajustar. En el código, hacer lo mismo con las líneas mejora la **claridad** y facilita futuras modificaciones.
+
+------------------------------------------------------------------------
+
+## Función `ls()`
+
+La función **`ls()`** en **R** se utiliza para **listar** los objetos presentes en el **espacio de trabajo** de **R**. Estos objetos pueden ser variables, funciones, data frames, matrices, entre otros. Es una herramienta útil para explorar el entorno de trabajo y saber qué objetos están disponibles en un momento dado.
+
+``` r
+# Crear algunos objetos
+x <- 10
+y <- 20
+z <- "Hola mundo"
+
+# Listar los objetos en el espacio de trabajo
+ls()  # Devuelve: "x", "y", "z"
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Esta función es especialmente útil en los siguientes casos:
+
+-   **Explorar el espacio de trabajo**: Al trabajar con muchos objetos, `ls()` te ayuda a verificar rápidamente qué variables, funciones o datos están disponibles en tu entorno.
+
+-   **Organizar el código**: Puedes usar `ls()` al inicio de tu script para verificar qué objetos están presentes y garantizar que el espacio de trabajo está limpio.
+
+-   **Limpiar el espacio de trabajo (liberar memoria):** A través de la función `rm()`, en conjunto con la función `ls()`, se puede limpiar el espacio de trabajo para empezar con un espacio totalmente limpio, sin variables ni información previa que ocupe memoria en la computadora.
+
+> La función `ls()` es como **revisar un inventario** de herramientas o materiales en un taller de ingeniería. Imagina que tienes muchas herramientas (como destornilladores, llaves, etc.) y necesitas saber qué tienes disponible antes de comenzar un trabajo. La función `ls()` te permite ver qué herramientas (o, en este caso, objetos) están en tu "taller" (espacio de trabajo) en cualquier momento.
+
+------------------------------------------------------------------------
+
+## Función `rm`
+
+La función **`rm()`** en **R** se utiliza para **eliminar** objetos del espacio de trabajo. Esto es útil cuando deseas **liberar memoria** o cuando ya no necesitas ciertos objetos, y quieres mantener el entorno de trabajo limpio y organizado.
+
+``` r
+# Ejemplo 1
+# Crear una variable
+x <- 10
+
+# Verificar que 'x' existe
+ls()    # Muestra "x"
+
+# Eliminar el objeto 'x'
+rm(x)
+
+# Verificar que 'x' ha sido eliminado
+ls()    # Ya no muestra "x"
+```
+
+``` r
+# Ejemplo 2
+# Crear más variables
+a <- 5
+b <- 10
+c <- 15
+
+# Verificar los objetos en el entorno
+ls()  # Muestra "a", "b", "c"
+
+# Eliminar varios objetos
+rm(a, b)
+
+# Verificar que 'a' y 'b' han sido eliminados
+ls()  # Muestra solo "c"
+```
+
+``` r
+# Ejemplo 3
+# Crear más variables
+x <- 1
+y <- 2
+z <- 3
+
+# Eliminar todos los objetos del espacio de trabajo
+rm(list = ls())
+
+# Verificar que no quedan objetos
+ls()    # Devuelve un vector vacío
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Esta función es especialmente útil en los siguientes casos:
+
+-   **Liberar memoria**: Si trabajas con grandes conjuntos de datos, múltiples objetos o tu computadora no tiene muchos recursos, puedes usar `rm()` para liberar memoria y evitar que el espacio de trabajo se sature.
+
+-   **Mantener el entorno limpio**: Eliminar objetos que ya no son necesarios te permite mantener el entorno de trabajo organizado y evitar errores causados por variables innecesarias.
+
+-   **Prevención de conflictos de nombres**: Al eliminar objetos que podrían estar en conflicto con nuevos objetos o funciones, puedes evitar sobrescribir inadvertidamente nombres importantes.
+
+> La función `rm()` en **R** es como **eliminar herramientas o equipos obsoletos de un taller de ingeniería**. Imagina que tienes un taller con muchas herramientas y equipos que ya no usas. Con el tiempo, estos ocupan espacio y pueden generar confusión. Usar `rm()` sería como hacer una limpieza y eliminar esas herramientas que ya no necesitas, asegurando que el taller esté organizado y solo contenga los equipos que son realmente útiles para el trabajo actual.
+
+------------------------------------------------------------------------
+
+## Funciones `save()` y `load()`
+
+Las funciones **`save()`** y **`load()`** en **R** son herramientas útiles para guardar y cargar objetos del espacio de trabajo, lo que permite guardar el progreso de un análisis, o trabajo, y retomarlo más tarde sin perder información. Estas funciones son particularmente útiles cuando trabajas con grandes conjuntos de datos o modelos complejos, ya que te permiten guardar el estado de tu trabajo en archivos y cargarlo posteriormente para continuar desde donde lo dejaste.
+
+### Función `save()`
+
+La función **`save()`** se utiliza para guardar uno o varios objetos en un archivo. El archivo generado tiene la extensión `.RData`.
+
+``` r
+# Crear algunas variables
+x <- 10
+y <- 20
+z <- 30
+
+# Guardar las variables en un archivo .RData
+save(x, y, z, file = "mis_datos.RData")
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Función `load()`
+
+La función **`load()`** se utiliza para cargar objetos previamente guardados con `save()` desde un archivo `.RData` al espacio de trabajo actual. Los objetos se restauran con los mismos nombres que tenían cuando se guardaron.
+
+``` r
+# Cargar los objetos desde el archivo guardado
+load("mis_datos.RData")
+
+# Verificar que los objetos se han cargado
+ls()  # Deberías ver "x", "y", "z" de nuevo en el entorno de trabajo
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Estas funciones son especialmente útiles en los siguientes casos:
+
+-   **Guardar el progreso**: Puedes guardar el estado de tu trabajo y retomarlo en otro momento sin tener que volver a ejecutar todo el código. Esto es útil cuando trabajas con grandes volúmenes de datos o modelos computacionalmente costosos.
+
+-   **Compartir datos y resultados**: Puedes guardar objetos y compartir el archivo `.RData` con otros para que carguen y usen los mismos objetos en su entorno de trabajo.
+
+> Las funciones `save()` y `load()` en **R** son como **guardar y recuperar planos de un proyecto de ingeniería**. Imagina que estás trabajando en el diseño de un edificio y, después de varias semanas de trabajo, decides guardar todos los planos y documentos en un archivo. Más tarde, puedes recuperar esos planos (como un archivo en tu computadora) para continuar donde lo dejaste sin necesidad de rehacer el trabajo. De igual manera, en programación, **guardar el estado** de tu trabajo y **cargarlo** cuando sea necesario te permite seguir avanzando de manera eficiente sin perder lo que ya has logrado.
+
+### Ejemplo
+
+Carga la información del archivo `Tema01_Auxiliar_DatosPersonales.RData`. ¿Qué personaje es y cuáles son sus características?
+
+[**Nota:**]{.underline} Asegúrate de limpiar el espacio de trabajo antes de cargar la información.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------

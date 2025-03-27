@@ -1,7 +1,7 @@
 ---
-title: "Introducción a RStudio y R Markdown"
+title: "R para Ingenierías"
+author: "La Academia"
 subtitle: "Tema 00 - Práctica"
-author: "Technica"
 output:
   html_document:
     df_print: paged
@@ -23,24 +23,23 @@ Ingresa tu respuesta aquí 👽
 
 ## Ejercicio 2
 
-De seguro en alguna ocasión has tenido que ir a hacer compras al supermercado. ¿Algunas vez has hecho una lista de las compras que debes hacer? Crea una lista numerada con todas las compras que normalmente haces. Además, clasifica tus compras por grupos añadiendo subniveles a tu lista.
+De seguro en alguna ocasión has tenido que ir a hacer compras a una papelería, ya sea por inicio de clases o por algo similar. ¿Has hecho una lista de las compras que debes hacer? Crea una lista numerada con todas las compras que normalmente haces. Además, clasifica tus compras por grupos añadiendo subniveles a tu lista.
 
 **Por ejemplo:**
 
-1.  Comida
-    1.  Atún
-    2.  Arroz
-    3.  Aceite
-2.  Embutidos
-    1.  Salchichas
-    2.  Jamón
-3.  Golosinas
-    1.  Galletas de chocolate
-    2.  Cereal
+1.  Cuadernos
+    1.  Universitario a cuadros 100 hojas
+    2.  Universitario a cuadros 200 hojas
+    3.  Pequeño sin líneas 50 hojas
+2.  Esferos
+    1.  Azul, rojo y negro
+    2.  Borrable de varios colores
+3.  Pinturas
+    1.  Temperas de 10 colores
 
-Al final añade una imagen del supermercado donde sueles hacer tus compras.
+Al final añade una imagen de la papelería donde sueles hacer tus compras.
 
-**Observación:** La imagen la puedes descargar de internet.
+**Observación:** La imagen la puedes descargar de internet o cargar a través de su enlace.
 
 ## Solución
 
@@ -53,8 +52,8 @@ Ingresa tu respuesta aquí 👽
 Ahora vamos a repasar los hipervínculos. Por lo tanto, vas a crear los siguientes hipervínculos:
 
 -   Un hipervínculo que te lleve al inicio de este archivo de código. *Pista:* Utiliza el título de este archivo como referencia.
--   Un hipervínculo que te lleve al ejercicio 1.
--   Un hipervínculo que te lleve al ejercicio 2.
+-   Un hipervínculo que te lleve al primer ejercicio.
+-   Un hipervínculo que te lleve al último ejercicio.
 -   Un hipervínculo que te lleve la página de inicio este curso en Udemy: **R para Ingenierías**.
 -   Consulta en Wikipedia sobre R y crea un hipervínculo que te lleve a la página web consultada.
 
@@ -68,9 +67,9 @@ Ingresa tu respuesta aquí 👽
 
 Consulta en internet sobre LaTeX (una guía de inicio rápido o un tutorial de introducción es suficiente) y escribe las siguientes expresiones matemáticas:
 
--   Fórmula para determinar el área de un círculo.
--   Fórmula para obtener la hipotenusa de un triángulo rectángulo.
--   Fórmula para calcular el área de un trapecio.
+-   Fórmula para determinar el volumen de un cilindro.
+-   Fórmula para obtener la hipotenusa de un triángulo rectángulo isósceles.
+-   Fórmula para calcular el volumen de una esfera.
 -   Fórmula para determinar las raíces de un polinomio de segundo grado (conocida como fórmula general de segundo grado).
 
 Y, si te animas a este desafío, también escribe las siguientes expresiones matemáticas:
@@ -80,6 +79,22 @@ Y, si te animas a este desafío, también escribe las siguientes expresiones mat
 -   Definición matemática de la integral (en una variable).
 
 -   Una ecuación diferencial en derivadas parciales (la que tú quieras).
+
+## Solución
+
+Ingresa tu respuesta aquí 👽
+
+------------------------------------------------------------------------
+
+## Ejercicio 5
+
+En la universidad tenemos un horario de las materias que tomamos en cada semestre. A continuación genera una tabla con tu horario del semestre actual.
+
+-   Si todavía no entras a la universidad, entonces crea una tabla con tu horario del colegio.
+
+-   Si ya terminaste la universidad, entonces crea una tabla con el horario del último semestre que cursaste.
+
+Luego, añade una imagen de la universidad donde estudias, quieres estudiar o estudiaste.
 
 ## Solución
 

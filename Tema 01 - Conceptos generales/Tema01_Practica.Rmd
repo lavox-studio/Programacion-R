@@ -1,32 +1,136 @@
 ---
-title: "Conceptos generales"
+title: "R para Ingenierías"
+author: "La Academia"
 subtitle: "Tema 01 - Práctica"
-author: "Technica"
 output:
   html_document:
     df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Conceptos generales
+
+## Ejercicio 1
+
+¿Cuáles son las ventajas del **enfoque EPS**? Enumera al menos 3.
+
+## Solución
+
+Ingresa tu respuesta aquí 👽
+
+------------------------------------------------------------------------
+
+## Ejercicio 2
+
+Supón que estás diseñando una estructura de soporte para una máquina. Necesitas calcular la resistencia de diferentes materiales utilizados en la estructura, tomando en cuenta su área transversal y su módulo de elasticidad.
+
+$$ \text{tensión} = \frac{\text{módulo de elasticidad} \times \text{deformación}}{\text{área transversal}} $$
+
+Donde el módulo de elasticidad está en GPa, la deformación está en **fracción de porcentaje** (1 % = **0.01**, por ejemplo) y el área transversal está en m^2^.
+
+**Crear las variables** necesarias para calcular la tensión. ¿Qué unidades tendría la tensión?
+
+> [**Nota 1:**]{.underline} Por el momento no es necesario realizar las operaciones aritméticas involucradas.
+>
+> [**Nota 2:**]{.underline} Recuerda seguir el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## R Markdown
+------------------------------------------------------------------------
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Ejercicio 3
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+La posición final $(h)$, o desplazamiento, de un objeto en caída libre es:
 
-```{r cars}
-summary(cars)
+$$
+h = h_0 + v_0 t + \frac{1}{2} g t^2
+$$
+
+Entonces, realiza las siguientes actividades:
+
+1.  Consulta en internet el nombre y unidades de los componentes de la fórmula $(h_0, v_0$, etc.). Describe lo consultado ya sea con una lista o con una tabla.
+2.  Crea las variables necesarias para obtener la posición final $(h)$ del objeto.
+3.  Sabiendo que la posición inicial es $h_0$, ¿llamarías a la variable `h0` o `posicion_inicial`? ¿Por qué?
+
+> [**Nota 1:**]{.underline} Por el momento no es necesario realizar las operaciones aritméticas involucradas.
+>
+> [**Nota 2:**]{.underline} Recuerda seguir el **enfoque EPS**.
+
+## Solución
+
+Ingresa tu respuesta aquí 👽
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## Including Plots
+------------------------------------------------------------------------
 
-You can also embed plots, for example:
+## Ejercicio 4
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+Realiza las siguientes actividades:
+
+1.  Crea una variable que contenga el salario básico (también llamado salario mínimo) de tu país.
+2.  Vamos a suponer que cada año se aumenta \$10.00 USD al salario básico. Por lo tanto, utilizando la reasignación de variables añade \$10.00 USD al salario básico que ingresaste.
+3.  Suponiendo que cada ejecución del código es un año (es decir, se aumenta \$10.00 USD al salario básico). ¿Cuál sería el salario básico dentro de 7 años? Analiza la respuesta y luego compruébala ejecutando el código las veces que sean necesarias.
+
+> [**Nota:**]{.underline} Recuerda seguir el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+------------------------------------------------------------------------
+
+## Ejercicio 5
+
+Identifica cuál de los siguientes nombres es un nombre válido de variable o no lo es, y justifica el motivo.
+
+-   `A.3`
+
+-   `_hello`
+
+-   `5hermanos`
+
+-   `año2022`
+
+-   `4.equipos`
+
+-   `a_b-c`
+
+-   `a_b.4`
+
+## Solución
+
+Ingresa tu respuesta aquí 👽
+
+------------------------------------------------------------------------
+
+## Ejercicio 6
+
+Limpia el espacio de trabajo. Luego, crea variables con nombres representativos que contendrán la siguiente información personal cantante, compositor o banda favorito:
+
+-   Nombre
+
+-   Edad
+
+-   Género de música
+
+-   País de origen
+
+-   Nombre del primer álbum o canción
+
+Una vez creadas las variables con su información correspondiente, guarda todas las variables, excepto el país de origen, en un archivo `.RData`. Finalmente, limpia nuevamente el espacio de trabajo, verifica que esté vacío y carga la información del archivo creado.
+
+> [**Nota:**]{.underline} Recuerda seguir el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
