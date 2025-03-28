@@ -17,6 +17,8 @@ El enfoque **Entradas - Procedimiento - Salidas (EPS)**, también llamado **Entr
 2.  **Procedimiento:** Operaciones y cálculos que transforman las entradas en resultados. Incluye funciones, ecuaciones y algoritmos.
 3.  **Salidas:** Resultados generados, que pueden mostrarse en pantalla, guardarse en archivos o enviarse a otros sistemas.
 
+![Definición visual del enfoque EPS.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2001%20-%20Conceptos%20generales/1.png?raw=true){width="500"}
+
 El siguiente ejemplo ilustra la aplicación de este enfoque. *No es necesario entender cada parte del ejemplo en esta etapa de aprendizaje. Todo esto será cubierto en el transcurso del curso.*
 
 ### Ejemplo

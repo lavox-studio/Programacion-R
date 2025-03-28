@@ -7,6 +7,105 @@ output:
     df_print: paged
 ---
 
-## Tipos de datos: Valores lógicos
+# Tipos de datos: Valores lógicos
 
-Añadir info.
+## Ejercicio 1
+
+**Un algoritmo de control de calidad** evalúa piezas de una fábrica. Si una pieza tiene un diámetro mayor a **50 mm** o es de material defectuoso (`TRUE`), se descarta. Utiliza una expresión lógica para representar esta condición.
+
+> [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 2
+
+**En una central hidroeléctrica** se monitorea el nivel del embalse. Si el nivel es menor a **20 metros**, las turbinas deben apagarse, y si es mayor a **80 metros**, se deben abrir compuertas de seguridad. Representa estas condiciones mediante una expresión lógica.
+
+> [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 3
+
+Realizar las siguientes actividades:
+
+1.  Crear la variable `a` con un número entre 1 y 5.
+2.  Crear la variable `b` con un número entre -1 y -5.
+
+Ahora comprobar lo siguiente:
+
+-   $a + b > 0$
+
+-   $ab \ge 2b$
+
+-   $2a = -1.5b$
+
+-   $a^2 - 1 \ne b^2 + 1$
+
+-   $a^3 - b \le b^3 + a$
+
+> [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 4
+
+Evalúa si un número que tú indiques es divisible por 5 y por 8, pero no por 10.
+
+> [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 5
+
+Evalúa si un número que tú indiques es divisible por 3 o 5, sabiendo que es impar.
+
+> [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 6
+
+Queremos verificar si un proceso industrial cumple con los tiempos de producción y calidad esperados.
+
+Por lo tanto, si el tiempo de ciclo del proceso (en minutos) es menor o igual al tiempo máximo permitido (15 minutos) y la calidad del producto (en porcentaje) es mayor a la calidad mínima (90%), entonces el proceso industrial cumple con los requisitos de tiempo y calidad. Desplegar esto último por pantalla junto con el resultado de la verificación.
+
+> [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------

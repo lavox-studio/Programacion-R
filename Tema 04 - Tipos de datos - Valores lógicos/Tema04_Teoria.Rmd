@@ -7,6 +7,164 @@ output:
     df_print: paged
 ---
 
-## Tipos de datos: Valores lógicos
+# Tipos de datos: Valores lógicos
 
-Añadir info.
+En **R**, los **valores lógicos** (`TRUE` y `FALSE`) representan afirmaciones de **verdadero** o **falso**. Son esenciales en la toma de decisiones y en estructuras de control como **condicionales** y **bucles**.
+
+![Valores lógicos como base de la toma de decisiones.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2004%20-%20Tipos%20de%20datos%20-%20Valores%20l%C3%B3gicos/1.png?raw=true)
+
+> Imagina un **interruptor eléctrico** en un circuito. Solo tiene dos estados: **encendido (TRUE)** o **apagado (FALSE)**. De la misma manera, en programación utilizamos valores lógicos para representar estados y condiciones.
+
+## Creación de valores lógicos
+
+Los **valores lógicos** (`TRUE` y `FALSE`) pueden crearse directamente o mediante comparaciones entre variables.
+
+``` r
+estado_maquina <- TRUE          # La máquina está encendida
+alarma_activada <- FALSE        # La alarma no está activada
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Operaciones relacionales
+
+Las **operaciones relacionales** permiten comparar valores en **R** y generan un resultado lógico (`TRUE` o `FALSE`).
+
+| Operador |    Significado    | Ejemplo (`a = 10`, `b = 20`) |
+|:--------:|:-----------------:|:----------------------------:|
+|   `==`   |     Igualdad      |      `a == b` → `FALSE`      |
+|   `!=`   |     Diferente     |      `a != b` → `TRUE`       |
+|   `>`    |     Mayor que     |      `a > b` → `FALSE`       |
+|   `<`    |     Menor que     |       `a < b` → `TRUE`       |
+|   `>=`   | Mayor o igual que |      `a >= b` → `FALSE`      |
+|   `<=`   | Menos o igual que |      `a <= b` → `TRUE`       |
+
+: Operaciones relacionales en R.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Las operaciones relacionales son clave en la **automatización de procesos**, el **control de calidad** y la **validación de datos** en sistemas industriales.
+
+### Ejemplo 1
+
+Verificar si la velocidad de un vehículo en una autopista es mayor al límite permitido de **120 km/h**.
+
+> [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 2
+
+Comprobar si la **presión de un gas** en un tanque está dentro del rango operativo seguro, definido entre **50 y 200 kPa**.
+
+> [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 3
+
+Verificar si un **satélite en órbita** sigue una trayectoria estable, asegurando que su **altura** está entre **400 km y 500 km**.
+
+> [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Operaciones lógicas
+
+Las **operaciones lógicas** en **R** permiten combinar operaciones relacionales y devolver un único valor lógico (`TRUE` o `FALSE`) como resultado.
+
+| Operador | Descripción | Ejemplo (`A = TRUE`, `B = FALSE`) |
+|:--:|:--:|:--:|
+| `&` | **Y (AND)** → Verdadero si **ambos** son `TRUE` | `A & B` → `FALSE` |
+| `|` | **O (OR)** → Verdadero si **al menos uno** es `TRUE` | `A | B` → `TRUE` |
+| `!` | **NO (NOT)** → Invierte el valor lógico | `!A` → `FALSE` |
+
+: Operaciones lógicas en R.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> En ingeniería, es similar a un **sistema de seguridad industrial** en una fábrica:
+>
+> -   La **máquina solo puede operar** si el operador está presente (`TRUE`) **y** el botón de encendido está activado (`TRUE`).
+>
+> -   La **alarma debe activarse** si hay una fuga de gas (`TRUE`) **o** una alta temperatura (`TRUE`).
+
+### Ejemplo 1
+
+Verificar si un circuito eléctrico está en condiciones seguras, asegurando que la tensión está entre 210V y 230V y la corriente no supera los 10A.
+
+> [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 2
+
+Comprobar si un sistema de refrigeración industrial está en estado crítico, evaluando si la temperatura supera los 5°C o la presión del refrigerante cae por debajo de 50 kPa.
+
+> [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 3
+
+Determinar si un satélite puede ajustar su órbita, verificando que su altura está entre 400 km y 500 km y su velocidad está dentro del rango de 7.6 km/s a 7.8 km/s.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Coerción
+
+Es posible convertir cualquier tipo de dato en un valor lógico a través de la función `as.logical()`. Cuando se convierten otros tipos de datos a **valores lógicos** (`TRUE` o `FALSE`), **R** sigue las siguientes reglas:
+
+-   **Cero (`0`)** se convierte en **`FALSE`**.
+
+-   **Cualquier otro número** (positivo o negativo) se convierte en **`TRUE`**.
+
+-   **Cualquier cadena de caracteres** se convierte en **`NA`**.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+## Más adelante...
+
+Los valores lógicos son extremadamente útiles para ingenieros, especialmente con una herramienta llamada **vectorización de código** e **indexación lógica** (que forma parte de la vectorización).
+
+Se retomará el estudio de los valores lógicos, y particularmente su uso, en los temas siguientes.
+
+------------------------------------------------------------------------

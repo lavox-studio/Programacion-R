@@ -1,29 +1,76 @@
 ---
-title: "Tipos de datos - Valores lógicos"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías"
+author: "La Academia"
+subtitle: "Tema 05 - Teoría"
+output:
+  html_document:
+    df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# Ingreso de datos por el usuario y visualización personalizada
 
-## R Markdown
+asd
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Función readline
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+asd
 
-```{r cars}
-summary(cars)
-```
+### Ejemplo 1
 
-## Including Plots
+asd
 
-You can also embed plots, for example:
+### Solución
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+asd
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+### Ejemplo 2
+
+asd
+
+### Solución
+
+asd
+
+------------------------------------------------------------------------
+
+## Secuencias de escape
+
+asd
+
+------------------------------------------------------------------------
+
+## Función `sprintf`
+
+asd
+
+------------------------------------------------------------------------
+
+## Función `cat` 
+
+asd
+
+### Ejemplo 1
+
+asd
+
+### Solución
+
+asd
+
+### Ejemplo 2
+
+asd
+
+### Solución
+
+asd
+
+### Ejemplo 3
+
+asd
+
+### Solución
+
+asd
+
+------------------------------------------------------------------------
