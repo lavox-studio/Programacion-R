@@ -9,68 +9,178 @@ output:
 
 # Ingreso de datos por el usuario y visualización personalizada
 
-asd
+En ingeniería, muchas veces es necesario interactuar con los sistemas para ingresar información y obtener resultados personalizados. Por ejemplo, en el diseño de una estructura, un ingeniero debe ingresar datos como la carga máxima y las dimensiones de los materiales antes de calcular esfuerzos y deformaciones.
+
+En **R**, podemos capturar información desde la consola utilizando la función **`readline()`** y luego mostrar los resultados de manera clara con **`cat()`**, **`print()`** o **`paste()`**. Esto permite desarrollar programas interactivos donde el usuario introduce datos y recibe respuestas en tiempo real.
+
+![Proceso de ingreso de datos por el usuario y visualización personalizada.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2005%20-%20Ingreso%20de%20datos%20por%20el%20usuario%20y%20visualizaci%C3%B3n%20personalizada/1.png?raw=true){width="712"}
+
+> Imagina que eres un operador de una máquina CNC (Control Numérico Computarizado). Antes de fabricar una pieza, debes ingresar parámetros como el diámetro del corte y la velocidad de la herramienta. Sin estos datos, la máquina no podría operar correctamente. En **R**, el ingreso de datos funciona de manera similar: **el usuario proporciona la información necesaria para que el programa realice cálculos o análisis adecuados**.
 
 ## Función readline
 
-asd
+La función **`readline()`** permite capturar datos ingresados por el usuario a través de la consola. Es útil en programas interactivos donde se necesita recibir información y procesarla.
+
+``` r
+nombre <- readline("Ingrese su nombre: ")
+cat("Hola,", nombre, "¡Bienvenido!\n")
+```
+
+La función `readline()` siempre devuelve un valor de tipo **carácter**. Si se necesita un número, debe convertirse con `as.numeric()` o `as.integer()`.
+
+``` r
+edad <- as.numeric(readline("Ingrese su edad: "))
+cat("En 5 años tendrás", edad + 5, "años.\n")
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> En aplicaciones de **cálculo estructural**, **automatización industrial** o **análisis de datos**, `readline()` permite al usuario ingresar valores como temperaturas, presiones o dimensiones, facilitando cálculos en tiempo real.
 
 ### Ejemplo 1
 
-asd
+**Un sistema de monitoreo ambiental** necesita registrar la temperatura y humedad de un laboratorio. Escriba un programa que solicite al usuario ingresar estos valores y los muestre en un formato claro.
+
+> [**Nota 1:**]{.underline} Utiliza la función `paste()` o `paste0()`. En unas clases más adelante, en este mismo tema, se mostrará formas de controlar aún más la presentación de resultados.
+>
+> [**Nota 2:**]{.underline} Recuerda seguir el enfoque EPS.
 
 ### Solución
 
-asd
+```{r}
+# Ingresa tu código aquí 👽
+```
 
 ### Ejemplo 2
 
-asd
+**En un cálculo de resistencia de materiales**, se requiere conocer el tipo de material y la carga aplicada sobre una viga. Solicite al usuario que ingrese estos datos y muéstrelos adecuadamente.
+
+> [**Nota 1:**]{.underline} Utiliza la función `paste()` o `paste0()`. En unas clases más adelante, en este mismo tema, se mostrará formas de controlar aún más la presentación de resultados.
+>
+> [**Nota 2:**]{.underline} Recuerda seguir el enfoque EPS.
 
 ### Solución
 
-asd
+```{r}
+# Ingresa tu código aquí 👽
+```
 
 ------------------------------------------------------------------------
 
 ## Secuencias de escape
 
-asd
+Las **secuencias de escape** son combinaciones especiales de caracteres que permiten **dar formato a los textos** dentro de cadenas de caracteres. Se representan con una **barra invertida (`\`)** seguida de un carácter especial.
+
+| Secuencia | Descripción | Ejemplo |
+|----|----|----|
+| `\n` | Salto de línea | `cat("Línea 1\nLínea 2")` |
+| `\t` | Tabulación (espacio extra) | `cat("Columna1\tColumna2")` |
+| `\\` | Barra invertida (`\`) | `cat("Ruta: C:\\Usuarios\\Docs")` |
+| `\"` | Comillas dobles dentro de texto | `cat("Dijo: \"Hola\"")` |
+| `\'` | Comillas simples dentro de texto | `cat('Escribió: \'Rocks\'')` |
+
+: Principales secuencias de escape.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Las secuencias de escape son esenciales para **dar formato a reportes**, **estructurar datos de sensores** o **organizar salidas en simulaciones** de forma legible y clara.
 
 ------------------------------------------------------------------------
 
 ## Función `sprintf`
 
-asd
+La función **`sprintf()`** en R permite **formatear cadenas de texto** con precisión, controlando cómo se presentan los valores numéricos y de texto dentro de una salida estructurada. Es útil en reportes, mediciones e interfaces donde se necesita control sobre la cantidad de decimales, alineación y otros aspectos de visualización.
+
+![Función sprintf.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2005%20-%20Ingreso%20de%20datos%20por%20el%20usuario%20y%20visualizaci%C3%B3n%20personalizada/2.png?raw=true){width="761"}
+
+``` r
+sprintf("formato", valores)
+```
+
+El el código de ejemplo **`formato`** define cómo se mostrarán los valores. Las principales especificaciones de formato se detallan en la siguiente tabla.
+
+| Código | Descripción | Ejemplo |
+|--------------|-----------------------|-----------------------------------|
+| `%d` | Entero decimal | `sprintf("Valor: %d", 25)` → `"Valor: 25"` |
+| `%f` | Número decimal con punto flotante | `sprintf("Altura: %.2f m", 1.789)` → `"Altura: 1.79 m"` |
+| `%s` | Cadena de caracteres | `sprintf("Material: %s", "Acero")` → `"Material: Acero"` |
+| `%e` o `%E` | Notación científica | `sprintf("Carga: %.3e N", 125000)` → `"Carga: 1.250e+05 N"` |
+
+: Principales especificaciones de formato.
+
+``` r
+diametro <- 12.34567
+sprintf("El diámetro de la tubería es %.2f cm", diametro)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
 
 ------------------------------------------------------------------------
 
-## Función `cat` 
+## Función `cat`
 
-asd
+La función **`cat()`** se utiliza para **imprimir texto y valores en la consola** de forma personalizada, permitiendo unir múltiples elementos en una misma línea y agregar formatos especiales como saltos de línea (`\n`) o tabulaciones (`\t`).
+
+``` r
+cat(valor1, valor2, ..., sep = " ", end = "\n")
+```
+
+-   `sep`: Define el separador entre los valores (por defecto es un espacio `" "`).
+
+-   `end`: Define qué ocurre al final de la impresión (por defecto es un salto de línea `"\n"`).
+
+``` r
+nombre <- "Acero"
+resistencia <- 250  
+cat("Material:", nombre, "\nResistencia:", resistencia, "MPa")
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Podríamos pensar que `cat()` es como un **operador de radio** en un sistema de comunicaciones de emergencia. Su trabajo es transmitir mensajes de manera clara y estructurada para que sean entendidos sin confusión. Del mismo modo, `cat()` permite mostrar información organizada y legible en la consola.
 
 ### Ejemplo 1
 
-asd
+Solicita al usuario que ingrese el nombre de un material y su densidad en kg/m³, luego muestra la información utilizando `cat()`, organizándola en columnas con tabulaciones (`\t`).
+
+> [**Nota:**]{.underline} Recuerda seguir el enfoque EPS.
 
 ### Solución
 
-asd
+```{r}
+# Ingresa tu código aquí 👽
+```
 
 ### Ejemplo 2
 
-asd
+Solicita al usuario una distancia en metros, conviértela a kilómetros y milímetros, y muestra los resultados con `sprintf()` en una sola línea.
+
+> [**Nota:**]{.underline} Recuerda seguir el enfoque EPS.
 
 ### Solución
 
-asd
+```{r}
+# Ingresa tu código aquí 👽
+```
 
 ### Ejemplo 3
 
-asd
+Pregunta al usuario el radio y la altura de un tanque cilíndrico, calcula su volumen y muestra el resultado con `sprintf()`, asegurando que se presenten tres decimales.
+
+> [**Nota:**]{.underline} Recuerda seguir el enfoque EPS.
 
 ### Solución
 
-asd
+```{r}
+# Ingresa tu código aquí 👽
+```
 
 ------------------------------------------------------------------------

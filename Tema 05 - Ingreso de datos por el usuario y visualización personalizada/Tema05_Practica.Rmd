@@ -11,7 +11,7 @@ output:
 
 ## Ejercicio 1
 
-**Un algoritmo de control de calidad** evalúa piezas de una fábrica. Si una pieza tiene un diámetro mayor a **50 mm** o es de material defectuoso (`TRUE`), se descarta. Utiliza una expresión lógica para representar esta condición.
+Desarrolla un programa que solicite al usuario la velocidad inicial (en m/s), la aceleración (en m/s²), y el tiempo (en s) de un objeto en movimiento. Calcula la velocidad final utilizando la fórmula $v_f = v_i + at$ y la distancia recorrida utilizando $d = v_i t + \frac{1}{2}at^2$. Imprime estos resultados de manera estructurada.
 
 > [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
 
@@ -25,7 +25,7 @@ output:
 
 ## Ejercicio 2
 
-**En una central hidroeléctrica** se monitorea el nivel del embalse. Si el nivel es menor a **20 metros**, las turbinas deben apagarse, y si es mayor a **80 metros**, se deben abrir compuertas de seguridad. Representa estas condiciones mediante una expresión lógica.
+Escribe un programa que acepte un entero $n$ y compute el valor de $n + nn + nnn$.
 
 > [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
 
@@ -39,22 +39,7 @@ output:
 
 ## Ejercicio 3
 
-Realizar las siguientes actividades:
-
-1.  Crear la variable `a` con un número entre 1 y 5.
-2.  Crear la variable `b` con un número entre -1 y -5.
-
-Ahora comprobar lo siguiente:
-
--   $a + b > 0$
-
--   $ab \ge 2b$
-
--   $2a = -1.5b$
-
--   $a^2 - 1 \ne b^2 + 1$
-
--   $a^3 - b \le b^3 + a$
+Escribe un programa que solicite al usuario los valores de resistencia $R$ (en ohmios), inductancia $L$ (en henrios), y capacitancia $C$ (en faradios) de un circuito RLC en serie. Calcula la frecuencia resonante del circuito usando la fórmula $f_r = \frac{1}{2\pi\sqrt{LC}}$, y el factor de calidad usando $Q = \frac{1}{R} \sqrt{\frac{L}{C}}$.
 
 > [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
 
@@ -68,7 +53,7 @@ Ahora comprobar lo siguiente:
 
 ## Ejercicio 4
 
-Evalúa si un número que tú indiques es divisible por 5 y por 8, pero no por 10.
+Escribe un programa que solicite al usuario la carga axial (en kN) y la sección transversal (en cm²) de una columna. Calcula la tensión axial usando la fórmula $\sigma = P / A$, donde $P$ es la carga axial y $A$ es la sección transversal. Imprime los resultados en un formato claro y legible. La tensión axial $\sigma$ debe estar expresada en Pascales.
 
 > [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
 
@@ -82,7 +67,13 @@ Evalúa si un número que tú indiques es divisible por 5 y por 8, pero no por 1
 
 ## Ejercicio 5
 
-Evalúa si un número que tú indiques es divisible por 3 o 5, sabiendo que es impar.
+Solicita al usuario el coeficiente de rugosidad $n$, el área transversal $A$ (m²), el radio hidráulico $R$ (m) y la pendiente $S$. Calcula el caudal utilizando la ecuación de Manning:
+
+$$
+Q = \frac{1}{n} A R ^ {2/3} S ^ {1/2}
+$$
+
+Imprime los resultados en un formato claro y legible.
 
 > [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
 
@@ -96,9 +87,13 @@ Evalúa si un número que tú indiques es divisible por 3 o 5, sabiendo que es i
 
 ## Ejercicio 6
 
-Queremos verificar si un proceso industrial cumple con los tiempos de producción y calidad esperados.
+Pide al usuario la longitud de la columna $L$ (m), el momento de inercia $I$ (m⁴) y el módulo de elasticidad $E$ (Pa). Calcula la carga crítica de pandeo usando la ecuación de Euler:
 
-Por lo tanto, si el tiempo de ciclo del proceso (en minutos) es menor o igual al tiempo máximo permitido (15 minutos) y la calidad del producto (en porcentaje) es mayor a la calidad mínima (90%), entonces el proceso industrial cumple con los requisitos de tiempo y calidad. Desplegar esto último por pantalla junto con el resultado de la verificación.
+$$
+P_{cr} = \frac{\pi^2EI}{L^2}
+$$
+
+Imprime los resultados en un formato claro y legible.
 
 > [**Nota:**]{.underline} Recuerda utilizar el **enfoque EPS**.
 
