@@ -7,6 +7,141 @@ output:
     df_print: paged
 ---
 
-## Tipos de datos: Caracteres
+# Tipos de datos: Caracteres
 
-Añadir información.
+En **R**, los **datos de tipo carácter** representan texto, es decir, secuencias de letras, números o símbolos encerrados entre comillas (`""` o `''`). Este tipo de datos es fundamental cuando trabajamos con nombres, descripciones, códigos alfanuméricos o cualquier dato que no se interprete numéricamente.
+
+En diversas ramas de la ingeniería, los datos de tipo carácter son esenciales para identificar elementos en bases de datos, etiquetar sensores en sistemas de monitoreo, almacenar códigos de piezas en manufactura, o registrar nombres de materiales en análisis de estructuras.
+
+![Ejemplos de uso de los datos de tipo caracter.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2003%20-%20Tipos%20de%20datos%20-%20Caracteres/1.png?raw=true){width="700"}
+
+> Imagina un sistema de gestión de inventarios en una planta industrial. Los materiales tienen un código único como `"MAT-001"` o `"STEEL-45"`. Estos valores no deben tratarse como números, ya que perderían su significado si se realizaran operaciones matemáticas con ellos. Aquí es donde los datos de tipo carácter juegan un papel clave en la organización y procesamiento de información.
+
+## Creación de cadenas de caracteres
+
+Una **cadena de caracteres** es una secuencia de texto encerrada entre comillas dobles (`" "`) o simples (`' '`). Para definir una cadena de texto, basta con asignarla a una variable usando el operador de asignación (`<-`, `=`).
+
+``` r
+nombre <- "Motor eléctrico"
+codigo <- 'ME-2024'
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> En una planta de producción, cada máquina tiene una placa con su **nombre** y **código de identificación**. Si programamos un sistema de monitoreo, debemos almacenar estas identificaciones como cadenas de caracteres para procesarlas correctamente.
+
+### Ejemplo
+
+Dada una máquina nueva adquirida por la planta de producción llamada Torno CNC con número de serie CNC-4521A, crea las variables necesarias para almacenar esta información (nombre y número de serie).
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Concatenación
+
+La **concatenación** de cadenas en **R** se realiza mediante la función `paste()` o `paste0()`, permitiendo unir varias cadenas en una sola.
+
+-   `paste(...)`: Une cadenas **con un separador** (por defecto, un espacio).
+
+-   `paste0(...)`: Une cadenas **sin separador**.
+
+``` r
+nombre <- "Sensor"
+tipo <- "Temperatura"
+resultado <- paste(nombre, tipo)    # "Sensor Temperatura"
+resultado2 <- paste0(nombre, tipo)  # "SensorTemperatura"
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> En sistemas industriales y bases de datos, concatenar cadenas es útil para generar **códigos de identificación**, **etiquetas de sensores** o **nombres de archivos de registro**.
+
+### Ejemplo 1
+
+Crea un par de variables que almacenen tu nombre, edad y país de nacimiento. Luego, concatena las variables de tal forma que el texto resultante sea: `"Hola, soy [nombre]. Tengo [edad] años y nací en [país de nacimiento]."`
+
+Por ejemplo, para Isacc que tiene 26 años y es de Ecuador, el texto resultante es: `"Hola, soy Isacc. Tengo 26 años y nací en Ecuador."`
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 2
+
+En una fábrica cada sensor tiene un **código compuesto** por su tipo y número de identificación. Sabiendo que un sensor es de presión y su identificación es A45, ¿cuál sería su código compuesto?
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Coerción
+
+Recordemos que la **coerción** es el proceso mediante el cual **R** convierte automáticamente un tipo de dato en otro cuando es necesario. Esto ocurre principalmente cuando se combinan diferentes tipos de datos en una misma operación o estructura.
+
+Podemos pensar en la coerción como una **conversión de un tipo de dato hacia otro**. Esta conversión puede ser implícita (**R** lo realiza automáticamente si es posible) o explícita (a través de las funciones `as.*()`).
+
+Previamente se utilizó las funciones `as.integer()` o `as.numeric()` para convertir un tipo de número en otro. A este conjunto de funciones de conversión vamos a añadir la función `as.character()` que permite convertir el tipo de dato en una cadena de caracteres o texto, y viceversa.
+
+### Ejemplo 1
+
+Cargar la información del archivo `Tema03_Auxiliar_Mediciones.RData` y mostrar por pantalla la cantidad de mediciones, además de los valores de cada medición.
+
+Como un desafío adicional, obtén el promedio (utilizando la función `mean`) de las mediciones y también muéstralo por pantalla. ¿Es necesario convertir ese resultado en una cadena de caracteres para visualizarlo?
+
+``` r
+# Ejemplo de uso de la función 'mean'
+estatura_1 <- 1.79      # [m]
+estatura_2 <- 1.83      # [m]
+estatura_3 <- 1.82      # [m]
+
+estatura_promedio <- mean(c(estatura_1, estatura_2, estatura_3))
+```
+
+> [**Nota 1:**]{.underline} Recuerda primero **limpiar el espacio de trabajo**.
+>
+> [**Nota 2:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 2
+
+Cargar la información del archivo `Tema03_Auxiliar_Amazonas.RData` y mostrar por pantalla de manera adecuada las características del río Amazonas.
+
+> [**Nota 1:**]{.underline} Recuerda primero **limpiar el espacio de trabajo**.
+>
+> [**Nota 2:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Más adelante...
+
+Trabajar con **cadenas de caracteres**, o **textos** de forma sencilla, es una habilidad necesaria en ingeniería. **No es suficiente con realizar bien los cálculos, es igual o más importante presentarlos adecuadamente**.
+
+Por lo tanto, más adelante se profundizará aún más en el uso de cadenas de caracteres. Antes de llegar a ese punto es menester estudiar otros temas que serán necesarios y útiles tanto para tu aprendizaje como para su aplicación en tu rama de ingeniería.
+
+------------------------------------------------------------------------

@@ -186,7 +186,7 @@ print(resultado_na)             # Resultado: NA
 
 ------------------------------------------------------------------------
 
-## Función `class()` 
+## Función `class()`
 
 La función `class()` se utiliza para identificar el tipo o clase de un objeto. Cada objeto en **R** tiene una clase que define su estructura y las operaciones que se pueden realizar con él. Las clases en **R** determinan si un objeto es un número, un vector, una matriz, una lista, etc. Esta función es útil para entender la naturaleza de los datos y para asegurarse de que se están utilizando correctamente en el código.
 

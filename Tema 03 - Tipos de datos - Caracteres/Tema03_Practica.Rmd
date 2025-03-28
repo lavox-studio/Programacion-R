@@ -7,6 +7,78 @@ output:
     df_print: paged
 ---
 
-## Tipos de datos: Caracteres
+# Tipos de datos: Caracteres
 
-Añadir información.
+## Ejercicio 1
+
+¿Cuáles son los usos que tú le darías a las cadenas de caracteres? Enumera al menos 5.
+
+## Solución
+
+Ingresa tu respuesta aquí 👽
+
+------------------------------------------------------------------------
+
+## Ejercicio 2
+
+¿Existe alguna diferencia entre crear una cadena de caracteres utilizando comillas dobles (`" "`) y utilizando comillas simples (`' '`)? Justifica.
+
+## Solución
+
+Ingresa tu respuesta aquí 👽
+
+------------------------------------------------------------------------
+
+## Ejercicio 3
+
+Almacena la información de tu país de origen, su capital y la cantidad de habitantes en la capital. Luego, muestra por pantalla toda esta información de manera adecuada.
+
+Como desafío adicional, añade una imagen representativa de tu país y su capital.
+
+> [**Nota 1:**]{.underline} Recuerda primero **limpiar el espacio de trabajo**.
+>
+> [**Nota 2:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 4
+
+Almacena información de las empresas más conocidas de tu país como su nombre, el año de fundación, el sector comercial, la cantidad de trabajadores, etc. Luego, muestra por pantalla toda esta información de manera adecuada.
+
+Como desafío adicional, añade imágenes de las empresas.
+
+> [**Nota 1:**]{.underline} Recuerda primero **limpiar el espacio de trabajo**.
+>
+> [**Nota 2:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 5
+
+Cargar la información del archivo `Tema03_Auxiliar_Everest.RData` y mostrar por pantalla de manera adecuada las características del monte Everest.
+
+Como desafío adicional, añade una imagen del monte Everest.
+
+> [**Nota 1:**]{.underline} Recuerda primero **limpiar el espacio de trabajo**.
+>
+> [**Nota 2:**]{.underline} Recuerda utilizar el **enfoque EPS**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
