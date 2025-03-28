@@ -1,29 +1,83 @@
 ---
-title: "Ingreso de datos por el usuario y visualización personalizada"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías"
+author: "La Academia"
+subtitle: "Tema 06 - Teoría"
+output:
+  html_document:
+    df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Funciones internas
+
+Las **funciones internas** son aquellas que ya están predefinidas en el entorno del lenguaje, y están disponibles para su uso sin necesidad de que el usuario las defina. Estas funciones realizan tareas comunes y específicas dentro del proceso de programación, como manipulaciones de datos, estadísticas, gráficos, y muchas más.
+
+Las funciones internas son fundamentales en **R**, ya que simplifican tareas y procesos al no requerir que el programador las construya desde cero.
+
+![Funciones Internas en R.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2006%20-%20Funciones%20internas/1.png?raw=true){width="535"}
+
+> Considera que en una fábrica de ensamblaje de piezas ya tienes una máquina que puede realizar tareas específicas como contar, medir o clasificar. Las funciones internas en **R** son como esas máquinas: ya están configuradas para realizar ciertas acciones, por lo que no necesitas reprogramarlas. Solo les proporcionas los datos, y ellas devuelven el resultado de manera eficiente.
+
+------------------------------------------------------------------------
+
+## Función matemática
+
+Sea la función $f(x) = x^2$, se tiene que:
+
+$$
+f(1) = 1 \\
+f(2) = 4 \\
+f(-3) = 9 \\
+f(-5) = 25
+$$
+
+Es decir, una función matemática se compone de 3 partes esenciales:
+
+-   **Nombre de la función:** $f$
+
+-   **Entradas:** valores de $x$
+
+-   **Salidas:** evaluaciones de la función con los valores de $x$.
+
+------------------------------------------------------------------------
+
+## Función en programación
+
+En el contexto de la programación, una función no sólo realiza cálculos matemáticos. Generalizando una función matemática, **una función en programación puede hacer lo que nosotros seamos capaces de programar**. Es la magia de la programación.
+
+![Analogía de una función interna en R.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2006%20-%20Funciones%20internas/2.png?raw=true){width="693"}
+
+Si bien una función puede realizar tareas tanto sencillas como complejas, todas tienen ciertas características en común.
+
+-   Un **nombre**.
+
+-   Una o varias **entradas**.
+
+-   Una o varias **salidas**.
+
+------------------------------------------------------------------------
+
+## Entradas de una función
+
+Considera el siguiente ejemplo:
+
+``` r
+nombre <- "Acero"
+resistencia <- 250  
+cat("Material:", nombre, "\nResistencia:", resistencia, "MPa")
 ```
 
-## R Markdown
+La función `cat()` recibe un número múltiple de entradas, desde una sola hasta la cantidad que queramos. En el ejemplo, está recibiendo 5 entradas que son separadas con comas (`,`).
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Por lo tanto, **las entradas de una función son separadas con comas** (`,`). De esta forma la función, cualquiera que sea, toma la información y la utiliza para realizar los cálculos internos.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## Including Plots
+------------------------------------------------------------------------
 
-You can also embed plots, for example:
+## Más adelante...
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+Este tema es más amplio de lo que puede parecer dado que involucra otros temas que se estudiarán posteriormente. Por lo tanto, en cuanto se retomen los conceptos explicados aquí puedes volver para refrescar tus conocimientos.
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Después de todo, este curso se basa en el paradigma, o estilo, de **programación funcional**. Poco a poco te estás empapando de cada aspecto necesario para que logres comprenderlo en su totalidad hasta el final de este curso.
