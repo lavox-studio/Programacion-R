@@ -9,7 +9,9 @@ output:
 
 # Paquetes
 
-asd
+En **R**, los **paquetes** son colecciones de funciones, datos y documentación que amplían las capacidades del lenguaje. Son como "bibliotecas" que permiten a los usuarios acceder a herramientas especializadas para tareas específicas, como análisis de datos, visualización, modelado estadístico, inteligencia artificial, entre muchas otras.
+
+![Ejemplos de usos de paquetes en R.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2007%20-%20Paquetes/1.png?raw=true){width="853"}
 
 ## Instalación y desinstalación de paquetes
 
@@ -21,7 +23,7 @@ asd
 
 asd
 
-### Ejemplo 
+### Ejemplo
 
 asd
 
