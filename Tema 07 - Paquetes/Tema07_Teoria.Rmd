@@ -13,19 +13,45 @@ En **R**, los **paquetes** son colecciones de funciones, datos y documentación 
 
 ![Ejemplos de usos de paquetes en R.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2007%20-%20Paquetes/1.png?raw=true){width="853"}
 
-## Instalación y desinstalación de paquetes
+## Instalar y cargar paquetes
 
-asd
+Para utilizar un paquete en **R**, primero debes instalarlo (si no viene incluido en la instalación base) y luego activarlo en la sesión de trabajo.
+
+-   **Instalar un paquete (solo una vez)**
+
+``` r
+install.packages("ggplot2")         # Instala el paquete ggplot2
+```
+
+-   **Cargar un paquete (cada vez que inicias R)**
+
+``` r
+library(ggplot2)                    # Carga el paquete ggplot2 para usar sus funciones
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Imagina que **R** es como una **caja de herramientas** básica con algunas herramientas estándar (funciones internas). Sin embargo, para tareas más específicas, puedes añadir **kits especializados** (paquetes) que te permiten hacer más cosas, como un kit de electrónica para circuitos o un set de herramientas para mecánica de precisión.
 
 ------------------------------------------------------------------------
 
-## Cargar paquetes
+## Desinstalar paquetes
 
-asd
+A medida que trabajas en **R**, puedes instalar muchos paquetes para diferentes propósitos. Sin embargo, con el tiempo, algunos paquetes pueden volverse innecesarios o simplemente ocupar espacio en tu sistema. En estos casos, puedes **desinstalar paquetes** para mantener tu entorno limpio y organizado.
+
+``` r
+remove.packages("ggplot2")          # Desinstala el paquete ggplot2
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
 
 ### Ejemplo
 
-asd
+Consulta en internet sobre el paquete, o librería, `tidyverse`. Luego instala y carga el paquete.
 
 ### Solución
 
@@ -35,8 +61,20 @@ asd
 
 ------------------------------------------------------------------------
 
-## Utiliza y consulta paquetes correctamente
+## Consulta correctamente la documentación de paquetes
 
-asd
+Cuando trabajas con paquetes en **R**, es fundamental conocer cómo acceder a su documentación para entender su funcionamiento y aprovechar al máximo sus funciones.
+
+Los paquetes más populares tienen documentación oficial en línea. Puedes buscarlos en:
+
+-   **CRAN**: <https://cran.r-project.org/web/packages/>
+
+-   **RDocumentation**: <https://www.rdocumentation.org/>
+
+-   **GitHub**: Si el paquete es de código abierto y mantenido activamente.
+
+No obstante, una **forma más directa de consultar la documentación** del paquete que requieres utilizar es a través de una **búsqueda adecuada en internet**. Una recomendación que te puedo proporcionar es realizar la búsqueda de la forma "**tidyverse r package documentation**" (en lugar de **tidyverse** reemplaza por el paquete de tu interés). Esto te proporcionará la documentación oficial e incluso el sitio web, si está disponible, del paquete tal que puedas documentarte a través de los mismos creadores y desarrolladores del paquete en cuestión.
+
+> Consultar la documentación en **R** es como **leer el manual de un equipo complejo**: te permite entender cómo usarlo correctamente y evitar errores en su aplicación.
 
 ------------------------------------------------------------------------

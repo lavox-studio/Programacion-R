@@ -1,29 +1,56 @@
 ---
-title: "Funciones internas"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías"
+author: "La Academia"
+subtitle: "Tema 08 - Práctica"
+output:
+  html_document:
+    df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Ayuda y documentación de R
+
+## Ejercicio 1
+
+Consulta la ayuda de la función `round()`. ¿Qué hace esta función?
+
+Luego, utilízala para redondear el número $\pi$ con 2 decimales.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## R Markdown
+------------------------------------------------------------------------
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Ejercicio 2
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Consulta la ayuda de la función `ceiling()` y `floor()`. ¿Qué hacen estas funciones? ¿En qué se diferencian de las funciones `round()`?
 
-```{r cars}
-summary(cars)
+Luego, aplica las 3 funciones (la función `round()` con 1 decimal) a los siguientes números y analiza el resultado para cada número: 4.49, 3.99, -2.50, -1.49.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## Including Plots
+------------------------------------------------------------------------
 
-You can also embed plots, for example:
+## Ejercicio 3
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+Consulta la ayuda de la función `seq()`. ¿Qué hace esta función?
+
+Luego, utilízala para crear un vector que empiece en el número 3, termine en el número 17 y tenga un incremento de 2.75.
+
+Como un desafío adicional, ¿el vector generado termina en el número 17 o no? Si la respuesta es negativa, ¿por qué no termina en el número 17 cuando se estableció que termine en ese número?
+
+> [**Nota:**]{.underline} La función `seq()` forma parte de la creación de vectores del tema **Estructuras de datos - Vectores**. En ese tema se responderá al desafío propuesto. No obstante, si puedes responder aquí al desafío quiere decir que tu habilidad de abstracción en programación es bastante bueno.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+------------------------------------------------------------------------

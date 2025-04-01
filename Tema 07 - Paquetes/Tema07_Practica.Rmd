@@ -1,0 +1,64 @@
+---
+title: "R para Ingenierías"
+author: "La Academia"
+subtitle: "Tema 07 - Práctica"
+output:
+  html_document:
+    df_print: paged
+---
+
+# Paquetes
+
+## Ejercicio 1
+
+Documéntate sobre el paquete `pracma`. Luego responde estas preguntas:
+
+-   ¿En qué casos se utiliza este paquete?
+
+-   ¿Tú lo ocuparías en tu día a día como ingeniero?
+
+Luego, instala y carga el paquete. Finalmente, si consideras innecesario el paquete para ti, desinstálalo.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 2
+
+Documéntate sobre el paquete `units`. Luego responde estas preguntas:
+
+-   ¿En qué casos se utiliza este paquete?
+
+-   ¿Tú lo ocuparías en tu día a día como ingeniero?
+
+Luego, instala y carga el paquete. Finalmente, si consideras innecesario el paquete para ti, desinstálalo.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 3
+
+Documéntate sobre el paquete `purrr`. Luego responde estas preguntas:
+
+-   ¿En qué casos se utiliza este paquete?
+
+-   ¿Tú lo ocuparías en tu día a día como ingeniero?
+
+Luego, instala y carga el paquete. Finalmente, si consideras innecesario el paquete para ti, desinstálalo.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------

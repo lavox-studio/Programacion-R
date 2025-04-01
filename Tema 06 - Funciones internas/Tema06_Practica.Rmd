@@ -1,0 +1,75 @@
+---
+title: "R para Ingenierías"
+author: "La Academia"
+subtitle: "Tema 06 - Práctica"
+output:
+  html_document:
+    df_print: paged
+---
+
+# Funciones internas
+
+## Ejercicio 1
+
+Dado el siguiente código:
+
+``` r
+nombre <- "Grace"
+cat("Hola, me llamo ", nombre, ".\nEs un placer conocerte.", sep = "")
+```
+
+¿Cuántas entradas tiene la función `cat()` en el ejemplo? ¿Cuántas entradas como mínimo se le podría proporcionar a esta función?
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 2
+
+Dado el siguiente código:
+
+``` r
+dinero_total <- sum(c(1, 3, 2.5, 2L, 0.5))        # [$]
+dinero_total
+```
+
+-   ¿Cuántas entradas tiene la función `sum()` en el ejemplo?
+
+-   ¿Cuántas entradas tiene la función `c()` en el ejemplo?
+
+> [**Nota:**]{.underline} La función `c()` permite crear vectores. Este tema se lo estudiará próximamente.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 3
+
+Dado el siguiente código:
+
+``` r
+v <- seq(from = 4, by = 2, length.out = 8)
+v
+```
+
+-   ¿Cuántas entradas tiene la función `seq()` en el ejemplo?
+
+-   La función `seq()` permite crear una secuencia de números. ¿Podrías traducir en palabras sencillas la línea de código que se utiliza para crear la secuencia de números?
+
+> [**Nota:**]{.underline} La función `seq()` permite crear vectores linealmente espaciados. Este tema se lo estudiará próximamente.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------

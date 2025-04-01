@@ -286,7 +286,7 @@ esfuerzo_efectivo <- esfuerzo_total - esfuerzo_residual         # [kg/cm2]
 
 ## Multiplicación, división y potencia
 
-Operaciones básicas de multiplicar con el operador `*`, dividir con el operador `/` y aplicar la potencia con el operador `^`.
+Operaciones básicas de multiplicar con el operador `*`, dividir con el operador `/` y aplicar la potencia con el operador `**` o `^`.
 
 ``` r
 # Multiplicación
@@ -301,7 +301,7 @@ precio_hora <- salario / cantidad_horas_trabajadas      # [$]
 
 # Potencia
 radio <- 2.5
-area_circulo <- pi * r ^ 2
+area_circulo <- pi * r ** 2
 ```
 
 ```{r}

@@ -74,7 +74,7 @@ cat("En 5 años tendrás", edad + 5, "años.\n")
 Las **secuencias de escape** son combinaciones especiales de caracteres que permiten **dar formato a los textos** dentro de cadenas de caracteres. Se representan con una **barra invertida (`\`)** seguida de un carácter especial.
 
 | Secuencia | Descripción | Ejemplo |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | `\n` | Salto de línea | `cat("Línea 1\nLínea 2")` |
 | `\t` | Tabulación (espacio extra) | `cat("Columna1\tColumna2")` |
 | `\\` | Barra invertida (`\`) | `cat("Ruta: C:\\Usuarios\\Docs")` |
@@ -104,7 +104,7 @@ sprintf("formato", valores)
 El el código de ejemplo **`formato`** define cómo se mostrarán los valores. Las principales especificaciones de formato se detallan en la siguiente tabla.
 
 | Código | Descripción | Ejemplo |
-|-----------------|----------------------|---------------------------------|
+|----|----|----|
 | `%d` | Entero decimal | `sprintf("Valor: %d", 25)` → `"Valor: 25"` |
 | `%f` | Número decimal con punto flotante | `sprintf("Altura: %.2f m", 1.789)` → `"Altura: 1.79 m"` |
 | `%s` | Cadena de caracteres | `sprintf("Material: %s", "Acero")` → `"Material: Acero"` |

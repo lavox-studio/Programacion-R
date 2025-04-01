@@ -1,29 +1,107 @@
 ---
-title: "Funciones internas"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías"
+author: "La Academia"
+subtitle: "Tema 08 - Teoría"
+output:
+  html_document:
+    df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Ayuda y documentación de R
+
+**R** es un lenguaje de programación potente, pero para aprovecharlo al máximo, es crucial saber **cómo acceder a su ayuda y documentación**. **R** cuenta con un sistema integrado de ayuda que permite consultar información sobre funciones, paquetes y conceptos directamente desde la consola o un bloque de código.
+
+![Utilizar la documentación de R.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2008%20-%20Ayuda%20y%20documentaci%C3%B3n%20de%20R/1.png?raw=true){width="953"}
+
+> En ingeniería y análisis de datos, trabajar con herramientas precisas es fundamental. La documentación en **R** funciona como un **manual de referencia**, evitando errores y optimizando el uso de funciones y paquetes.
+
+## Función `help()` u operador `?`
+
+En **R**, la función `help()` y el operador `?` permiten acceder a la documentación de funciones, paquetes y otros elementos del lenguaje. Son herramientas esenciales para comprender cómo utilizar correctamente las funciones disponibles.
+
+``` r
+# Documentación de la función mean() utilizando la función help()
+help("mean")
+
+# Documentación de la función mean() utilizando el operador ?
+?mean
 ```
 
-## R Markdown
+Algunos operadores necesitan comillas o paréntesis para acceder a su documentación:
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+``` r
+?"+"            # Información sobre el operador de suma
+?"%in%"         # Información sobre el operador de pertenencia
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+> Usar `help()` o `?` en **R** es como **preguntarle a un manual técnico** cómo funciona una herramienta específica antes de usarla.
+
+### Ejemplo
+
+Consulta la ayuda de la función `sd()`. ¿Qué hace esta función?
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Función `help.search()` u operador `??`
+
+Cuando no recuerdas el nombre exacto de una función o quieres buscar términos relacionados en la documentación de **R**, puedes usar `help.search()` o el operador `??`.
+
+``` r
+# Búsqueda con la función help.search()
+help.search("regression")
+
+# Búsqueda con el opeador ??
+??regression
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Usar `help.search()` o `??` en **R** es como **buscar en el índice de un libro técnico** cuando no sabes exactamente qué capítulo contiene la información que necesitas.
+
+------------------------------------------------------------------------
+
+## Diferencias entre las funciones `help()` y `help.search()`
+
+-   `help()` o `?` buscan información de una función específica (debes conocer su nombre exacto).
+
+-   `help.search()` o `??` buscan términos generales en la documentación.
+
+------------------------------------------------------------------------
+
+## Documentación oficial
+
+**R** cuenta con una amplia documentación oficial que sirve como referencia para entender su funcionamiento, desde conceptos básicos hasta funciones avanzadas. Consultar esta documentación es clave para resolver dudas y optimizar el uso del lenguaje en ingeniería y ciencia de datos.
+
+### Manuales oficiales de R
+
+Los manuales oficiales están disponibles en el sitio de CRAN:\
+🔗 <https://cran.r-project.org/manuals.html>
+
+Algunos documentos importantes incluyen:
+
+-   **"An Introduction to R"** → Explicación básica del lenguaje.
+
+-   **"R Data Import/Export"** → Guía para importar y exportar datos.
+
+-   **"R Internals"** → Información sobre el funcionamiento interno de R.
+
+### R Documentation (documentación en línea de funciones y paquetes)
+
+Puedes consultar documentación de funciones y paquetes en:\
+🔗 <https://www.rdocumentation.org/>
+
+Aquí puedes buscar cualquier función y ver ejemplos de uso. Además, en el tema **Paquetes** se proporcionan algunas recomendaciones específicas para consultar la documentación de paquetes.
+
+------------------------------------------------------------------------
