@@ -87,4 +87,4 @@ Esto es una tabla:
 
 Esto es una imagen:
 
-![Logo de R.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2000%20-%20Introducci%C3%B3n%20a%20R%20Markdown/1.png?raw=true){width="600"}
+![Logo de R.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2000%20-%20Introducci%C3%B3n%20a%20R%20Markdown/1.png?raw=true){width="583"}
