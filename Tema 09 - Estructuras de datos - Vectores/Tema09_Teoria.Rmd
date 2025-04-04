@@ -1,29 +1,572 @@
 ---
-title: "Funciones matemáticas"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías"
+author: "La Academia"
+subtitle: "Tema 09 - Teoría"
+output:
+  html_document:
+    df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Estructuras de datos: Vectores
+
+Un **vector** en **R** es la estructura de datos fundamental y se utiliza para almacenar una colección de elementos de un mismo tipo. Los vectores son esenciales en **R**, ya que muchas de las operaciones y funciones se aplican sobre ellos.
+
+Un **vector** es una secuencia de elementos organizados en una sola dimensión. En **R**, puedes almacenar números, texto, o valores lógicos en un vector, pero todos los elementos deben ser del mismo tipo de dato. Es decir, sus características importantes son:
+
+-   **Homogeneidad**: Todos los elementos de un vector deben ser del mismo tipo (números, caracteres, valores lógicos).
+
+-   **Acceso por índice**: Los elementos de un vector se pueden acceder a través de índices (comenzando desde 1 en **R**).
+
+-   **Operaciones vectorizadas**: Las operaciones aritméticas y lógicas se aplican a todo el vector de manera simultánea.
+
+![Características principales de los vectores en R.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2009%20-%20Estructuras%20de%20datos%20-%20Vectores/1.png?raw=true){width="903"}
+
+> Los vectores se utilizan en diversas ramas de la ingeniería, desde almacenar datos de sensores en ingeniería electrónica hasta manejar resultados de cálculos en ingeniería civil. Son la base de las estructuras de datos más complejas.
+
+## Creación de vectores
+
+Los vectores son fundamentales para almacenar y manejar datos de manera eficiente. Existen diferentes formas de crear vectores según el tipo de datos que se desee almacenar. A continuación, se explican los métodos más comunes para crear vectores en **R**. Cabe destacar que la creación manual de vectores se realiza a través de la función `c()`.
+
+### Creación de vectores numéricos
+
+Para crear un vector numérico, puedes utilizar la función `c()`, que concatena los valores dentro del vector.
+
+``` r
+# Vector con números enteros
+v_entero <- c(1L, 2L, 3L, 4L, 5L)
+
+# Vector con números de punto flotante
+v_flotante <- c(3, 2.71, 1.618, 4)
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## Including Plots
+### Creación de vectores de caracteres
 
-You can also embed plots, for example:
+Los vectores también pueden almacenar texto (cadenas de caracteres). De nuevo, la función `c()` se utiliza para concatenar las cadenas.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+``` r
+# Vector con nombres de personas
+nombres <- c("Juan", "Pedro", "María")
+
+# Vector con colores
+colores <- c("rojo", "verde", "azul")
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Creación de vectores lógicos
+
+Un vector lógico almacena valores de tipo **TRUE** o **FALSE**. Esto es útil cuando se realizan comparaciones o condiciones.
+
+``` r
+# Vector con valores lógicos
+valores_logicos <- c(TRUE, FALSE, TRUE)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Este proceso de creación de vectores es esencial para trabajar con datos y realizar análisis en ingeniería, ya que muchos cálculos requieren que los datos sean almacenados y manipulados en estructuras de vectores.
+
+## Nombres en vectores
+
+En **R**, los vectores pueden tener **nombres** asignados a sus elementos. Estos nombres permiten una identificación más clara de los elementos y facilitan la manipulación de los datos, especialmente cuando se trata de vectores con varios elementos que representan variables o características.
+
+Para asignar nombres a los elementos de un vector, utilizamos la función `names()`.
+
+``` r
+# Crear un vector de tiempos de viaje (en horas)
+tiempos_viaje <- c(3, 5, 2, 7)
+
+# Asignar nombres a los elementos del vector
+names(tiempos_viaje) <- c("Quito", "Guayaquil", "Cuenca", "Loja")
+
+# Mostrar el vector con los nombres asignados
+print(tiempos_viaje)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Otra forma de asignar nombres es con la función `c()`.
+
+``` r
+# Forma 1
+v1 <- c(A=10, B=20)
+print(v1)
+
+# Forma 2
+v2 <- c("Año"=30, "Duración"=40)
+print(v2)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+También es posible modificar los nombres asignados.
+
+``` r
+# Crear un vector con nombres
+mi_vector <- c(10, 20, 30, 40)
+names(mi_vector) <- c("Elemento1", "Elemento2", "Elemento3", "Elemento4")
+
+# Cambiar el nombre del segundo elemento
+names(mi_vector)[2] <- "NuevoNombre"
+
+# Ver el vector con el nombre cambiado
+print(mi_vector)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Además, si se desea eliminar los nombres de los elementos de un vector se lo realiza con la misma función `names()`, pero con una asignación nula (`NULL`).
+
+``` r
+# Eliminar los nombres del vector
+names(tiempos_viaje) <- NULL
+
+# Mostrar el vector sin nombres
+print(tiempos_viaje)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Asignar nombres a los elementos de un vector es como **etiquetar los componentes de una máquina en una planta de producción**. En lugar de tener una lista de números que representan los componentes, al ponerles nombres (como "motor", "bomba", "sensor"), sabes exactamente qué representa cada componente, facilitando el trabajo y la comprensión de la información.
+
+### Ejemplo 1
+
+Crea un vector que contenga las longitudes (en metros) de 4 vigas diferentes y asigna un nombre representando su ubicación (por ejemplo: "viga_entrada", "viga_sala", etc.).
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 2
+
+Guarda en un vector los diámetros (en mm) de 5 ejes de una máquina. Asigna un nombre que indique la posición de cada eje (como "eje1", "eje2", etc.).
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 3
+
+Representa en un vector los tiempos de producción (en minutos) de diferentes estaciones en una línea de ensamblaje. Usa nombres que indiquen la estación (por ejemplo: "corte", "ensamble", "empaque").
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Vector vacío
+
+Un **vector vacío** es un vector que no contiene elementos, pero que puede ser utilizado para almacenar valores más adelante. Se define utilizando la función `vector()` o `c()` sin argumentos.
+
+Los vectores vacíos son útiles en situaciones donde **los valores no están disponibles al inicio**, pero se llenarán dinámicamente más adelante, como en:
+
+-   **Lectura de datos de sensores** en ingeniería eléctrica o mecánica.
+
+-   **Almacenamiento de resultados de cálculos iterativos** en simulaciones de ingeniería.
+
+-   **Inicialización de estructuras de datos** en análisis de datos o inteligencia artificial.
+
+``` r
+# Crear un vector vacío de tipo numérico
+v1 <- vector(mode = "numeric")
+print(v1)
+```
+
+``` r
+# Crear un vector vacío
+valores_medidos <- c()
+
+# Agregar elementos al vector
+valores_medidos <- c(valores_medidos, 10.2, 15.6, 8.9)
+
+print(valores_medidos)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Un **vector vacío** es como un **contenedor sin contenido en una bodega**. Al inicio está vacío, pero está listo para almacenar piezas, herramientas o materiales conforme sean necesarios.
+
+------------------------------------------------------------------------
+
+## Función `lenght()`
+
+La función `length()` en **R** permite conocer la cantidad de elementos que contiene un vector, una lista u otros tipos de estructuras de datos.
+
+``` r
+# Crear un vector numérico
+v <- c(5, 10, 15, 20)
+
+# Obtener la cantidad de elementos
+print(length(v))
+
+# Vector vacío
+vacio <- c()
+
+# Longitud del vector vacío
+print(length(vacio))
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Usar `length()` es como **contar la cantidad de herramientas en una caja**: sin importar el tipo de herramientas que haya dentro, `length()` simplemente te dirá cuántas hay.
+
+------------------------------------------------------------------------
+
+## Vectores linealmente espaciados
+
+Un **vector linealmente espaciado** es un conjunto de valores que se distribuyen uniformemente entre un **valor inicial** y un **valor final**. Estos vectores son útiles en cálculos numéricos, simulaciones y gráficos en ingeniería.
+
+![Descripción gráfica de un vector linealmente espaciado.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2009%20-%20Estructuras%20de%20datos%20-%20Vectores/2.jpg?raw=true){width="516"}
+
+Se puede crear un vector linealmente espaciado de 2 formas:
+
+-   A través de la función `seq()`.
+
+-   A través del operador dos puntos (`:`).
+
+## Función `seq()`
+
+La función `seq()` en R se usa para generar **secuencias de números** con un paso o cantidad de elementos definidos. Es más flexible que el operador `:` porque permite definir incrementos personalizados y especificar la cantidad total de valores.
+
+``` r
+# Sintaxis conociendo el inicio, el fin y el paso/incremento/decremento.
+seq(from = inicio, to = fin, by = paso)
+
+# Sintaxis conociendo el inicio, el fin y el número de elementos.
+seq(from = inicio, to = fin, length.out = número_de_elementos)
+```
+
+``` r
+# Secuencia de 0 a 10 con incremento de 2
+v1 <- seq(from = 0, to = 10, by = 2)
+print(v1)
+
+# Secuencia de 5 valores entre 0 y 10
+v2 <- seq(from = 0, to = 10, length.out = 5)
+print(v2)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Usar `seq()` es como **programar un temporizador**: puedes decidir cuándo inicia, cuándo termina y con qué frecuencia registrar los valores.
+
+## Operador dos puntos
+
+El operador `:` en **R** se usa para **generar secuencias de números enteros consecutivos** de manera rápida y sencilla. Es una alternativa compacta a la función `seq()` cuando se desea un incremento de 1 o -1.
+
+``` r
+# Secuencia de 1 a 10
+v1 <- 1:10
+print(v1)
+
+# Secuencia descendente del 10 al 1
+v2 <- 10:1
+print(v2)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> El operador `:` es como **subir o bajar escalones**: avanza uno a uno en un sentido específico hasta llegar al destino.
+
+### Ejemplo 1
+
+Un puente tiene 10 pilares numerados del 1 al 10. Crea un vector con los números de los pilares y asígnales nombres indicando su ubicación como `"Pilar_1"`, `"Pilar_2"`, etc.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 2
+
+Un cigüeñal gira desde 0° hasta 360° en incrementos de 30°. Genera un vector con los valores de los ángulos y nómbralo con `"Ángulo_0"`, `"Ángulo_30"`, etc.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 3
+
+Un sensor de calidad del aire toma mediciones cada 30 minutos durante 4 horas. Genera el vector de tiempos en minutos y asigna nombres como `"Min_30"`, `"Min_60"`, etc.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Concatenar vectores
+
+La **concatenación de vectores** se realiza mediante la función `c()`. Esta función permite combinar múltiples vectores en uno solo.
+
+``` r
+# Forma 1
+v <- c(5, 10, 15)
+resultado <- c(v, 20)               # Se agrega un nuevo elemento
+print(resultado)
+
+# Forma 2
+v <- c()
+resultado <- c(v, 1, 2, 3)          # Se agregan varios nuevos elementos
+print(resultado)
+
+# Forma 3
+vector1 <- c(1, 2, 3)
+vector2 <- c(4, 5, 6)
+resultado <- c(vector1, vector2)    # Se concatenan 2 vectores
+print(resultado)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> La concatenación de vectores es clave en el **procesamiento y análisis de datos**. Permite combinar mediciones, registros y resultados obtenidos en diferentes partes de un proceso para analizarlos en conjunto.
+
+### Ejemplo 1
+
+En la construcción de un puente, se registraron las longitudes de los tramos de la carretera y los puentes en el siguiente orden:
+
+-   Sección 1: 1000 m
+
+-   Sección 2: 1200 m
+
+-   Sección 3: 800 m
+
+-   Puente 1: 250 m
+
+-   Puente 2: 180 m
+
+-   Puente 3: 300 m
+
+Se requiere concatenar las longitudes de las secciones de carretera con las de los puentes, y luego calcular la longitud total de la carretera sumando los elementos del vector resultante.
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} Utiliza la función `sum()`. Si no la conoces, consulta la documentación.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 2
+
+En un estudio de eficiencia de dos motores de un vehículo, se midieron las temperaturas a intervalos de tiempo específicos:
+
+-   Motor 1: 85°C, 90°C, 88°C, 92°C
+
+-   Motor 2: 80°C, 89°C, 93°C, 95°C
+
+Concatenar las temperaturas de ambos motores en un solo vector y luego calcular la temperatura promedio durante el período de observación para ambos motores.
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} Utiliza la función `mean()` para obtener el promedio. Si no conoces la función, consulta su ayuda.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Indexación posicional/nominal de vectores
+
+En **R**, los vectores se pueden indexar de dos maneras: **posicional** y **nominal**. Ambas técnicas permiten acceder a los elementos de un vector, pero se utilizan de maneras diferentes.
+
+### Indexación posicional
+
+La **indexación posicional** se refiere a acceder a los elementos de un vector según su **índice** o **posición** en el vector. En R, los índices de los vectores comienzan desde **1**, a diferencia de otros lenguajes de programación que comienzan en 0.
+
+``` r
+# Crear un vector
+v <- c(10, 20, 30, 40)
+
+# Acceder al primer elemento (posición 1)
+v[1]
+
+# Acceder al tercer elemento (posición 3)
+v[3]
+
+# Acceder a un rango de elementos (segundo y tercer elementos)
+v[2:3]
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Imagina que tienes una fila de asientos en un teatro, numerados del 1 al 10. Si quieres sentarte en el **segundo asiento**, simplemente te diriges a la **segunda posición** en la fila. En **R**, es exactamente lo mismo, cuando usas un número dentro de los corchetes (por ejemplo, `v[2]`), estás seleccionando la **segunda posición** del vector.
+
+### Indexación nominal
+
+La **indexación nominal** se refiere a la capacidad de asignar **nombres** a los elementos de un vector. Luego, puedes acceder a esos elementos utilizando los **nombres**, en lugar de utilizar los índices posicionales.
+
+``` r
+# Crear un vector
+v <- c(10, 20, 30, 40)
+
+# Asignar nombres a los elementos del vector
+names(v) <- c("A", "B", "C", "D")
+
+# Acceder al elemento llamado "A"
+v["A"]
+
+# Acceder al elemento llamado "C"
+v["C"]
+
+# Acceder a un rango de elementos usando nombres
+v[c("A", "C")]
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Piensa en una **biblioteca**: los libros (elementos del vector) están almacenados en estantes numerados (posiciones). Sin embargo, si se les pone un **nombre** a los libros (como “Física”, “Matemáticas”), puedes encontrarlos no por su número de estante, sino por su **nombre**. La **indexación nominal** te permite acceder a los elementos del vector por su nombre en lugar de por su número de estante.
+
+### Diferencias entre indexación posicional y nominal
+
+| Indexación posicional | Indexación nominal |
+|----|----|
+| Se accede a los elementos por su **posición** en el vector. | Se accede a los elementos por su **nombre**. |
+| Ideal cuando sabes la **ubicación** de los elementos. | Ideal cuando los elementos tienen un **significado** y deseas identificarlos por su nombre. |
+| Ejemplo: `v[3]` para el tercer elemento. | Ejemplo: `v["C"]` para el elemento nombrado "C". |
+
+###  Indexación lógica de vectores
+
+La **indexación lógica** es una forma avanzada de acceder a los elementos de un vector en **R**, utilizando valores lógicos (`TRUE` o `FALSE`) como condiciones para seleccionar elementos. En lugar de seleccionar elementos por su posición o nombre, utilizamos un **vector lógico** que tiene el mismo tamaño que el vector original y que indica, con `TRUE` o `FALSE`, si el valor en esa posición debe ser seleccionado.
+
+Por ejemplo, si quieres acceder a todos los valores de un vector que sean **mayores que un número determinado**, puedes crear un vector lógico de **`TRUE`** y **`FALSE`**, donde **`TRUE`** indica que el valor en esa posición cumple con la condición, y **`FALSE`** indica lo contrario.
+
+``` r
+# Crear un vector de ejemplo
+v <- c(5, 15, 8, 20, 10)
+
+# Crear un vector lógico que indique si los elementos son mayores que 10
+logical_index <- v > 10
+
+# Ver el vector lógico
+print(logical_index)    # Devuelve: FALSE  TRUE FALSE  TRUE FALSE
+
+# Usar el vector lógico para seleccionar elementos
+v[logical_index]        # Devuelve: 15 20
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ventajas de la indexación lógica
+
+-   **Simplicidad**: La indexación lógica permite realizar filtros y selecciones de datos de manera directa y sencilla.
+
+-   **Flexibilidad**: Puedes aplicar condiciones complejas (combinación de condiciones lógicas) y hacer selecciones precisas sin necesidad de bucles.
+
+-   **Eficiencia**: Las operaciones lógicas en R son muy rápidas, lo que las hace eficientes cuando trabajas con grandes conjuntos de datos.
+
+> Imagina que tienes un vector con las **temperaturas de diferentes componentes de una máquina**. Puedes utilizar indexación lógica para seleccionar todos los componentes cuya temperatura esté por encima de un valor crítico (por ejemplo, 100°C), lo cual es útil para la monitorización.
+
+## Función `which()`
+
+La función `which()` es muy útil cuando deseas conocer las **posiciones** de los elementos que cumplen con una condición lógica. Esta función devuelve los **índices** de los elementos que son `TRUE` en el vector lógico.
+
+``` r
+# Crear un vector de ejemplo
+v <- c(3, 8, 12, 17, 5, 10)
+
+# Usar which() para encontrar las posiciones de los valores mayores que 10
+indices <- which(v > 10)
+
+# Ver las posiciones
+print(indices)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 1
+
+Crea un vector de números y selecciona solo los números **positivos pares**.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 2
+
+Un ingeniero está registrando la cantidad de productos fabricados por hora durante 24 horas en una fábrica. Los valores de producción por hora son los siguientes: **120, 150, 130, 140, 155, 160, 170, 165, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330.** Accede a las producciones de las horas 5, 10, 15, 20, 25 y 30.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 3
+
+En una planta de energía eólica, se registraron las velocidades del viento en metros por segundo durante 15 días. Los valores son los siguientes: **12.3, 14.1, 13.4, 15.6, 16.1, 14.7, 13.9, 12.6, 15.2, 14.5, 16.3, 14.0, 13.2, 15.7, 14.8.** Usa indexación lógica para obtener todas las velocidades que estén entre 13.0 y 15.0 metros por segundo, inclusive.
+
+Adicionalmente, ¿en qué posición estás aquellas velocidades que cumplen con la condición mencionada?
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------

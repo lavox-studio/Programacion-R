@@ -1,29 +1,260 @@
 ---
-title: "Funciones matemáticas"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías"
+author: "La Academia"
+subtitle: "Tema 09 - Práctica"
+output:
+  html_document:
+    df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Estructuras de datos: Vectores
+
+## Ejercicio 1
+
+Crea un vector con los niveles de pH medidos en diferentes puntos de un río. Asigna a cada valor el nombre del punto de muestreo (por ejemplo, "punto_norte", "punto_sur", etc.).
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## R Markdown
+------------------------------------------------------------------------
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Ejercicio 2
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Define un vector con los momentos de inercia (en kg·m²) de varios componentes rotatorios de una máquina. Nombra cada elemento según su tipo (como "disco", "volante", "polea").
 
-```{r cars}
-summary(cars)
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## Including Plots
+------------------------------------------------------------------------
 
-You can also embed plots, for example:
+## Ejercicio 3
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+Crea un vector con los factores de potencia medidos en diferentes cargas de un sistema trifásico. Asigna nombres como "motor1", "compresor", "iluminación", etc.
+
+> > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+------------------------------------------------------------------------
+
+## Ejercicio 4
+
+Un robot en una línea de ensamblaje coloca productos en posiciones numeradas de 5 en 5 desde la posición 5 hasta la 100. Crea un vector y nómbralo con `"Posición_5"`, `"Posición_10"`, etc.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 5
+
+Se monitorea la temperatura de una reacción desde 100°C hasta 500°C en incrementos de 50°C. Crea el vector y asigna nombres a cada elemento con `"T_100C"`, `"T_150C"`, etc.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 6
+
+En un pozo de perforación, se toman mediciones de presión cada 200 metros hasta los 5000 metros. Usa `seq()` para crear el vector y nómbralo con `"Prof_200m"`, `"Prof_400m"`, etc.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 7
+
+Un marcapasos emite pulsos cada 600 milisegundos durante 10 segundos. Genera el vector y asigna nombres con `"Pulso_600ms"`, `"Pulso_1200ms"`, etc.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 8
+
+En un experimento de reacción química, se registraron las concentraciones de un reactivo en dos etapas del proceso:
+
+-   Etapa 1: 0.1 M, 0.2 M, 0.3 M
+
+-   Etapa 2: 0.25 M, 0.15 M, 0.35 M
+
+Concatenar las concentraciones de ambos periodos y luego determinar la concentración promedio total en todo el proceso de reacción.
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} Utiliza la función `mean()` para obtener el promedio. Si no conoces la función, consulta su ayuda.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 9
+
+En un estudio de eficiencia de dos motores de un vehículo, se midieron las temperaturas a intervalos de tiempo específicos:
+
+-   Motor 1: 85°C, 90°C, 88°C, 92°C
+
+-   Motor 2: 80°C, 89°C, 93°C, 95°C
+
+Concatenar las temperaturas de ambos motores en un solo vector y luego calcular la temperatura promedio durante el período de observación para ambos motores.
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} Utiliza la función `mean()` para obtener el promedio. Si no conoces la función, consulta su ayuda.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 10
+
+En un experimento de lanzamiento de cohetes, se tienen los registros de velocidad a diferentes altitudes en dos intervalos de vuelo:
+
+-   Intervalo 1: 900 km/h, 1200 km/h, 1500 km/h
+
+-   Intervalo 2: 1800 km/h, 2000 km/h, 2200 km/h
+
+Concatenar las velocidades de ambos intervalos de vuelo y luego calcular la desviación estándar de velocidad media entre los dos intervalos.
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} Utiliza la función `sd()` para obtener el promedio. Si no conoces la función, consulta su ayuda.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 11
+
+Tienes un vector que contiene las mediciones de velocidad de un flujo de agua en un conducto en metros por segundo durante 7 días consecutivos:\
+
+`(0.5, 0.8, 1.1, 0.7, 1.2, 1.3, 1.0)`.\
+
+Accede al valor que corresponde al cuarto día de medición.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 12
+
+Un ingeniero está analizando la eficiencia de varios motores eléctricos. Tienes el siguiente vector de eficiencias en porcentaje:\
+
+`(Motor_1 = 85, Motor_2 = 90, Motor_3 = 78, Motor_4 = 88, Motor_5 = 92)`\
+
+Utilizando la indexación nominal, selecciona la eficiencia del motor 4.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 13
+
+En un laboratorio de investigación, se registraron las temperaturas de un líquido experimental durante un ciclo de 10 horas. Las mediciones fueron las siguientes: **15.3, 16.8, 17.0, 16.5, 17.2, 16.9, 16.0, 17.1, 16.7, 15.8.** Primero, selecciona todas las temperaturas que estén por encima de 16.5°C. Luego, accede al segundo y cuarto valor de las temperaturas seleccionadas.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 14
+
+En un experimento de un sistema hidráulico, se registraron las presiones durante 12 días. Los valores de presión en bar son los siguientes:**4.5, 4.8, 4.6, 5.0, 4.7, 4.9, 4.6, 4.8, 5.2, 4.7, 4.9, 5.1.** Usa indexación lógica para obtener todas las presiones que estén entre 4.7 y 5.0 bar, inclusive.
+
+Adicionalmente, ¿en qué posición estás aquellas velocidades que cumplen con la condición mencionada?
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 15
+
+En un sistema de control de calidad en una fábrica de circuitos electrónicos, se han medido las resistencias de diferentes lotes. Los valores de resistencia en ohmios están registrados como sigue:\
+
+**"Lote_A" = 150, "Lote_B" = 155, "Lote_C" = 160, "Lote_D" = 145, "Lote_E" = 150**\
+
+Accede a las resistencias de los lotes "Lote_B", "Lote_C" y "Lote_D", y luego selecciona solo aquellos lotes cuya resistencia sea superior a 150 ohmios.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio
