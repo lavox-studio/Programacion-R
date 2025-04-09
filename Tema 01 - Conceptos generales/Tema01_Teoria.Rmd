@@ -405,7 +405,7 @@ Esta función es especialmente útil en los siguientes casos:
 
 ------------------------------------------------------------------------
 
-## Función `rm`
+## Función `rm()`
 
 La función **`rm()`** en **R** se utiliza para **eliminar** objetos del espacio de trabajo. Esto es útil cuando deseas **liberar memoria** o cuando ya no necesitas ciertos objetos, y quieres mantener el entorno de trabajo limpio y organizado.
 

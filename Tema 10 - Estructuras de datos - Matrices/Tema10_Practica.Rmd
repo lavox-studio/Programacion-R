@@ -11,7 +11,9 @@ output:
 
 ## Ejercicio 1
 
-asd
+En un laboratorio de ingeniería química se midieron las concentraciones de un reactivo en 4 tubos de ensayo distintos, repitiendo la medición en dos ocasiones. Las concentraciones fueron: 0.5, 0.55, 0.48, 0.52, 0.51, 0.56, 0.49, 0.53.\
+
+Representa estos datos en una matriz de dos filas, en la que cada fila representa una repetición del experimento.
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -23,4 +25,279 @@ asd
 
 ------------------------------------------------------------------------
 
-## Ejercicio
+## Ejercicio 2
+
+Un sensor de humedad colocado en 3 puntos distintos de un suelo agrícola recolectó datos durante 3 días consecutivos:
+
+-   Primer día: 30, 32, 31
+
+-   Segundo día: 33, 34, 35
+
+-   Tercer día: 36, 37, 38
+
+Organiza estos datos en una matriz en la que las filas representen los días y las columnas los puntos de medición.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 3
+
+Un sistema de climatización fue evaluado por un ingeniero mecánico en 3 zonas de un edificio, tomando la temperatura cada hora durante 5 horas consecutivas. Las mediciones fueron, por zona:
+
+-   Zona A: 22, 23, 24, 24, 25
+
+-   Zona B: 21, 22, 22, 23, 24
+
+-   Zona C: 20, 21, 21, 22, 23
+
+Representa estos datos en una matriz donde las filas correspondan a las horas y las columnas a las zonas.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 4
+
+Un equipo de ingeniería electrónica prueba el voltaje de respuesta en 6 sensores sometidos a la misma señal de entrada. Se realizan 2 pruebas consecutivas con estos resultados:
+
+-   Prueba 1: 5.0, 5.1, 4.9, 5.2, 5.0, 5.3
+
+-   Prueba 2: 5.1, 5.2, 5.0, 5.3, 5.1, 5.4
+
+Organiza los resultados en una matriz de dos filas.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 5
+
+En un laboratorio de ingeniería de materiales, se estudian las tensiones aplicadas en distintos puntos de una pieza de acero. La pieza se divide en una cuadrícula de 3x5. Las tensiones, en MPa, se tomaron en orden fila por fila: 350, 360, 355, 362, 358, 340, 345, 342, 347, 343, 330, 335, 332, 338, 336.
+
+Representa estos datos en una matriz que refleje la distribución en la superficie del material.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 6
+
+Un ingeniero biomédico analiza la respuesta de diferentes electrodos sobre la piel frente a un estímulo eléctrico. Para un paciente, se colocan 4 electrodos en distintas posiciones del brazo, registrando su respuesta en 6 momentos consecutivos: 12.5, 13.0, 12.8, 13.1, 12.6, 13.2, 12.9, 13.0, 12.7, 13.3, 12.8, 13.2, 12.6, 13.1, 12.7, 13.4, 12.5, 13.2, 12.6, 13.3, 12.7, 13.1, 12.8, 13.5.
+
+Organiza la información en una matriz que permita observar la evolución de cada electrodo a lo largo del tiempo.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 7
+
+Un laboratorio de ingeniería ambiental mide los niveles de pH en cuatro cuerpos de agua diferentes durante dos días consecutivos.
+
+-   Primer día: 7.1, 6.9, 7.0, 7.2
+
+-   Segundo día: 7.3, 7.0, 7.1, 7.4
+
+Construye una estructura matricial, a través de concatenación, que permita visualizar el cambio en los niveles de pH entre los dos días.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 8
+
+Un ingeniero biomédico registra la frecuencia cardíaca de un paciente en reposo y después de hacer ejercicio, en cuatro momentos diferentes: 70, 72, 71, 73 en reposo; 90, 95, 93, 91 después del ejercicio.
+
+Organiza estos datos en una matriz, utilizando concatenación, donde se puedan comparar ambas situaciones.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 9
+
+En un ensayo de materiales, un ingeniero civil realiza dos series de pruebas de resistencia a la compresión en cinco bloques de concreto.
+
+-   Primera serie: 32, 34, 33, 35, 31
+
+-   Segunda serie: 33, 35, 34, 36, 32
+
+Organiza los datos de forma que puedan analizarse por bloque y por serie de prueba. Utiliza concatenación de matrices.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 10
+
+En un laboratorio de ingeniería electrónica, se evalúa el comportamiento de una serie de sensores. Se realizaron dos mediciones sobre cuatro sensores colocados en diferentes posiciones. Cada medición arrojó una matriz 2x2, indicando la tensión en voltios en cada sensor.
+
+Primera medición:\
+Sensor 1: 5.1, Sensor 2: 5.3\
+Sensor 3: 5.2, Sensor 4: 5.4
+
+Segunda medición:\
+Sensor 1: 5.0, Sensor 2: 5.2\
+Sensor 3: 5.1, Sensor 4: 5.3
+
+Construye una única matriz que contenga ambas mediciones, facilitando el análisis comparativo de cada sensor.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 11
+
+En una simulación térmica computacional para ingeniería mecánica, se genera una matriz de temperaturas (3x3) para una placa metálica bajo tres configuraciones distintas de calor.
+
+Configuración 1:\
+Fila 1: 70, 72, 74\
+Fila 2: 71, 73, 75\
+Fila 3: 69, 70, 72
+
+Configuración 2:\
+Fila 1: 68, 69, 71\
+Fila 2: 70, 72, 74\
+Fila 3: 67, 68, 70
+
+Configuración 3:\
+Fila 1: 66, 67, 69\
+Fila 2: 68, 70, 72\
+Fila 3: 65, 66, 68
+
+Concatenando correctamente las matrices, representa un modelo donde se pueda ver el efecto de cada configuración sobre la distribución térmica.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 12
+
+Limpia el espacio de trabajo, luego carga el archivo `Tema10_Auxiliar_Datos.RData` y visualiza la información cargada. La matriz `precipitaciones` (cantidad de lluvia registrada) tiene:
+
+-   **12 filas.** De arriba hacia abajo representan los meses: Enero, Febrero, Marzo, etc.
+
+-   **10 columnas.** De izquierda a derecha representan los años: 2001, 2002, 2003, etc.
+
+-   Cada elemento de la matriz representa la precipitación registrada (cantidad de lluvia registrada) en el mes y año correspondiente (fila y columna).
+
+Nombra las filas y las columnas de la matriz adecuadamente. Si realizaste este ejercicio en la parte teórica, replica el código y continua al siguiente ejercicio.
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} Si lo requieres, revisa nuevamente el **Tema 01: Conceptos generales**.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 13
+
+Utilizando la matriz `precipitaciones`, del ejercicio anterior, realiza las siguientes actividades:
+
+-   Visualiza las precipitaciones de todos los meses del año 2001 al año 2005.
+
+-   Visualiza las precipitaciones de todos los años del mes Marzo, Junio y Octubre.
+
+-   Visualiza las precipitaciones del primer trimestre de los dos últimos años.
+
+-   Visualiza las precipitaciones del segundo trimestre de los años 2004, 2007, 2008 y 2010.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 14
+
+Considera la matriz `precipitaciones` del ejercicio anterior...
+
+La estación meteorológica no cuenta con las herramientas adecuadas, por lo que el registro de precipitaciones de algunos meses es negativo. Eso físicamente no es posible. ¿Es posible que haya llovido -30 mm? Piénsalo de esta forma, ¿es posible que tu estatura sea -170 cm? Es algo similar a lo que sucede con los registros de precipitaciones: deben ser valores positivos o cero.
+
+Entonces, realiza las siguientes actividades:
+
+-   Determina los meses en los cuales hay registros negativos en el año 2001.
+
+-   Determina los años en los cuales hay registros negativos en el mes Septiembre.
+
+-   Reemplaza todos los valores negativos con cero.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------

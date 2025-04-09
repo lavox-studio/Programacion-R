@@ -9,4 +9,591 @@ output:
 
 # Estructuras de datos: Matrices
 
-asd
+Una **matriz** en **R** es una estructura de datos bidimensional que contiene elementos del **mismo tipo** (por lo general, numérico), organizados en **filas y columnas**. A diferencia de los *data frames* (su estudio se realiza más adelante), que pueden contener distintos tipos de datos por columna, las matrices son homogéneas: todos sus elementos deben ser del mismo tipo.
+
+![Matrices en R.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2010%20-%20Estructuras%20de%20datos%20-%20Matrices/1.png?raw=true){width="518"}
+
+> Las matrices son fundamentales en muchas ramas de la ingeniería, ya que permiten representar sistemas lineales, transformaciones geométricas, flujos de energía o incluso imágenes, según el contexto.
+
+## Diferencia entre vector y matriz
+
+Un **vector** en **R** es una estructura de datos **unidimensional**, que almacena una secuencia ordenada de elementos **del mismo tipo** (números, caracteres, lógicos, etc.). Es la unidad más básica de almacenamiento en **R**.
+
+Una **matriz** es una estructura de datos **bidimensional**, que también contiene **elementos del mismo tipo**, pero organizados en **filas y columnas**.
+
+| Aspecto | Vector | Matriz |
+|----|----|----|
+| Dimensión | Unidimensional | Bidimensional |
+| Estructura | Línea de datos | Filas y columnas |
+| Acceso a elementos | Solo con una posición | Una posición \| Filas y columnas |
+| Aplicación típica | Registro lineal de variables | Representación de relaciones o distribuciones |
+| Tipos de datos | Homogéneo | Homogéneo |
+
+: Diferencias entre vector y matriz.
+
+-   Usa **vectores** cuando solo necesitas una dimensión (una serie de lecturas, resultados o mediciones).
+
+-   Usa **matrices** cuando trabajas con datos en dos dimensiones, donde cada combinación de fila y columna tiene un significado contextual.
+
+Estas diferencias son fundamentales para estructurar correctamente tus datos y aplicarles operaciones matemáticas o análisis adecuados en cualquier rama de la ingeniería.
+
+------------------------------------------------------------------------
+
+## Creación de matrices
+
+Crear una matriz en **R** significa **organizar un conjunto de datos del mismo tipo** en una **estructura bidimensional**, especificando el número de **filas** y **columnas**. Esto permite representar relaciones entre variables o fenómenos que ocurren simultáneamente en múltiples dimensiones, algo común en muchas áreas de la ingeniería.
+
+``` r
+# Sintaxis
+matrix(data, nrow, ncol, byrow = FALSE)
+```
+
+-   `data`: vector de entrada con los valores.
+
+-   `nrow`: número de filas.
+
+-   `ncol`: número de columnas.
+
+-   `byrow`: indica si los datos se llenan por filas (`TRUE`) o por columnas (`FALSE`, valor por defecto).
+
+``` r
+# Un ingeniero agrónomo registra la humedad del suelo en distintos puntos de una parcela.
+humedad <- matrix(c(30, 45, 50, 32, 48, 52), nrow = 2, ncol = 3)
+
+# En ingeniería mecánica, al modelar el calor en una placa cuadrada,
+# se puede representar la temperatura con una matriz 3x3.
+temperatura <- matrix(c(70, 68, 69,
+                        71, 75, 73,
+                        69, 70, 72), 
+                      nrow = 3, byrow = TRUE)
+
+# Crear matrices con un único valor repetido, útil para inicializar cálculos o modelos.
+m <- matrix(0, nrow = 4, ncol = 4)  # Matriz 4x4 llena de ceros
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> La creación de matrices en **R** es una habilidad fundamental cuando se trabaja con datos organizados en dos dimensiones, ya sea en análisis estructural, simulación térmica, control de calidad o imágenes digitales. Comprender cómo organizar y llenar una matriz correctamente es clave para analizar comportamientos complejos en ingeniería.
+
+------------------------------------------------------------------------
+
+## Nombres de filas y columnas
+
+Cuando trabajamos con matrices en **R**, especialmente en aplicaciones de ingeniería, es común que las **filas y columnas representen entidades reales** como sensores, zonas geográficas, fechas, equipos o variables físicas.
+
+Asignar nombres mejora la **claridad, legibilidad** y la **interpretabilidad de los datos**, además de facilitar la **indexación nominal** (se estudiará en este tema, más adelante).
+
+### Asignar nombres de filas y columnas
+
+En **R**, puedes usar las funciones `rownames()` y `colnames()` para asignar o modificar los nombres de las filas y columnas de una matriz.
+
+``` r
+# Sintaxis
+rownames(matriz) <- c("NombreFila1", "NombreFila2", ...)
+colnames(matriz) <- c("NombreCol1", "NombreCol2", ...)
+```
+
+``` r
+# Un ingeniero eléctrico mide voltajes en tres líneas de transmisión durante dos días.
+# La información se presenta en una matriz de 3 filas (líneas) por 2 columnas (días).
+voltajes <- matrix(c(120, 125, 123, 122, 126, 124), nrow = 3)
+rownames(voltajes) <- c("Línea1", "Línea2", "Línea3")
+colnames(voltajes) <- c("Día1", "Día2")
+
+print(voltajes)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Modificar nombres de filas y columnas
+
+Puedes modificar directamente los nombres como cualquier otro vector:
+
+``` r
+voltajes <- matrix(c(120, 125, 123, 122, 126, 124), nrow = 3)
+rownames(voltajes) <- c("Línea1", "Línea2", "Línea3")
+colnames(voltajes) <- c("Día1", "Día2")
+
+# Modificar nombres
+rownames(voltajes)[2] = "Segunda línea"
+colnames(voltajes)[1] = "Primer día"
+
+print(voltajes)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Eliminar nombres de filas y columnas
+
+Puedes eliminar los nombres de una matriz de la siguiente forma:
+
+``` r
+# Sintaxis
+rownames(matriz) <- NULL
+colnames(matriz) <- NULL
+```
+
+``` r
+rownames(voltajes) <- NULL
+colnames(voltajes) <- NULL
+
+print(voltajes)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 1
+
+Un ingeniero eléctrico registra las tensiones en tres líneas de transmisión durante dos turnos del día (mañana y tarde). Las lecturas se tomaron en el siguiente orden: 220, 215, 210, 225, 230, 220.\
+
+Organiza estos valores en una matriz con dos filas, de modo que cada fila represente un turno y cada columna una línea de transmisión.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 2
+
+Durante una inspección estructural en un puente, se midieron las deformaciones en 4 puntos clave durante 3 fases de carga. Las deformaciones, en milímetros, se anotaron en el siguiente orden: 1.2, 1.5, 1.3, 1.6, 1.1, 1.4, 1.2, 1.5, 1.0, 1.3, 1.1, 1.4.
+
+Organiza los datos en una matriz adecuada para visualizar el comportamiento de los puntos en cada fase.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 3
+
+Un estudio ambiental modela la temperatura superficial de una laguna como una cuadrícula de 5 filas y 4 columnas. Los valores, recolectados de izquierda a derecha y de arriba hacia abajo, son: 23.1, 23.3, 23.2, 23.5, 23.6, 23.7, 23.8, 24.0, 24.1, 24.3, 24.2, 24.4, 24.5, 24.7, 24.6, 24.8, 25.0, 25.1, 25.2, 25.3.
+
+Construye una matriz adecuada para representar espacialmente esta superficie.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Concatenar matrices
+
+Concatenar matrices en **R** implica **unir dos o más matrices** para formar una matriz más grande. Esta unión puede hacerse **horizontalmente** (agregando columnas) o **verticalmente** (agregando filas), siempre y cuando se respeten ciertas condiciones estructurales (número de filas o columnas coincidente, según el tipo de concatenación).
+
+``` r
+# Sintaxis
+cbind(matriz1, matriz2)     # Unión por columnas (column bind)
+rbind(matriz1, matriz2)     # Unión por filas (row bind)
+```
+
+| Tipo de concatenación | Requisito | Esquema gráfico |
+|----|----|----|
+| `rbind()` | Igual número de columnas. | ![](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2010%20-%20Estructuras%20de%20datos%20-%20Matrices/2.png?raw=true){width="211"} |
+| `cbind()` | Igual número de filas. | ![](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2010%20-%20Estructuras%20de%20datos%20-%20Matrices/3.png?raw=true){width="299"} |
+
+: Condiciones para concatenar matrices.
+
+Estas funciones permiten combinar matrices **del mismo tipo de datos**, respetando las dimensiones apropiadas para lograr una **estructura coherente**.
+
+``` r
+# Dos ingenieros registran las temperaturas en los mismos tres sensores pero en turnos distintos.
+turno1 <- matrix(c(22.5, 23.0, 22.8), nrow = 1)
+turno2 <- matrix(c(23.1, 23.3, 22.9), nrow = 1)
+
+temperaturas <- rbind(turno1, turno2)
+
+# Si ambos ingenieros midieron diferentes variables (temperatura y humedad)
+# en los mismos tres puntos.
+temperatura <- matrix(c(22.5, 23.0, 22.8), ncol = 1)
+humedad     <- matrix(c(45.2, 46.0, 44.8), ncol = 1)
+
+clima <- cbind(temperatura, humedad)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Imagina que estás trabajando en una **matriz de esfuerzos** en una pieza de ingeniería mecánica. Si capturas esfuerzos en una pieza A y luego en una pieza B del mismo tamaño, podrías:
+>
+> -   **Unir verticalmente** (`rbind`) si cada matriz representa un ensayo distinto con igual número de columnas.
+>
+> -   **Unir horizontalmente** (`cbind`) si cada matriz representa un tipo distinto de esfuerzo medido en los mismos puntos.
+>
+> La concatenación te permite construir una base de datos más completa para el análisis.
+
+### Ejemplo 1
+
+Una ingeniera industrial lleva un registro de producción de dos turnos diferentes (mañana y tarde) en tres máquinas. En el turno de la mañana se produjeron: 50, 55 y 53 unidades. En el turno de la tarde: 52, 58 y 54 unidades.
+
+Organiza la información en una matriz, a través de concatenación, que permita ver los datos de ambos turnos juntos.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 2
+
+Durante un estudio térmico en un panel solar, se registraron temperaturas en 6 celdas distintas durante la mañana y durante la tarde.
+
+-   Mañana: 45.2, 46.0, 44.8, 45.5, 46.1, 44.9
+
+-   Tarde: 48.3, 49.0, 47.8, 48.1, 49.2, 47.9
+
+Construye una estructura matricial donde cada fila represente un momento del día y cada columna una celda del panel.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 3
+
+Una empresa de ingeniería industrial registra el tiempo (en segundos) que toma completar un ciclo de producción en cuatro máquinas, durante cinco días. Los datos de los cinco días son matrices de una fila (día) por cuatro columnas (máquinas).
+
+-   Día 1: 120, 125, 130, 128
+
+-   Día 2: 118, 124, 129, 127
+
+-   Día 3: 119, 123, 131, 126
+
+-   Día 4: 121, 126, 132, 129
+
+-   Día 5: 117, 122, 128, 125
+
+Construye una matriz que consolide los datos de todos los días, permitiendo observar la evolución del desempeño de cada máquina.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Indexación posicional/nominal/múltiple de matrices
+
+La **indexación** es el proceso de acceder a elementos individuales o subconjuntos dentro de una estructura de datos. En el caso de las **matrices en R**, esto se logra usando **índices de fila y columna**, de forma similar a cómo localizarías una celda específica en una hoja de cálculo.
+
+Siempre se debe recordar que la indexación, de cualquier tipo, es extremadamente útil en 2 escenarios:
+
+-   Acceder a elementos.
+
+-   **Reemplazar elementos.**
+
+**Especialmente es útil para el reemplazo de elemento.**
+
+### Indexación posicional
+
+Es la forma más común. Se utilizan **números enteros** para acceder a posiciones específicas dentro de la matriz.
+
+``` r
+# Sintaxis
+matriz[fila, columna]
+```
+
+-   `matriz[2, 3]` devuelve el valor en la **segunda fila, tercera columna**.
+
+-   `matriz[1, ]` devuelve **toda la primera fila**.
+
+-   `matriz[, 2]` devuelve **toda la segunda columna**.
+
+-   `matriz[2:4, ]` o `matriz[c(2, 3, 4), ]` devuelve **todas las columnas de las filas 2, 3 y 4**.
+
+-   `matriz[, 3:5]` o `matriz[, c(3, 4, 5)]` devuelve **todas las filas de las columnas 3, 4 y 5**.
+
+``` r
+mediciones <- matrix(c(21, 22, 23, 24, 25, 26), nrow = 2, byrow = TRUE)
+
+# Obtener el elemento de la fila 2, columna 1
+mediciones[2, 1]
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Indexación nominal
+
+Cuando las filas o columnas de una matriz tienen **nombres asignados**, se pueden usar estos nombres para acceder a los datos. Esto mejora la legibilidad y claridad del código, especialmente en contextos aplicados a la ingeniería.
+
+``` r
+# Sintaxis
+matriz["nombre_fila", "nombre_columna"]
+```
+
+Entonces, en lugar de utilizar el índice posicional se puede utilizar el nombre de fila y el nombre de columna.
+
+``` r
+mediciones <- matrix(c(21, 22, 23, 24, 25, 26), nrow = 2, byrow = TRUE)
+rownames(mediciones) <- c("SensorA", "SensorB")
+colnames(mediciones) <- c("Mañana", "Tarde", "Noche")
+
+# Obtener el dato del SensorB en la Mañana
+mediciones["SensorB", "Mañana"]
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Indexación múltiple
+
+Puedes acceder a **varios elementos a la vez** usando vectores de índices utilizando la posición posicional y la posición nominal al mismo tiempo.
+
+``` r
+# Sintaxis
+matriz[fila, "nombre_columna"]
+matriz["nombre_fila", columna]
+```
+
+``` r
+mediciones <- matrix(c(21, 22, 23, 24, 25, 26), nrow = 2, byrow = TRUE)
+rownames(mediciones) <- c("SensorA", "SensorB")
+colnames(mediciones) <- c("Mañana", "Tarde", "Noche")
+
+# Obtener el dato del SensorA en la Tarde
+mediciones["SensorB", 2]
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+-   La indexación posicional es **rápida y directa**, útil para operaciones simples o cuando no se han asignado nombres.
+
+-   La indexación nominal es **más legible y expresiva**, ideal cuando los datos tienen un contexto aplicado (experimentos, zonas geográficas, equipos, etc.).
+
+-   La indexación múltiple es la **más versátil**, adecuada cuando se domina la indexación posicional y la indexación nominal.
+
+Todas estas formas son esenciales para manejar matrices de forma eficiente en tareas de ingeniería y análisis de datos.
+
+### Indexación con exclusión
+
+También es posible excluir filas o columnas usando el signo `-`:
+
+``` r
+# Ejemplo
+mediciones <- matrix(c(21, 22, 23, 24, 25, 26), nrow = 2, byrow = TRUE)
+mediciones[-1, ]  # Excluye la primera fila
+mediciones[, -2]  # Excluye la segunda columna
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Indexación lineal de matrices
+
+La **indexación lineal** es un método de acceder a los elementos de una matriz utilizando un único índice **en lugar de una combinación de fila y columna**. **R** convierte internamente las matrices en **vectores** cuando se utiliza la indexación lineal.
+
+En lugar de especificar **fila** y **columna**, puedes utilizar un **índice único** que recorre todos los elementos de la matriz, comenzando desde el primer elemento en la primera fila y primera columna y avanzando en el orden de las filas.
+
+``` r
+# Sintaxis
+matriz[indice_lineal]
+```
+
+Donde `indice_lineal` es el índice de la **posición única** que representa un elemento dentro de la matriz. **R** **numera** los elementos de la matriz de izquierda a derecha, de arriba a abajo.
+
+![Esquema gráfico de la indexación lineal.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2010%20-%20Estructuras%20de%20datos%20-%20Matrices/4.png?raw=true)
+
+``` r
+# Ejemplo
+mediciones <- matrix(c(21, 22, 23, 24, 25, 26), nrow = 2, byrow = TRUE)
+
+mediciones[7]
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Función `which()`
+
+La función `which()` en **R** se utiliza para **encontrar las posiciones** de los elementos dentro de un vector, matriz o cualquier otro tipo de objeto que pueda ser evaluado de manera lógica. Su propósito es devolver **los índices** de los elementos que cumplen con una condición lógica específica.
+
+Esta función es especialmente útil cuando necesitas localizar elementos que **cumplen ciertas condiciones** dentro de grandes conjuntos de datos o matrices, lo que facilita el análisis y manipulación de los mismos.
+
+``` r
+# Sintaxis
+which(condición)                    # Devuelve índices lineales.
+which(condición, arr.ind = TRUE)    # Devuelve índices posicionales.
+```
+
+``` r
+voltajes <- matrix(c(120, 130, 110, 125, 140, 135), nrow = 2, byrow = TRUE)
+which(voltajes > 125, arr.ind = TRUE)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Imagina que estás trabajando con una matriz que representa las **temperaturas** en distintos puntos de una máquina, y necesitas encontrar las ubicaciones de todos los puntos donde la temperatura supera un umbral crítico.
+>
+> Usando `which()` puedes localizar esos puntos rápidamente para **tomar decisiones sobre mantenimiento o ajuste**.
+
+------------------------------------------------------------------------
+
+## Indexación lógica de matrices
+
+La **indexación lógica** permite acceder a elementos de una matriz **según condiciones**, no por su posición o nombre, sino por **si cumplen o no con ciertos criterios** (por ejemplo, ser mayores a cierto valor, iguales a otro, etc.).
+
+En vez de decir “dame el elemento en la fila 2, columna 3”, se dice: “dame los elementos **mayores a 50**” o “los elementos que son **iguales a cero**”.
+
+Esto es extremadamente útil en ingeniería para filtrar, localizar o analizar datos que cumplen con ciertas **propiedades físicas o umbrales técnicos**.
+
+``` r
+# Sintaxis
+matriz[condición]
+```
+
+``` r
+# Tienes una matriz que representa temperaturas (°C) medidas en distintas secciones de una máquina.
+temp <- matrix(c(68, 71, 69, 73, 70, 74), nrow = 2, byrow = TRUE)
+temp[temp > 70]
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+A continuación se presentan nuevamente (dado que se estudió anteriormente) las operaciones relacionales.
+
+| Operador | Significado       | Ejemplo (`a = 10`, `b = 20`) |
+|----------|-------------------|------------------------------|
+| `==`     | Igualdad          | `a == b` → `FALSE`           |
+| `!=`     | Diferente         | `a != b` → `TRUE`            |
+| `>`      | Mayor que         | `a > b` → `FALSE`            |
+| `<`      | Menor que         | `a < b` → `TRUE`             |
+| `>=`     | Mayor o igual que | `a >= b` → `FALSE`           |
+| `<=`     | Menos o igual que | `a <= b` → `TRUE`            |
+
+: Operaciones relacionales en R.
+
+Asimismo, las operaciones lógicas también se presentan.
+
+| Operador | Descripción | Ejemplo (`A = TRUE`, `B = FALSE`) |
+|------------------------|------------------------|------------------------|
+| `&` | **Y (AND)** → Verdadero si **ambos** son `TRUE` | `A & B` → `FALSE` |
+| `|` | **O (OR)** → Verdadero si **al menos uno** es `TRUE` | `A | B` → `TRUE` |
+| `!` | **NO (NOT)** → Invierte el valor lógico | `!A` → `FALSE` |
+
+: Operaciones lógicas en R.
+
+``` r
+temp <- matrix(c(68, 71, 69, 73, 70, 74), nrow = 2, byrow = TRUE)
+temp[temp > 70 & temp < 75] <- 80
+
+print(temp)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+La indexación lógica es una herramienta poderosa para filtrar datos en matrices sin conocer su posición exacta. En contextos de ingeniería, es clave para:
+
+-   Detectar valores fuera de rango
+
+-   Identificar fallos
+
+-   Validar condiciones técnicas
+
+-   Extraer información crítica automáticamente
+
+Permite escribir código más general, limpio y adaptable a cualquier tipo de matriz, sin tener que preocuparse por posiciones fijas.
+
+> En ingeniería de materiales, supón que una matriz representa resultados de pruebas de dureza en distintos puntos de una pieza metálica. Con indexación lógica puedes extraer **todos los puntos con dureza por debajo del estándar mínimo**, sin saber sus posiciones.
+
+### Ejemplo 1
+
+Limpia el espacio de trabajo, luego carga el archivo `Tema10_Auxiliar_Datos.RData` y visualiza la información cargada. La matriz `precipitaciones` (cantidad de lluvia registrada) tiene:
+
+-   **12 filas.** De arriba hacia abajo representan los meses: Enero, Febrero, Marzo, etc.
+
+-   **10 columnas.** De izquierda a derecha representan los años: 2001, 2002, 2003, etc.
+
+-   Cada elemento de la matriz representa la precipitación registrada (cantidad de lluvia registrada) en el mes y año correspondiente (fila y columna).
+
+Nombra las filas y las columnas de la matriz adecuadamente.
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} Si lo requieres, revisa nuevamente el **Tema 01: Conceptos generales**.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 2
+
+Utilizando la matriz `precipitaciones`, del ejemplo anterior, realiza las siguientes actividades:
+
+-   Visualiza las precipitaciones de todos los meses del año 2001.
+
+-   Visualiza las precipitaciones de todos los años del mes Marzo.
+
+-   Visualiza las precipitaciones del primer trimestre del último año.
+
+-   Visualiza las precipitaciones del segundo trimestre de los 3 primeros años.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 3
+
+Considera la matriz `precipitaciones` del ejemplo anterior...
+
+La estación meteorológica no cuenta con las herramientas adecuadas, por lo que el registro de precipitaciones de algunos meses es negativo. Eso físicamente no es posible. ¿Es posible que haya llovido -30 mm? Piénsalo de esta forma, ¿es posible que tu estatura sea -170 cm? Es algo similar a lo que sucede con los registros de precipitaciones: deben ser valores positivos o cero.
+
+Por lo tanto, reemplaza todas las precipitaciones que tienen un valor negativo con cero. Luego determina en qué año se produjo la mayor precipitación registrada en toda la serie de tiempo.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
