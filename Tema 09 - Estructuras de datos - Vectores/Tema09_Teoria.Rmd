@@ -484,7 +484,7 @@ v[c("A", "C")]
 | Ideal cuando sabes la **ubicación** de los elementos. | Ideal cuando los elementos tienen un **significado** y deseas identificarlos por su nombre. |
 | Ejemplo: `v[3]` para el tercer elemento. | Ejemplo: `v["C"]` para el elemento nombrado "C". |
 
-###  Indexación lógica de vectores
+### Indexación lógica de vectores
 
 La **indexación lógica** es una forma avanzada de acceder a los elementos de un vector en **R**, utilizando valores lógicos (`TRUE` o `FALSE`) como condiciones para seleccionar elementos. En lugar de seleccionar elementos por su posición o nombre, utilizamos un **vector lógico** que tiene el mismo tamaño que el vector original y que indica, con `TRUE` o `FALSE`, si el valor en esa posición debe ser seleccionado.
 
