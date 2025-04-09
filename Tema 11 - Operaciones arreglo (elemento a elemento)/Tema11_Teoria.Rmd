@@ -1,29 +1,93 @@
 ---
-title: "Importación y exportación de datos"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías"
+author: "La Academia"
+subtitle: "Tema 11 - Teoría"
+output:
+  html_document:
+    df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Operaciones arreglo (elemento a elemento)
+
+Las **operaciones arreglo (elemento a elemento)** en **R** se refieren a la capacidad de realizar operaciones matemáticas directamente sobre los **elementos individuales de un vector o matriz** sin necesidad de recurrir a bucles o estructuras adicionales. **R** permite realizar estas operaciones de manera eficiente y rápida, gracias a su enfoque de **vectorización**.
+
+![Vectorización en R.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2011%20-%20Operaciones%20arreglo%20(elemento%20a%20elemento)/1.png?raw=true){width="695"}
+
+## Operaciones elementales
+
+En este tipo de operaciones, cada elemento de un arreglo (vector o matriz) es **procesado de forma independiente**. Los operadores estándar en **R** se aplican **elemento por elemento**, lo que significa que cada operación se realiza entre los elementos correspondientes de los arreglos involucrados.
+
+| Operador | Descripción    |
+|----------|----------------|
+| `+`      | Suma           |
+| `-`      | Resta          |
+| `*`      | Multiplicación |
+| `/`      | División       |
+| `**`     | Potencia       |
+| `%%`     | Residuo        |
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## R Markdown
+> Las operaciones arreglo son extremadamente útiles en contextos ingenieriles, donde a menudo es necesario realizar operaciones sobre grandes conjuntos de datos. Algunos ejemplos incluyen:
+>
+> -   **Procesamiento de señales**: Se pueden aplicar operaciones de filtrado o transformación de señales sobre vectores o matrices que representan datos de sensores.
+>
+> -   **Análisis de datos estructurales**: Los ingenieros civiles pueden usar operaciones arreglo para trabajar con matrices de deformaciones o tensiones en elementos estructurales.
+>
+> -   **Simulación y modelado**: Las matrices que representan sistemas de ecuaciones o simulaciones numéricas pueden ser manipuladas directamente mediante operaciones arreglo para acelerar cálculos.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+------------------------------------------------------------------------
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+## Compatibilidad de operaciones arreglo + Broadcasting
 
-```{r cars}
-summary(cars)
+Las operaciones arreglo realizan las operaciones entre los correspondientes elementos de las matrices involucradas. No obstante, se debe destacar lo siguiente:
+
+-   **Si las matrices tienen el mismo tamaño**, entonces cada elemento de la primera matriz se empareja con el elemento en la misma ubicación de la segunda matriz.
+
+-   **Si las matrices tienen tamaños compatibles**, entonces cada entrada se expande implícitamente según sea necesario para que coincida con el tamaño de la otra. Esto solo es posible para **operaciones entre matriz-vector**, lo que en **R** se conoce como **broadcasting**.
+
+-   Si las matrices no son del mismo tamaño ni tienen tamaños compatibles, entonces no se realiza la operación y **R** devuelve un error.
+
+![Compatibilidad de operaciones arreglo.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2011%20-%20Operaciones%20arreglo%20(elemento%20a%20elemento)/2.png?raw=true){width="662"}
+
+------------------------------------------------------------------------
+
+### Ejemplo 1
+
+asd
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## Including Plots
+### Ejemplo 2
 
-You can also embed plots, for example:
+asd
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+### Ejemplo 3
+
+asd
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
