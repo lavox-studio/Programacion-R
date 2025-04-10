@@ -22,7 +22,7 @@ Un **vector** en **R** es una estructura de datos **unidimensional**, que almace
 Una **matriz** es una estructura de datos **bidimensional**, que también contiene **elementos del mismo tipo**, pero organizados en **filas y columnas**.
 
 | Aspecto | Vector | Matriz |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Dimensión | Unidimensional | Bidimensional |
 | Estructura | Línea de datos | Filas y columnas |
 | Acceso a elementos | Solo con una posición | Una posición \| Filas y columnas |
@@ -205,7 +205,7 @@ rbind(matriz1, matriz2)     # Unión por filas (row bind)
 ```
 
 | Tipo de concatenación | Requisito | Esquema gráfico |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | `rbind()` | Igual número de columnas. | ![](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2010%20-%20Estructuras%20de%20datos%20-%20Matrices/2.png?raw=true){width="211"} |
 | `cbind()` | Igual número de filas. | ![](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2010%20-%20Estructuras%20de%20datos%20-%20Matrices/3.png?raw=true){width="299"} |
 

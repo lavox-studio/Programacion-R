@@ -11,9 +11,21 @@ output:
 
 ## Ejercicio 1
 
-asd
+La serie de Taylor de la función exponencial se define como:
 
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+$$
+e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots = \sum^\infty_{n=0}\frac{x^n}{n!}
+$$
+
+Evaluar la serie de Taylor para $x=1$ con 5 términos de la expansión de la serie.
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} Primero sería ideal crear vectores linealmente espaciados que representen las potencias y los denominadores, luego se podría evaluar la serie para el valor deseado utilizando operaciones arreglo.
+>
+> [**Nota 3:**]{.underline} La función `factorial()` permite determinar el factorial de un número. Para verificar el resultado se puede utilizar la función `exp()` la cual permite evaluar la función exponencial.
+>
+> [**Nota 4:**]{.underline} No utilizar bucles dado que todavía no se los ha estudiado.
 
 ## Solución
 
@@ -23,4 +35,184 @@ asd
 
 ------------------------------------------------------------------------
 
-## Ejercicio
+## Ejercicio 2
+
+Se tiene la siguiente serie de Taylor:
+
+$$ \tan^{-1}(x) = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots $$
+
+para $|x|<1$. Evaluar la serie de Taylor para $x = 0.5$ con 6 términos de la expansión de la serie.
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} Para verificar el resultado se puede utilizar la función `atan()` la cual permite evaluar la función arcotangente.
+>
+> [**Nota 4:**]{.underline} No utilizar bucles dado que todavía no se los ha estudiado.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 3
+
+Se tiene la siguiente serie de Taylor:
+
+$$ \frac{1}{1 - x} = 1 + x + x^2 + x^3 + x^4 + \cdots $$
+
+Evaluar la serie de Taylor para $x = 0.2$ con 3 términos de la expansión de la serie.
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} No utilizar bucles dado que todavía no se los ha estudiado.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 4
+
+Una medida de la obesidad se determina mediante el índice de masa corporal (IMC), que se calcula dividiendo la masa de una persona, $m$, por el cuadrado de su estatura, $h$.
+
+$$
+\text{IMC} = \frac{m}{h^2}
+$$
+
+La masa está en kilogramos y la estatura en metros.
+
+Un médico de la capital desea saber el IMC de sus pacientes. Para esto, toma una muestra de 50 pacientes y guarda sus datos en el archivo `Tema11_Auxiliar_Datos.RData`. Este archivo contiene una matriz en donde la primera columna representa la masa de cada paciente, en kilogramos, y la segunda columna representa la altura en metros.
+
+En base a la gráfica, ¿cuántos pacientes de la muestra están saludables?
+
+![Índice de masa corporal (IMC)](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2011%20-%20Operaciones%20arreglo%20(elemento%20a%20elemento)/5.png?raw=true){width="688"}
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} No utilizar bucles dado que todavía no se los ha estudiado.
+>
+> [**Nota 3:**]{.underline} Para responder la pregunta del número de pacientes saludables debes utilizar indexación y la función `sum()`.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 5
+
+Tú depositaste \$12 000 USD en una cuenta de ahorros que te ofrece un interés simple del 5% anual. ¿Cuánto dinero ganarás en intereses después de 3 años? La expresión matemática del interés simple es:
+
+$$
+I = P  r  t
+$$
+
+Donde $I$ es el dinero generado por intereses, $P$ es el capital inicial (o depósito inicial), $r$ es el interés simple anual (en fracción, no porcentaje) y $t$ es el tiempo en años.
+
+Al haber transcurrido los 3 años, y habiendo recibido el dinero por intereses, piensas en el dinero que habrías recibido si en lugar de depositar \$12 000 USD hubieses depositado desde \$20 000 USD hasta \$40 000 USD, con incrementos de \$1 000 USD.
+
+¿Cuánto hubiese sido el dinero recibido por intereses para cada depósito?
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} No utilizar bucles dado que todavía no se los ha estudiado.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 6
+
+En esta ocasión tu mejor amigo depositó \$15 000 en una cuenta de ahorros de otro banco que le ofrece un interés **compuesto** del 5% anual. ¿Cuánto dinero tendrá tu amigo en su cuenta después de 3 años? Puedes utilizar la expresión:
+
+$$
+A = P\left( 1 + r \right)^{t}
+$$
+
+Donde $A$ es el monto acumulado (capital inicial + intereses), $P$ es el capital inicial, $r$ es la tasa de interés anual (en fracción, no porcentaje) y $t$ es el tiempo en años.
+
+Él se hace la misma pregunta que tú en el ejercicio anterior, por lo que realiza la misma suposición de haber depositado desde \$20 000 USD a \$40 000 USD con incrementos de \$1 000 USD.
+
+¿Cuánto hubiese sido el monto acumulado generado por tu amigo para cada depósito?
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} No utilizar bucles dado que todavía no se los ha estudiado.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 7
+
+Un dron despegó desde la Facultad de Ingeniería Mecánica ubicada en la coordenada $(2,3)$ hacia otras facultades. Las facultades a las que arribó el dron están en las siguientes coordenadas:
+
+-   Facultad de Ciencias Administrativas: coordenada $(5,-3)$
+
+-   Facultad de Ingeniería Civil: coordenada $(4,8)$
+
+-   Facultad de Ingeniería Química: coordenada $(-1,10)$
+
+-   Facultad de Ingeniería Eléctrica: coordenada $(-12, 0)$
+
+-   Facultad de Medicina: coordenada $(12, 5)$
+
+Determinar la distancia que recorrió el dron desde el punto de partida hasta cada una de las facultades. Se puede utilizar la expresión:
+
+$$
+d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+$$
+
+¿Cuál es la facultad que está más lejos y más cerca del punto de partida?
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} No utilizar bucles dado que todavía no se los ha estudiado.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 8
+
+Supongamos que te interesa ofrecer tus servicios profesionales como ingeniero civil (para consultorías, capacitaciones, diseños, etc.), y deseas como mínimo obtener un beneficio neto de \$500 USD por trabajo. Estableces el precio normal de tu trabajo en \$799.99 USD y utilizas descuentos para hacer más atractiva tu oferta, por lo que estimas ofrecer descuentos desde el 10% hasta el 50% con incremento de 5%.
+
+Determinar el precio final de tu trabajo (beneficio neto) para cada descuento posible:
+
+$$
+\text{Precio final} = \text{Precio original} \times \left( 1 - \frac{\text{descuento %}}{100} \right)
+$$
+
+¿Cuál es el descuento máximo que puedes ofrecer para que el precio final (tu beneficio neto) sea al menos \$500 USD?
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} No utilizar bucles dado que todavía no se los ha estudiado.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------

@@ -46,19 +46,43 @@ Las operaciones arreglo realizan las operaciones entre los correspondientes ele
 
 -   **Si las matrices tienen el mismo tamaño**, entonces cada elemento de la primera matriz se empareja con el elemento en la misma ubicación de la segunda matriz.
 
+![Compatibilidad completa.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2011%20-%20Operaciones%20arreglo%20(elemento%20a%20elemento)/3.png?raw=true){width="474"}
+
+![Compatibilidad matriz-vector.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2011%20-%20Operaciones%20arreglo%20(elemento%20a%20elemento)/4.png?raw=true){width="474"}
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
 -   **Si las matrices tienen tamaños compatibles**, entonces cada entrada se expande implícitamente según sea necesario para que coincida con el tamaño de la otra. Esto solo es posible para **operaciones entre matriz-vector**, lo que en **R** se conoce como **broadcasting**.
+
+![Compatibilidad matriz-vector, *broadcasting* y sus limitaciones.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2011%20-%20Operaciones%20arreglo%20(elemento%20a%20elemento)/2.png?raw=true){alt="Compatibilidad de operaciones arreglo y sus limitaciones." width="609"}
+
+```{r}
+# Ingresa tu código aquí 👽
+```
 
 -   Si las matrices no son del mismo tamaño ni tienen tamaños compatibles, entonces no se realiza la operación y **R** devuelve un error.
 
-![Compatibilidad de operaciones arreglo.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2011%20-%20Operaciones%20arreglo%20(elemento%20a%20elemento)/2.png?raw=true){width="662"}
+```{r}
+# Ingresa tu código aquí 👽
+```
 
 ------------------------------------------------------------------------
 
 ### Ejemplo 1
 
-asd
+Considerando la siguiente serie de Taylor:
 
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+$$
+\ln(1-x) = -x -\frac{x^2}{2}-\frac{x^3}{3}-\cdots = -\sum^\infty_{n=1}\frac{x^n}{n}
+$$
+
+Evaluar la serie de Taylor para $x=0.5$ con 5 términos de expansión de la serie.
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} No utilizar bucles dado que todavía no se los ha estudiado.
 
 ### Solución
 
@@ -68,9 +92,15 @@ asd
 
 ### Ejemplo 2
 
-asd
+Considerando la siguiente serie de Taylor:
 
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+$$ \ln(1+x) = x -\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\cdots$$
+
+para $|x| < 1$. Evaluar la serie de Taylor para $x = 0.5$ con 7 términos de expansión de la serie.
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} No utilizar bucles dado que todavía no se los ha estudiado.
 
 ### Solución
 
@@ -80,7 +110,13 @@ asd
 
 ### Ejemplo 3
 
-asd
+Determinar la hipotenusa de un triángulo rectángulo isósceles. Los valores del cateto van desde 1 hasta 100. Utilizar el teorema de Pitágoras:
+
+$$
+c^2 = a^2 + b^2
+$$
+
+donde $c$ es la hipotenusa, y $a$ y $b$ son los lados del triángulo rectángulo.
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
