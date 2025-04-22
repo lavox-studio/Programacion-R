@@ -11,6 +11,46 @@ output:
 
 ## Ejercicio 1
 
+Con un calorímetro de bomba se realizó una serie de experimentos. En cada experimento se usó una cantidad diferente de agua. Calcule la capacidad calorífica total para el calorímetro en cada uno de los experimentos.
+
+![Propiedades térmicas de un calorímetro de bomba.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2012%20-%20Operaciones%20matriciales/8.png?raw=true){width="468"}
+
+![Capacidad calorímetra.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2012%20-%20Operaciones%20matriciales/9.png?raw=true){width="392"}
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 2
+
+El peso molecular (MW) de cualquier compuesto es la suma de los productos del número de átomos de cada elemento (Z) y el peso atómico (AW) de cada elemento presente en el compuesto, o
+
+$$
+\text{MW} = \sum^n_{i=1}AW_i \cdot Z_i
+$$
+
+En la tabla se mencionan las composiciones de los primeros cinco alcoholes de cadena recta. Use los pesos atómicos del carbono, hidrógeno y oxígeno (12, 1 y 16, respectivamente) y la multiplicación matricial para determinar el peso molecular (más correctamente llamada masa molar) de cada alcohol.
+
+![Composición de alcoholes.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2012%20-%20Operaciones%20matriciales/10.png?raw=true){width="460"}
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 3
+
 Suponga que un conjunto de puntos en el plano representa datos experimentales. Un polinomio de interpolación para los datos es un polinomio cuya gráfi ca pasa por todos los puntos. En el trabajo científico, se puede usar un polinomio así, por ejemplo, para estimar valores entre los puntos de datos conocidos. Otro uso es crear curvas para imágenes gráficas en una pantalla de computadora. Un método apropiado para encontrar un polinomio de interpolación es resolver un sistema de ecuaciones lineales.
 
 Encuentre el polinomio de interpolación $p(t) = a_0 + a_1t + a_2t^2$ para los datos (1, 12), (2, 15), (3, 16). Esto es, encuentre $a_0, a_1$ y $a_2$.
@@ -25,7 +65,7 @@ Encuentre el polinomio de interpolación $p(t) = a_0 + a_1t + a_2t^2$ para los d
 
 ------------------------------------------------------------------------
 
-## Ejercicio 2
+## Ejercicio 4
 
 Suponga que una economía tiene tres sectores, agricultura, minería y manufactura. Agricultura vende el 5% de su producción a minería, el 30% a manufactura, y retiene el resto. Minería vende un 20% de lo que produce a agricultura, un 70% a manufactura, y conserva el resto. Manufactura vende el 20% de su producción a agricultura, el 30% a minería, y se queda con el 50%. Determine la tabla de intercambio para esta economía, donde las columnas describen el modo en que la producción de cada sector se intercambia entre los tres sectores.
 
@@ -41,7 +81,7 @@ Suponga que una economía tiene tres sectores, agricultura, minería y manufactu
 
 ------------------------------------------------------------------------
 
-## Ejercicio 3
+## Ejercicio 5
 
 Suponga que una economía tiene cuatro sectores, agricultura (A), energía (E), manufactura (M) y transporte (T). El sector A vende un 10% de su producción a E, el 25% a M, y retiene el resto. El sector E vende un 30% de su producción a A, un 35% a M, un 25% a T, y conserva el resto. El sector M vende el 30% de su producción a A, el 15% a E, un 40% a T, y conserva lo restante. El sector T vende el 20% de su producción a A, el 10% a E, el 30% a M, y se queda con el 40 por ciento.
 

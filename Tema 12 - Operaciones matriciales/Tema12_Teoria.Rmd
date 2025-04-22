@@ -71,6 +71,26 @@ C <- A %*% B
 >
 > -   Multiplicar una matriz de rigidez con un vector de desplazamientos produce un vector de fuerzas.
 
+### Ejemplo
+
+Usted y un amigo van a una tienda. Sus listas son las que se muestran en la tabla.
+
+![Cantidad de artículos comprados por cada persona.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2012%20-%20Operaciones%20matriciales/6.png?raw=true){width="419"}
+
+Los artículos tienen los siguientes costos:
+
+![Precio unitario de cada artículo.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2012%20-%20Operaciones%20matriciales/7.png?raw=true){width="395"}
+
+Encuentre la factura total para cada comprador.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
 ------------------------------------------------------------------------
 
 ## Potencia
@@ -248,6 +268,8 @@ $$
 ![Malla de una placa delgada.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2012%20-%20Operaciones%20matriciales/4.png?raw=true){width="285"}
 
 Escriba un sistema de cuatro ecuaciones cuya solución proporcione un estimado para las temperaturas $T_1, \dots, T_4$, luego resuelva el sistema de ecuaciones.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
 ### Solución
 
