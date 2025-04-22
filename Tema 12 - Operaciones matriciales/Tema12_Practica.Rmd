@@ -1,29 +1,62 @@
 ---
-title: "Depuración y detección de errores"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías"
+author: "La Academia"
+subtitle: "Tema 12 - Práctica"
+output:
+  html_document:
+    df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Operaciones matriciales
+
+## Ejercicio 1
+
+Suponga que un conjunto de puntos en el plano representa datos experimentales. Un polinomio de interpolación para los datos es un polinomio cuya gráfi ca pasa por todos los puntos. En el trabajo científico, se puede usar un polinomio así, por ejemplo, para estimar valores entre los puntos de datos conocidos. Otro uso es crear curvas para imágenes gráficas en una pantalla de computadora. Un método apropiado para encontrar un polinomio de interpolación es resolver un sistema de ecuaciones lineales.
+
+Encuentre el polinomio de interpolación $p(t) = a_0 + a_1t + a_2t^2$ para los datos (1, 12), (2, 15), (3, 16). Esto es, encuentre $a_0, a_1$ y $a_2$.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## R Markdown
+------------------------------------------------------------------------
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Ejercicio 2
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Suponga que una economía tiene tres sectores, agricultura, minería y manufactura. Agricultura vende el 5% de su producción a minería, el 30% a manufactura, y retiene el resto. Minería vende un 20% de lo que produce a agricultura, un 70% a manufactura, y conserva el resto. Manufactura vende el 20% de su producción a agricultura, el 30% a minería, y se queda con el 50%. Determine la tabla de intercambio para esta economía, donde las columnas describen el modo en que la producción de cada sector se intercambia entre los tres sectores.
 
-```{r cars}
-summary(cars)
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} Utiliza como base el ejemplo realizado en la parte teórica.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## Including Plots
+------------------------------------------------------------------------
 
-You can also embed plots, for example:
+## Ejercicio 3
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+Suponga que una economía tiene cuatro sectores, agricultura (A), energía (E), manufactura (M) y transporte (T). El sector A vende un 10% de su producción a E, el 25% a M, y retiene el resto. El sector E vende un 30% de su producción a A, un 35% a M, un 25% a T, y conserva el resto. El sector M vende el 30% de su producción a A, el 15% a E, un 40% a T, y conserva lo restante. El sector T vende el 20% de su producción a A, el 10% a E, el 30% a M, y se queda con el 40 por ciento.
+
+-   Construya la tabla de intercambio para esta economía.
+
+-   Encuentre un conjunto de precios de equilibrio para esta economía.
+
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} Utiliza como base el ejemplo realizado en la parte teórica.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+------------------------------------------------------------------------

@@ -1,29 +1,300 @@
 ---
-title: "Depuración y detección de errores"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías"
+author: "La Academia"
+subtitle: "Tema 12 - Teoría"
+output:
+  html_document:
+    df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Operaciones matriciales
+
+Las **operaciones matriciales** en **R** son aquellas que se aplican a matrices siguiendo las **reglas del álgebra lineal**. A diferencia de las **operaciones elemento a elemento**, estas operaciones consideran la estructura bidimensional de las matrices y su relación matemática (dimensiones, filas y columnas).
+
+![Características de las operaciones matriciales en R.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2012%20-%20Operaciones%20matriciales/1.png?raw=true){width="668"}
+
+> Las operaciones matriciales son fundamentales en áreas como:
+>
+> -   **Ingeniería civil**: sistemas de ecuaciones estructurales.
+>
+> -   **Ingeniería eléctrica**: análisis de circuitos lineales.
+>
+> -   **Ingeniería mecánica**: transformaciones en dinámica de cuerpos.
+>
+> -   **Ingeniería de control**: modelos de estado y simulación.
+
+## Multiplicación
+
+La **multiplicación matricial** es una operación del álgebra lineal en la que dos matrices se combinan para formar una nueva matriz. Esta operación **no se realiza elemento a elemento**, sino mediante la suma de productos entre filas de la primera matriz y columnas de la segunda.
+
+Para que la multiplicación sea posible:
+
+-   El número de **columnas** de la primera matriz debe ser igual al número de **filas** de la segunda matriz.
+
+Si:
+
+-   $A$ es de dimensión $m \times n$
+
+-   $B$ es de dimensión $n \times p$
+
+![Verificación de dimensiones para aplicar la multiplicación matricial.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2012%20-%20Operaciones%20matriciales/2.png?raw=true){width="414"}
+
+Entonces:
+
+-   $A \times B$ es una matriz de dimensión $m \times p$
+
+![Dimensiones de la matriz resultante de aplicar la multiplicación matricial.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2012%20-%20Operaciones%20matriciales/3.png?raw=true){width="416"}
+
+``` r
+# Sintaxis
+C <- A %*% B
 ```
 
-## R Markdown
+-   `%*%` es el operador de multiplicación matricial en **R**.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+-   `A` y `B` deben tener dimensiones compatibles como se explicó arriba.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+``` r
+A <- matrix(c(1, 2, 3, 4), nrow = 2)    # 2x2
+B <- matrix(c(5, 6, 7, 8), nrow = 2)    # 2x2
 
-```{r cars}
-summary(cars)
+C <- A %*% B
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+> La multiplicación matricial permite conectar dos sistemas de información mediante una estructura lineal. Su correcta aplicación es esencial para modelar, simular y resolver numerosos problemas de ingeniería. Comprender la diferencia con la multiplicación elemento a elemento y saber cuándo se puede realizar es una competencia básica para el análisis numérico y computacional.
+>
+> -   Multiplicar una matriz de resistencias con un vector de corrientes permite obtener el vector de caídas de voltaje en un circuito.
+>
+> -   Multiplicar una matriz de rigidez con un vector de desplazamientos produce un vector de fuerzas.
+
+------------------------------------------------------------------------
+
+## Potencia
+
+La **potencia matricial** es una operación en la que una matriz se multiplica por sí misma varias veces. Es una extensión del concepto de elevar números a una potencia, pero en este caso, se aplica a matrices. La potencia de una matriz solo está definida cuando la matriz es **cuadrada** (es decir, tiene el mismo número de filas y columnas).
+
+Si $A$ es una matriz cuadrada de dimensión $n \times n$, su potencia $A^k$ (donde $k$ es un número entero positivo) se define como:
+
+-   $A^1 = A$
+
+-   $A^k = A \times A \times \cdots \times A$ ($k$ veces)
+
+La potencia de una matriz no es simplemente elevar cada elemento al exponente $k$. Es una multiplicación matricial repetida.
+
+En **R**, no hay una función nativa directamente diseñada para calcular potencias matriciales de forma general. Sin embargo, se puede utilizar (primero instalar y luego cargar) el paquete `expm` para hacer uso del operador de potencia matricial `%^%`.
+
+``` r
+install.packages("expm")    # Instalar paquete
+library(expm)               # Cargar paquete
+```
+
+``` r
+# Sintaxis
+C <- A %^% 3
+```
+
+-   `%^%` es el operador de potencia matricial en **R** a través del paquete `expm`.
+
+``` r
+A <- matrix(c(1, 2, 3, 4), nrow = 2)    # 2x2
+
+C1 <- A %^% 3           # Potencia matricial
+C2 <- A %*% A %*% A     # Verificación a través de multiplicación matricial
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> La **potencia matricial** es una herramienta clave en el análisis y modelado de sistemas en ingeniería, particularmente en áreas como el análisis de redes, control de sistemas dinámicos y simulaciones estructurales. Comprender cómo realizar estas operaciones, así como sus propiedades y aplicaciones, es crucial para el manejo efectivo de modelos matemáticos complejos.
+>
+> -   En la ingeniería de control, las potencias de matrices de transición son útiles para predecir el comportamiento del sistema a lo largo de varios períodos de tiempo.
+>
+> -   En redes de comunicación, la potencia de las matrices de adyacencia es utilizada para determinar la conectividad indirecta entre nodos después de múltiples pasos.
+>
+> -   En la ingeniería civil y mecánica, la potencia de las matrices puede ayudar a modelar la propagación de esfuerzos o desplazamientos a través de una estructura bajo múltiples cargas.
+
+------------------------------------------------------------------------
+
+## Inversa
+
+La **inversa de una matriz** es una matriz que, al multiplicarse por la matriz original, da como resultado la **matriz identidad**. Es decir, si tienes una matriz $A$, su inversa $A^{-1}$ cumple con:
+
+$$
+A \times A^{-1} = A^{-1} \times A = I
+$$
+
+donde $I$ es la **matriz identidad** (con unos en la diagonal principal y ceros en las demás posiciones).
+
+No todas las matrices tienen inversa. Solo las **matrices cuadradas** (es decir, con el mismo número de filas y columnas) que son **no singulares** (determinante distinto de cero) tienen inversa.
+
+En general, el cálculo de la inversa de una matriz $A$ se puede hacer de varias formas, incluyendo la **método de la matriz adjunta** o el **método de Gauss-Jordan**. Sin embargo, en **R**, se puede utilizar la función `solve()` para obtener la inversa de una matriz de manera directa.
+
+``` r
+# Sintaxis
+A_inv <- solve(A)
+```
+
+-   `A` debe ser una matriz cuadrada.
+
+-   `solve(A)` devuelve la inversa de `A`, si esta existe.
+
+``` r
+A <- matrix(c(4, 7, 2, 6), nrow = 2)
+A_inv <- solve(A)
+print(A_inv)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Imagina que estás trabajando con una estructura de vigas y necesitas encontrar las fuerzas internas a partir de los desplazamientos. Esto se puede modelar como un sistema de ecuaciones lineales que se resuelven utilizando la **inversa de una matriz** de rigidez, la cual conecta las fuerzas con los desplazamientos. Si no puedes calcular la inversa, significa que el sistema es **inestable** o **singular**.
+
+------------------------------------------------------------------------
+
+## Resolver sistemas de ecuaciones lineales
+
+Un sistema lineal puede escribirse como:
+
+$$
+Ax = b
+$$
+
+Donde:
+
+-   $A$ es la matriz de coeficientes ($m \times n$)
+
+-   $x$ es el vector de incógnitas ($n \times 1$)
+
+-   $b$ es el vector de términos independientes ($m \times 1$)
+
+Cuando el sistema es **cuadrado** (es decir, tiene igual número de ecuaciones que de incógnitas), y la matriz $A$ es **invertible**, podemos encontrar la solución usando:
+
+$$
+x = A^{-1}b
+$$
+
+En **R**, se puede resolver un sistema lineal de forma directa usando la función `solve()`.
+
+``` r
+# Sintaxis
+x <- solve(A, b)
+```
+
+Donde:
+
+-   `A` es la matriz de coeficientes.
+
+-   `b` es el vector de términos independientes.
+
+-   `x` es el vector solución.
+
+Esto es computacionalmente más eficiente que calcular la inversa de `A` y luego multiplicar por `b`.
+
+Consideremos el sistema:
+
+$$
+\begin{align}
+2x + 3y &= 8 \\
+4x - y &= 2
+\end{align}
+$$
+
+Representamos este sistema de forma matricial como:
+
+$$
+A = 
+\left(\begin{matrix}
+2 & 3 \\
+4 & -1
+\end{matrix}\right),\
+b =
+\left(\begin{matrix}
+8 \\
+2
+\end{matrix}\right)
+$$
+
+Y resolvemos con:
+
+``` r
+A <- matrix(c(2, 4, 3, -1), nrow = 2)
+b <- c(8, 2)
+x <- solve(A, b)
+print(x)
+```
+
+Esto nos da los valores de $x$ y $y$ que satisfacen el sistema.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+| Resolver sistemas de ecuaciones lineales mediante herramientas matriciales es una habilidad fundamental para ingenieros de todas las disciplinas. Permite modelar fenómenos reales y encontrar soluciones rápidas y precisas a problemas complejos, desde estructuras físicas hasta redes computacionales.
+
+### Ejemplo 1
+
+Un aspecto importante en el estudio de la transferencia de calor es determinar la distribución de la temperatura en estado estable sobre una placa delgada cuando se conoce la temperatura presente alrededor de los bordes. Suponga que la placa mostrada en la figura representa la sección transversal de una viga de metal, con un flujo de calor insignifi cante en la dirección perpendicular a la placa. Sean $T_1, \dots, T_4$ las temperaturas en los cuatro nodos interiores de la malla que se muestra en la figura. En un nodo, la temperatura es aproximadamente igual al promedio de los cuatro nodos más cercanos —a la izquierda, arriba, a la derecha y abajo. Por ejemplo,
+
+$$
+T_1 = (10 + 20 + T_2 + T_4)/4, \\ \text{ o } \\4T_1 - T_2 - T_4 = 30
+$$
+
+![Malla de una placa delgada.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2012%20-%20Operaciones%20matriciales/4.png?raw=true){width="285"}
+
+Escriba un sistema de cuatro ecuaciones cuya solución proporcione un estimado para las temperaturas $T_1, \dots, T_4$, luego resuelva el sistema de ecuaciones.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 2
+
+En un experimento de túnel de viento, la fuerza sobre un proyectil debida a la resistencia del aire se midió a diferentes velocidades:
+
+-   Velocidad (100 pies/seg): 0, 2, 4, 6, 8, 10
+
+-   Fuerza (100 lb): 0, 2.90, 14.8, 39.6, 74.3, 119
+
+Encuentre un polinomio de interpolación para estos datos y estime la fuerza sobre el proyectil cuando éste viaja a 750 pies/seg. Utilice $p(t) = a_0 + a_1t + a_2t^2 + a_3t^3 + a_4t^4 + a_5t^5$.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo 3
+
+Suponga que una economía consiste en los sectores de carbón, electricidad y acero, y que el rendimiento de cada sector se distribuye entre los diferentes sectores como en la tabla 1, donde las entradas de una columna representan fracciones de la producción total de un sector. La segunda columna de la tabla 1, por ejemplo, muestra que la producción total de electricidad se divide como sigue: un 40% de carbón, un 50% de acero, y el restante 10% de electricidad. (El sector eléctrico trata este 10% como un gasto en que incurre para hacer funcionar su negocio.) Ya que debe tomarse en cuenta la producción total, las fracciones decimales de cada columna deben sumar 1.
+
+![Una economía sencilla.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2012%20-%20Operaciones%20matriciales/5.png?raw=true){width="433"}
+
+Los precios (es decir, valores en moneda) de la producción total de los sectores de carbón, electricidad y acero se denotarán como $p_C,\ p_E$ y $p_S$, respectivamente. Si es posible, encuentre los precios de equilibrio que permiten a los ingresos de cada sector igualar sus gastos.
+
+Por ejemplo, la primera ecuación del sistema, de la primera fila de la tabla, es:
+
+$$
+p_C = 0.0p_C + 0.4p_E + 0.6p_S
+$$
+
+De esta forma se puede ensamblar el resto de ecuaciones del sistema de ecuaciones. Una vez planteado el sistema, resuélvalo.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------

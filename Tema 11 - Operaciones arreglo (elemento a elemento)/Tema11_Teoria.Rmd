@@ -56,7 +56,7 @@ Las operaciones arreglo realizan las operaciones entre los correspondientes ele
 
 -   **Si las matrices tienen tamaños compatibles**, entonces cada entrada se expande implícitamente según sea necesario para que coincida con el tamaño de la otra. Esto solo es posible para **operaciones entre matriz-vector**, lo que en **R** se conoce como **broadcasting**.
 
-![Compatibilidad matriz-vector, *broadcasting* y sus limitaciones.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2011%20-%20Operaciones%20arreglo%20(elemento%20a%20elemento)/2.png?raw=true){alt="Compatibilidad de operaciones arreglo y sus limitaciones." width="609"}
+![Compatibilidad de operaciones arreglo y sus limitaciones.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2011%20-%20Operaciones%20arreglo%20(elemento%20a%20elemento)/2.png?raw=true){width="609"}
 
 ```{r}
 # Ingresa tu código aquí 👽
