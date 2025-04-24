@@ -23,7 +23,7 @@ En otras palabras, **una lista es como una caja con compartimientos**, donde cad
 
 -   Estás trabajando con **resultados múltiples** de análisis o modelos.
 
-## Creación de listas
+## Crear listas
 
 Crear una lista en **R** significa **agrupar múltiples objetos de distintos tipos y tamaños en un único contenedor**. Esto es útil cuando deseas mantener un conjunto de resultados, configuraciones, datos heterogéneos o estructuras complejas **dentro de una misma unidad**.
 
