@@ -1,29 +1,122 @@
 ---
-title: "Estructuras de repetición o bucles"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías y Ciencias"
+author: "La Academia"
+subtitle: "Tema 14 - Práctica"
+output:
+  html_document:
+    df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Estructuras de datos: Listas
+
+## Ejercicio 1
+
+Una lista representa las especificaciones de un autobús eléctrico: tipo de motor ("eléctrico"), capacidad máxima de pasajeros (35) y autonomía en kilómetros (250). Agrega a la lista un nuevo elemento llamado “ciudad_asignada” con el valor “Medellín”.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## R Markdown
+------------------------------------------------------------------------
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Ejercicio 2
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Una lista contiene los siguientes elementos: voltaje de entrada (220 V), corriente máxima (10 A) y tipo de protección (“IP44”). Se requiere eliminar el elemento correspondiente al tipo de protección.
 
-```{r cars}
-summary(cars)
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## Including Plots
+------------------------------------------------------------------------
 
-You can also embed plots, for example:
+## Ejercicio 3
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+Una lista contiene las mediciones de vibración de tres puntos diferentes de una máquina, expresadas en milímetros por segundo, y guardadas en un vector de tres valores: 3.1, 4.5 y 2.8. Accede únicamente a la medición del segundo punto.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+------------------------------------------------------------------------
+
+## Ejercicio 4
+
+Una lista contiene tres sublistas: cada una representa un servidor con los siguientes datos: nombre del servidor, estado ("activo" o "inactivo") y tiempo de uso en horas. Cambia el estado del segundo servidor a “activo”.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 5
+
+Una lista contiene los datos de un puente: longitud en metros (560), tipo de estructura (“suspendido”), año de inauguración (1998), y una sublista con inspecciones (fechas de tres inspecciones pasadas). Reemplaza la fecha de la tercera inspección por “2024-03-15”.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 6
+
+Una lista contiene parámetros de una simulación de aterrizaje. Incluye una sublista de condiciones iniciales (velocidad vertical: 5.2 m/s, ángulo de ataque: 12°, peso: 1500 kg), otra sublista con condiciones ambientales (presión, temperatura, viento), y un elemento final que representa la duración total del aterrizaje. Accede a la presión en las condiciones ambientales y reemplaza el valor de velocidad vertical por uno nuevo.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 7
+
+Una lista representa datos de monitoreo de un paciente: nombre del paciente, una sublista de constantes vitales (frecuencia cardíaca, presión arterial sistólica y diastólica), una lista de medicamentos administrados y una lista de alergias. Elimina la lista de alergias y agrega un nuevo medicamento a la lista correspondiente.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 8
+
+Una empresa modela sus procesos con una lista que contiene: nombre del proceso (“Empaque”), eficiencia (0.92), costos por hora (en un vector con tres valores: 150, 175, 180), y una sublista con observaciones de auditoría (texto). Se solicita: cambiar el segundo valor del vector de costos, agregar una nueva observación al final, y modificar el nombre del proceso a “Empaque final”.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------

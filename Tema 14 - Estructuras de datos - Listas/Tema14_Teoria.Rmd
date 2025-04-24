@@ -1,29 +1,318 @@
 ---
-title: "Estructuras de repetición o bucles"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías y Ciencias"
+author: "La Academia"
+subtitle: "Tema 14 - Teoría"
+output:
+  html_document:
+    df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+## Estructuras de datos: Listas
+
+Una **lista** es una **estructura de datos flexible y heterogénea** que puede contener cualquier tipo de objeto: vectores, matrices, data frames, funciones, incluso otras listas.
+
+![Características de una lista.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2014%20-%20Estructuras%20de%20datos%20-%20Listas/1.png?raw=true){width="722"}
+
+En otras palabras, **una lista es como una caja con compartimientos**, donde cada compartimiento puede tener objetos distintos y de diferentes tamaños o tipos.
+
+**¿Cuándo usar listas?**
+
+-   Los elementos **no tienen la misma longitud ni el mismo tipo**.
+
+-   Quieres **agrupar información diversa** sobre un mismo fenómeno o entidad.
+
+-   Estás trabajando con **resultados múltiples** de análisis o modelos.
+
+## Creación de listas
+
+Crear una lista en **R** significa **agrupar múltiples objetos de distintos tipos y tamaños en un único contenedor**. Esto es útil cuando deseas mantener un conjunto de resultados, configuraciones, datos heterogéneos o estructuras complejas **dentro de una misma unidad**.
+
+``` r
+# Sintaxis 1
+nombre_lista <- list(elemento1, elemento2, ..., elementoN)
+
+# Sintaxis 2: Agregar nombre a cada valor
+nombre_lista <- list(nombre1 = valor1, nombre2 = valor2)
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+``` r
+equipo <- list(
+    nombre = "Motor hidráulico",
+    potencias = c(5.2, 5.8, 6.0),
+    operativo = TRUE
+)
 ```
 
-## Including Plots
+En este caso:
 
-You can also embed plots, for example:
+-   `nombre` es texto,
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+-   `potencias` es un vector numérico,
+
+-   `operativo` es un valor lógico.
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+> Crear listas en **R** permite construir estructuras de datos robustas, capaces de albergar múltiples elementos relacionados, aunque completamente distintos. En campos de la ingeniería, esto resulta esencial para representar sistemas, reportes, análisis o configuraciones completas en una sola entidad organizada.
+
+------------------------------------------------------------------------
+
+## Modificar los nombres de los elementos
+
+En **R**, cuando creas una lista, puedes **asignar nombres** a los elementos de esa lista para acceder a ellos de manera más clara y sencilla. Sin embargo, es posible que en algún momento necesites **modificar esos nombres**, ya sea para hacerlos más descriptivos, corregir errores o adaptar la estructura a nuevos requerimientos.
+
+``` r
+# Sintaxis
+names(lista) <- c("nuevo_nombre1", "nuevo_nombre2", ..., "nuevo_nombreN")
+```
+
+``` r
+mi_lista <- list(10, 20, 30)
+names(mi_lista) <- c("valor_1", "valor_2", "valor_3")
+mi_lista
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Si quieres modificar solo algunos de los nombres, puedes acceder a `names()` y **asignar solo los nuevos valores deseados**:
+
+``` r
+names(mi_lista)[2] <- "VALOR_2"
+mi_lista
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo
+
+Tienes una lista con valores para distintos **materiales de construcción**: 100 kg de cemento, 80 kg de arena y 50 litros de agua. Crea una lista con esta información y asigna los nombres adecuadamente.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Concatenar listas
+
+Concatenar listas en R implica **unir dos o más listas en una sola**. A diferencia de otros objetos como vectores o matrices, las listas pueden contener **elementos heterogéneos**, por lo que su combinación no implica homogenizar tipos de datos, sino **agregar elementos a nivel de estructura**.
+
+``` r
+# Sintaxis
+lista_concatenada <- c(lista1, lista2)
+```
+
+Sin embargo, en realidad esto no combina internamente los contenidos de cada lista, sino que **los agrega como nuevos elementos**.
+
+``` r
+lista1 <- list(temp = c(20, 22), zona = "Norte")
+lista2 <- list(temp = c(25, 27), zona = "Sur")
+
+lista_concatenada <- c(lista1, lista2)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Indexar listas
+
+Indexar una lista en **R** se refiere a **acceder a elementos específicos dentro de la lista** utilizando sus posiciones o nombres. Dado que las listas en **R** pueden contener **elementos heterogéneos** (es decir, de diferentes tipos de datos), la indexación te permite obtener de manera eficiente cualquier tipo de contenido almacenado en ellas.
+
+-   Indexación por índice numérico (posición)
+
+``` r
+mi_lista[[1]]       # Accede al primer elemento de la lista
+```
+
+-   Indexación por nombre
+
+``` r
+mi_lista$nombre_elemento            # Accede al elemento llamado "nombre_elemento"
+mi_lista[["nombre_elemento"]]       # También accede al mismo elemento
+```
+
+Se deben tener las siguientes consideraciones:
+
+-   **Índices numéricos vs. nombres**: Los índices numéricos son útiles cuando no conoces los nombres de los elementos, pero los nombres son preferibles cuando deseas hacer tu código más **legible** y **comprensible**.
+
+-   **Acceso a subcomponentes**: Si una lista contiene matrices o vectores, debes ser **preciso al indexar** y recordar la estructura interna de cada elemento.
+
+-   **Listas vacías**: Si accedes a un índice que no existe, R generará un error.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+La indexación mostrada anteriormente, que utilice corchetes dobles `[[]]` se considera **indexación por contenido**. Es decir, el resultado de la indexación es el elemento en sí, con su tipo de dato o estructura de dato: vector, matriz, data frame, factor, lista, etc. **La indexación con el símbolo `$` siempre realiza la indexación por contenido.**
+
+No obstante, existe otra indexación con corchetes simples `[]` la cual se denomina **indexación por contenedor**. Es decir, el resultado de esta indexación es un contenedor (otra lista) que contiene al elemento indexado (contenido).
+
+``` r
+resultados <- list(motor_A = 85, motor_B = 90, motor_C = 78)
+# Indexación por contenedor
+resultados[1]
+class(resultados[1])
+
+# Indexación por contenido
+resultados[[1]]
+class(resultados[[1]])
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> La indexación de listas es una herramienta **fundamental** para acceder y manipular datos complejos en **R**. Ya sea por posición o nombre, o por contenedor o contenido, permite extraer elementos específicos, modificar datos o realizar análisis avanzados dentro de estructuras de datos heterogéneas, lo que es especialmente útil en áreas como la ingeniería.
+
+------------------------------------------------------------------------
+
+### Indexación de indexación
+
+Si la lista contiene otros objetos (como vectores o listas internas), puedes indexar **partes específicas**. A esto se le denomina indexación de indexación.
+
+``` r
+motores <- list(motor1 = c("A", 90), motor2 = c("B", 85))
+
+# Indexación de indexación
+motores$motor2[2]
+```
+
+Es decir, puedes combinar las indexaciones estudiadas previamente para indexar elementos que sean indexables, como en el ejemplo se indexa el elemento de tipo vector `motor2` que a su vez se indexa su segundo elemento.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Si se te dificulta comprender fácilmente la aplicación y uso de la indexación de indexación, entonces te recomiendo que indexes por partes. Primero indexa el vector y guarda el resultado en un variable. Luego, con la variable creada, indexa nuevamente el elemento que sea de tu interés.
+
+``` r
+motores <- list(motor1 = c("A", 90), motor2 = c("B", 85))
+
+# Indexación por partes
+motor_indexado <- motores$motor2
+motor_indexado
+
+rendimiento_motor_indexado <- motor_indexado[2]
+rendimiento_motor_indexado
+```
+
+Indexar por partes es muy útil al inicio. Y si logras comprenderlo con facilidad, la indexación de indexación es el siguiente paso para optimizar tu código.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Modificar listas
+
+Una lista en **R** es una estructura flexible que puede almacenar múltiples tipos de datos (vectores, matrices, factores, otras listas, etc.). Modificar una lista implica:
+
+-   Cambiar el contenido de sus elementos.
+
+-   Agregar nuevos elementos.
+
+-   Eliminar elementos.
+
+-   Reemplazar elementos existentes.
+
+Estas operaciones permiten **adaptar estructuras complejas de datos a nuevas necesidades**, muy útil en distintos contextos de ingeniería.
+
+### Modificar el valor de un elemento existente
+
+``` r
+# Sintaxis
+## Forma 1
+mi_lista[[posicion]] <- nuevo_valor
+
+## Forma 2
+mi_lista$nombre_elemento <- nuevo_valor
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Agregar un nuevo elemento
+
+``` r
+# Sintaxis
+## Forma 1
+mi_lista[[posicion]] <- nuevo_valor
+
+## Forma 2
+mi_lista$nuevo_elemento <- nuevo_valor
+```
+
+Se debe tener cuidado con el índice posicional utilizado en la Forma 1. Si la lista tiene 4 elementos, el índice a utilizarse sería 5 para que el nuevo elemento se añada en esa posición.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Eliminar un elemento
+
+``` r
+# Sintaxis
+## Forma 1
+mi_lista[[posicion]] <- NULL
+
+## Forma 2
+mi_lista$elemento_a_eliminar <- NULL
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Aplicando todo lo detallado anterior se tiene lo siguiente:
+
+``` r
+proyecto <- list(nombre = "Puente", costo = 50000, terminado = FALSE)
+
+# Modificar el costo
+proyecto$costo <- 55000
+
+# Agregar un nuevo elemento
+proyecto$duracion_meses <- 18
+
+# Eliminar el elemento "terminado"
+proyecto$terminado <- NULL
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Ejemplo
+
+Estás gestionando un proyecto de construcción con la siguiente información:
+
+-   Nombre del proyecto: Edificio Valverde
+
+-   Porcentaje de avance del proyecto: 70%
+
+-   Presupuesto asignado (en millones de dólares): 1.2
+
+Crea una lista que contenga esta información. Luego de haberla creado, modifica el porcentaje de avance al 80% y añade un nuevo elemento denominado Cantidad de pisos, el cual indica que el edificio tiene 10 pisos.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
