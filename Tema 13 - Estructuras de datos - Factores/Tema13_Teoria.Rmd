@@ -1,12 +1,11 @@
 ---
-title: "Estructuras de selección"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías y Ciencias"
+author: "La Academia"
+subtitle: "Tema 13 - Teoría"
+output:
+  html_document:
+    df_print: paged
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ## R Markdown
 

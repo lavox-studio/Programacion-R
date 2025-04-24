@@ -1,5 +1,5 @@
 ---
-title: "R para Ingenierías"
+title: "R para Ingenierías y Ciencias"
 author: "La Academia"
 subtitle: "Tema 12 - Teoría"
 output:

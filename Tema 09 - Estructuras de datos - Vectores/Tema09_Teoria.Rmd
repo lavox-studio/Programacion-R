@@ -1,5 +1,5 @@
 ---
-title: "R para Ingenierías"
+title: "R para Ingenierías y Ciencias"
 author: "La Academia"
 subtitle: "Tema 09 - Teoría"
 output:
@@ -479,7 +479,7 @@ v[c("A", "C")]
 ### Diferencias entre indexación posicional y nominal
 
 | Indexación posicional | Indexación nominal |
-|----|----|
+|------------------------------------|------------------------------------|
 | Se accede a los elementos por su **posición** en el vector. | Se accede a los elementos por su **nombre**. |
 | Ideal cuando sabes la **ubicación** de los elementos. | Ideal cuando los elementos tienen un **significado** y deseas identificarlos por su nombre. |
 | Ejemplo: `v[3]` para el tercer elemento. | Ejemplo: `v["C"]` para el elemento nombrado "C". |

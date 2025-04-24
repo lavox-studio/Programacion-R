@@ -1,5 +1,5 @@
 ---
-title: "R para Ingenierías"
+title: "R para Ingenierías y Ciencias"
 author: "La Academia"
 subtitle: "Tema 04 - Teoría"
 output:
@@ -94,7 +94,7 @@ Verificar si un **satélite en órbita** sigue una trayectoria estable, aseguran
 Las **operaciones lógicas** en **R** permiten combinar operaciones relacionales y devolver un único valor lógico (`TRUE` o `FALSE`) como resultado.
 
 | Operador | Descripción | Ejemplo (`A = TRUE`, `B = FALSE`) |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | `&` | **Y (AND)** → Verdadero si **ambos** son `TRUE` | `A & B` → `FALSE` |
 | `|` | **O (OR)** → Verdadero si **al menos uno** es `TRUE` | `A | B` → `TRUE` |
 | `!` | **NO (NOT)** → Invierte el valor lógico | `!A` → `FALSE` |
