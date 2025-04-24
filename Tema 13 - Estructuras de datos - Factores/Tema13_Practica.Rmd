@@ -11,7 +11,9 @@ output:
 
 ## Ejercicio 1
 
-asd
+Una planta clasificadora de metales identifica tres tipos: *"aluminio"*, *"cobre"* y *"acero"*. Durante un turno, se procesaron las siguientes muestras: *"aluminio"*, *"acero"*, *"cobre"*, *"aluminio"*, *"cobre"*, *"aluminio"*.
+
+Representa estos datos como categorías y determina cuál fue el metal más frecuente.
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -25,7 +27,9 @@ asd
 
 ## Ejercicio 2
 
-asd
+Durante una simulación de fallas en una línea de ensamblaje, se registraron los siguientes tipos de eventos: *"mecánica"*, *"eléctrica"*, *"eléctrica"*, *"mecánica"*, *"hidráulica"*, *"eléctrica"*.
+
+Agrupa los datos en categorías y muestra un resumen de la frecuencia de cada tipo de evento.
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -37,4 +41,66 @@ asd
 
 ------------------------------------------------------------------------
 
-## Ejercicio
+## Ejercicio 3
+
+En una auditoría energética, los tipos de consumo registrados fueron: *"alto"*, *"medio"*, *"alto"*, *"bajo"*, *"medio"*, *"medio"*.
+
+Representa los datos como factores. Luego, cambia los nombres de los niveles por: *"A"*, *"M"*, *"B"* (de alto, medio, bajo respectivamente) y analiza la distribución.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 4
+
+Se registraron señales de alerta como texto: *"TRUE"*, *"FALSE"*, *"TRUE"*, *"TRUE"*, *"FALSE"*, *"TRUE"*.
+
+Convierte estas señales en datos lógicos y luego en factores. ¿Qué diferencias hay entre tratar estos valores como lógicos vs. factores?
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 5
+
+En un análisis de materiales, los valores originales de conductividad fueron ingresados como texto: *"1.1"*, *"3.5"*, *"2.2"*, *"3.5"*, *"1.1"*, *"2.2"*.
+
+Estos valores fueron transformados erróneamente en factores. Convierte correctamente estos datos en números reales y calcula el promedio. Explica por qué la conversión directa desde factor a número puede dar resultados inesperados.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 6
+
+Una empresa de transporte registra fallas por tipo: *"mecánica"*, *"eléctrica"*, *"mecánica"*, *"carrocería"*, *"eléctrica"*, *"eléctrica"*, *"carrocería"*.
+
+Se desea agrupar las fallas *"mecánica"* y *"eléctrica"* bajo la categoría *"técnica"*, dejando *"carrocería"* como categoría aparte. Realiza esta reclasificación de niveles.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------

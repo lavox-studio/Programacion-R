@@ -7,22 +7,368 @@ output:
     df_print: paged
 ---
 
-## R Markdown
+# Estructuras de datos: Factores
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+En **R**, un **factor** es una estructura de datos usada para representar variables **categóricas**. Es decir, variables cuyos valores corresponden a **niveles** o **categorías** distintas, como por ejemplo:
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+-   Tipos de materiales: `"acero"`, `"aluminio"`, `"cobre"`
 
-```{r cars}
-summary(cars)
+-   Estados de una máquina: `"encendido"`, `"apagado"`
+
+-   Clases de resistencia: `"baja"`, `"media"`, `"alta"`
+
+Aunque pueden parecer simples cadenas de texto (`character`), los factores almacenan las categorías como **niveles numéricos internos**, lo que permite a **R** optimizar operaciones estadísticas y gráficas.
+
+![Relación entre factor, niveles y categorías.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2013%20-%20Estructuras%20de%20datos%20-%20Factores/2.png?raw=true){width="703"}
+
+**Consideraciones importantes**
+
+-   Los factores son diferentes de los vectores de texto: se usan para datos **limitados y repetidos**, no para texto libre.
+
+-   Si haces operaciones aritméticas con factores, pueden dar error o resultados inesperados. Conviene transformarlos a texto (`as.character()`) o a números (`as.numeric()` con cuidado).
+
+-   Muchas funciones estadísticas y de visualización en **R** usan factores para agrupar o separar datos automáticamente.
+
+> Los factores son una herramienta esencial en **R** para trabajar con **variables categóricas**. Su correcta utilización permite análisis más claros, mejores visualizaciones y modelos más robustos. En ingeniería, son especialmente útiles para representar estados discretos, tipos de materiales, clasificaciones, entre otros.
+
+## Crear factores
+
+### Función `factor()`
+
+La función `factor()` se utiliza para **convertir un vector de datos** en un objeto de clase **factor**, que es la forma en la que **R** maneja internamente las variables categóricas.
+
+El uso de `factor()` no solo codifica las categorías como niveles, sino que también permite especificar **el orden y la estructura lógica** de esos niveles, lo cual es útil en análisis estadístico, modelado y visualización.
+
+``` r
+# Sintaxis
+factor(x, levels = NULL, labels = NULL, ordered = FALSE)
 ```
 
-## Including Plots
+-   `x`: vector de datos (character, numérico, etc.).
 
-You can also embed plots, for example:
+-   `levels`: vector que define qué niveles debe tener el factor y en qué orden.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+-   `labels`: nombres personalizados para los niveles.
+
+-   `ordered`: booleano (`TRUE` o `FALSE`) para indicar si los niveles tienen un orden lógico.
+
+``` r
+tipos_material <- c("acero", "aluminio", "acero", "cobre", "aluminio")
+material_factor <- factor(tipos_material)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Internamente, **R** asigna un número a cada categoría, pero lo que ves son los nombres legibles. **Los niveles están ordenados alfabéticamente por defecto**, a menos que especifiques lo contrario.
+
+``` r
+material_factor <- factor(tipos_material, levels = c("cobre", "aluminio", "acero"))
+material_factor
+```
+
+El código anterior fuerza a que `"cobre"` sea el primer nivel, luego `"aluminio"`, luego `"acero"`. Esto puede ser útil si quieres controlar el orden en gráficas o análisis.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Por otra parte, cuando los niveles tienen un **orden lógico** (por ejemplo: `"bajo" < "medio" < "alto"`), se usa el argumento `ordered = TRUE`.
+
+``` r
+resistencias <- c("bajo", "medio", "alto", "medio")
+f_resistencias <- factor(resistencias, levels = c("bajo", "medio", "alto"), ordered = TRUE)
+```
+
+Con esto puedes hacer comparaciones como:
+
+``` r
+f_resistencias[1] < f_resistencias[3]  # TRUE
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+También es posible personalizar las etiquetas de los factores.
+
+``` r
+codigos <- c(1, 2, 1, 3)
+tipos_falla <- factor(codigos, levels = c(1, 2, 3), labels = c("eléctrica", "mecánica", "hidráulica"))
+tipos_falla
+```
+
+Esto crea un factor con etiquetas más legibles en lugar de usar los valores numéricos directamente.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> La función `factor()` es fundamental para el tratamiento de variables categóricas en **R**. Define una estructura lógica sobre datos cualitativos, permitiendo análisis más potentes y gráficos más claros. Es una herramienta clave para ingenieros que trabajan con clasificaciones, estados del sistema, calidades de materiales, o cualquier conjunto de datos con categorías fijas.
+
+### Función `as.factor()`
+
+La función `as.factor()` se utiliza para **convertir un objeto existente en un factor**, es decir, transformar datos que no han sido definidos como categóricos a una estructura que R entienda como tal.
+
+A diferencia de `factor()`, que permite definir niveles, etiquetas y orden explícitamente, `as.factor()` es una conversión **rápida y automática**: toma los valores únicos del vector y los transforma en niveles, siguiendo el orden en que aparecen.
+
+``` r
+# Sintaxis
+as.factor(x)
+```
+
+-   `x`: cualquier vector (generalmente de tipo `character`, `numeric` o `logical`) que contenga datos categóricos o repetidos.
+
+**Diferencia clave con `factor()`**
+
+| Función       | Control de niveles | Orden manual | Etiquetas personalizadas |
+|---------------|--------------------|--------------|--------------------------|
+| `factor()`    | ✅ Sí              | ✅ Sí        | ✅ Sí                    |
+| `as.factor()` | ❌ No              | ❌ No        | ❌ No                    |
+
+``` r
+# Ejemplo 1
+colores <- c("rojo", "verde", "rojo", "azul", "verde")
+f_colores <- as.factor(colores)
+f_colores
+```
+
+``` r
+# Ejemplo 2
+estados_maquina <- c(0, 1, 1, 0, 2)
+f_estados <- as.factor(estados_maquina)
+f_estados
+```
+
+En el ejemplo 2 se crea niveles `"0"`, `"1"` y `"2"`, pero **R** los tratará como **texto categórico**, no como números.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> La función `as.factor()` es una herramienta simple pero poderosa en **R** para **etiquetar datos categóricos rápidamente**. Aunque no ofrece la personalización de `factor()`, es ideal para conversiones rápidas en procesos de análisis o limpieza de datos, especialmente útil en entornos de ingeniería donde se trabaja con registros, estados o clasificaciones estructuradas.
+
+### Ejemplo
+
+Limpiar el espacio de trabajo, luego cargar el archivo `Tema13_Auxiliar_PersonasInfo.RData` y visualizar las variables cargadas. ¿Cuáles serían adecuadas convertir a factores y cuáles no? ¿Por qué?
+
+Luego convierte a factores las variables que sí es adecuado que lo sean.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Estructura interna de los factores
+
+Dado lo siguiente:
+
+``` r
+mes.nacimiento <- c("Dic", "Feb", "Oct", "Mar", "Feb", "Nov", "Abr", "Dic", "Feb", "Oct", "Dic")
+Fmes.nacimiento <- as.factor(mes.nacimiento)
+Fmes.nacimiento
+```
+
+Se tienen, a modo de explicación visual, los siguientes resultados.
+
+![Factores y niveles.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2013%20-%20Estructuras%20de%20datos%20-%20Factores/3.jpg?raw=true)
+
+![Índices (ID) de factores y niveles.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2013%20-%20Estructuras%20de%20datos%20-%20Factores/4.jpg?raw=true)
+
+La relación entre factores y niveles, de forma general, es la siguiente:
+
+![Estructura interna de los factores. Tomado de **El Arte de Programar** de *Julio Sergio Santana*.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2013%20-%20Estructuras%20de%20datos%20-%20Factores/1.png?raw=true)
+
+Por lo tanto, un factor está compuesto de 2 vectores:
+
+-   Un vector de niveles
+
+-   Un vector de índices
+
+------------------------------------------------------------------------
+
+## Funciones `levels()` y `as.integer()`
+
+Las funciones `levels()` y `as.integer()` permiten obtener el vector de niveles y el vector de índices de un factor, respectivamente.
+
+``` r
+# Sintaxis
+levels(x)
+as.integer(x)
+```
+
+-   `x` es un factor.
+
+``` r
+mes.nacimiento <- c("Dic", "Feb", "Oct", "Mar", "Feb", "Nov", "Abr", "Dic", "Feb", "Oct", "Dic")
+Fmes.nacimiento <- as.factor(mes.nacimiento)
+Fmes.nacimiento
+
+niveles <- levels(Fmes.nacimiento)
+indices <- as.integer((Fmes.nacimiento))
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Funciones `unclass()` y `table()`
+
+La función `unclass()` se utiliza para **eliminar la clase de un objeto**. Cuando la aplicas a un factor, devuelve su **representación interna**: un vector numérico con atributos, pero sin la clase "factor".
+
+Esto es útil para inspeccionar **cómo R maneja internamente los factores** y otras estructuras de alto nivel.
+
+``` r
+# Sintaxis
+unclass(x)
+```
+
+-   `x`: objeto de cualquier clase (por ejemplo, un factor).
+
+``` r
+materiales <- factor(c("acero", "cobre", "aluminio", "cobre"))
+unclass(materiales)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Por su parte, la función `table()` **cuenta la frecuencia de aparición** de los elementos únicos en un vector o combinación de vectores. Es una de las formas más rápidas y útiles de **resumir datos categóricos o discretos**.
+
+``` r
+# Sintaxis
+table(x, ...)
+```
+
+-   `x`: vector (character, factor, numérico, lógico, etc.)
+
+-   `...`: vectores adicionales del mismo tamaño para crear tablas cruzadas (contingencia). Esto es un tema avanzado, así que se omitirá en la explicación.
+
+``` r
+fallas <- c("eléctrica", "mecánica", "eléctrica", "hidráulica", "mecánica")
+table(fallas)
+```
+
+Esto indica cuántas veces aparece cada tipo de falla.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+En síntesis se tiene lo siguiente:
+
+| Función     | ¿Para qué se usa?                                            |
+|-------------|--------------------------------------------------------------|
+| `unclass()` | Ver la estructura interna de objetos como factores           |
+| `table()`   | Contar frecuencias de elementos (resúmenes rápidos y claros) |
+
+> Ambas funciones son herramientas clave para la **exploración y análisis preliminar de datos categóricos**, y resultan esenciales en diversas ramas de la ingeniería para conocer patrones, estados y clasificaciones de forma inmediata.
+
+### Ejemplo
+
+En una inspección de calidad de componentes electrónicos, se registraron los siguientes estados: *"aprobado"*, *"rechazado"*, *"aprobado"*, *"observado"*, *"rechazado"*, *"aprobado"*.
+
+Modela estos datos como categorías e identifica cuántos componentes hubo de cada tipo de resultado.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Modificar niveles
+
+Modificar niveles consiste en **cambiar, renombrar, reordenar o eliminar niveles** de un objeto de tipo **factor**. Esta acción es esencial cuando se detectan errores de codificación, inconsistencias o cuando se desea agrupar o reinterpretar categorías en el análisis de datos.
+
+En ingeniería, donde los datos categóricos son comunes (tipos de fallas, estados de procesos, materiales, etc.), modificar niveles correctamente **garantiza análisis coherentes** y facilita la comunicación de resultados.
+
+### Renombrar niveles
+
+``` r
+# Sintaxis
+levels(factor_objeto) <- nuevo_vector_de_niveles
+```
+
+``` r
+materiales <- factor(c("acero", "cobre", "aluminio", "cobre"))
+levels(materiales) <- c("AL", "AC", "CO")
+materiales
+```
+
+Si `"aluminio"` era el primer nivel, se renombra a `"AL"`, `"acero"` a `"AC"`, y `"cobre"` a `"CO"`.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Reordenar niveles
+
+``` r
+niveles_reordenados <- factor(materiales, levels = c("CO", "AL", "AC"))
+niveles_reordenados
+```
+
+Esto reordena cómo se presentan o interpretan las categorías, sin alterar los datos.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Eliminar niveles no utilizados
+
+``` r
+materiales_usados <- factor(c("acero", "acero", "cobre"))
+materiales_filtrados <- droplevels(materiales_usados)
+materiales_filtrados
+```
+
+Esto remueve cualquier nivel que ya no aparece en los datos actuales.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Agrupar o combinar niveles
+
+Supón que `"mecánica"` y `"eléctrica"` deben agruparse como `"tecnológica"`:
+
+``` r
+fallas <- factor(c("eléctrica", "mecánica", "hidráulica"))
+levels(fallas)[levels(fallas) %in% c("eléctrica", "mecánica")] <- "tecnológica"
+fallas
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Resumen de funciones clave
+
+Un resumen breve de las funciones estudiadas en este tema se muestra a continuación:
+
+| Función        | Propósito                        |
+|----------------|----------------------------------|
+| `factor()`     | Crear factor                     |
+| `levels()`     | Ver o cambiar niveles            |
+| `ordered()`    | Crear factor ordenado            |
+| `as.factor()`  | Convertir a factor               |
+| `as.integer()` | Convertir a número (índices)     |
+| `unclass()`    | Ver estructura interna           |
+| `table()`      | Crear una tabla con los factores |
+
+------------------------------------------------------------------------

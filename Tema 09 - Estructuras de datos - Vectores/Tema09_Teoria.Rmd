@@ -570,3 +570,37 @@ Adicionalmente, ¿en qué posición estás aquellas velocidades que cumplen con 
 ```
 
 ------------------------------------------------------------------------
+
+## Operador `%in%`
+
+El operador `%in%` se utiliza para **verificar si los elementos de un vector están contenidos dentro de otro vector**. Es una herramienta **lógica** que devuelve un vector de valores `TRUE` o `FALSE`, indicando la pertenencia de cada elemento del primer vector al segundo.
+
+``` r
+# Sintaxis
+elementos %in% conjunto
+```
+
+-   `elementos`: vector con los elementos que deseas verificar.
+
+-   `conjunto`: vector con los posibles valores a los que se quiere comparar.
+
+``` r
+materiales <- c("acero", "aluminio", "plástico", "vidrio")
+materiales_reutilizables <- c("aluminio", "vidrio")
+
+materiales %in% materiales_reutilizables
+```
+
+Interpretación: sólo *"aluminio"* y *"vidrio"* están en la lista de reutilizables.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+El operador `%in%` suele combinarse con indexación lógica para extraer subconjuntos.
+
+``` r
+materiales[materiales %in% materiales_reutilizables]
+```
+
+------------------------------------------------------------------------
