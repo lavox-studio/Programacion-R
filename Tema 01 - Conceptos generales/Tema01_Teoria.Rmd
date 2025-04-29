@@ -142,7 +142,7 @@ La canasta familiar básica (conjunto de bienes y servicios que son imprescindib
 
 ¿Cuál será el valor de la canasta familiar básica dentro de 4 años?
 
-> [**Nota 1:**]{.underline} Recuerda utilizar la asignación aumentada para resolver el ejemplo.
+> [**Nota 1:**]{.underline} Recuerda utilizar la reasignación de variables para resolver el ejemplo.
 >
 > [**Nota 2:**]{.underline} Recuerda seguir el **enfoque EPS**.
 
