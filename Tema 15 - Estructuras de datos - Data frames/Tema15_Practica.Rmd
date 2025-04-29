@@ -1,29 +1,186 @@
 ---
-title: "Scripts"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías y Ciencias"
+author: "La Academia"
+subtitle: "Tema 15 - Práctica"
+output:
+  html_document:
+    df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Estructuras de datos: Data frames
+
+## Ejercicio 1
+
+Un equipo de ingeniería civil registra tiempos de fraguado de diferentes tipos de concreto. La tabla contiene las columnas: "tipo_concreto", "fraguado_hr", "resistencia_final".
+
+Accede a todas las filas pero únicamente a las columnas de "tipo_concreto" y "resistencia_final".
+
+| tipo_concreto | fraguado_hr | resistencia_final |
+|:--------------|:------------|:------------------|
+| C1            | 24          | 30 MPa            |
+| C2            | 36          | 45 MPa            |
+| C3            | 48          | 50 MPa            |
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## R Markdown
+------------------------------------------------------------------------
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Ejercicio 2
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Una planta industrial lleva un registro de consumo de gas natural. Cada registro contiene: "seccion", "consumo_m3", "fecha".
 
-```{r cars}
-summary(cars)
+Modifica el nombre de la columna "consumo_m3" a "volumen_consumido".
+
+| seccion | consumo_m3 | fecha      |
+|:--------|:-----------|:-----------|
+| Norte   | 120        | 2025-04-01 |
+| Sur     | 150        | 2025-04-01 |
+| Central | 130        | 2025-04-01 |
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## Including Plots
+------------------------------------------------------------------------
 
-You can also embed plots, for example:
+## Ejercicio 3
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+En un proyecto de energía solar, se recopilan mediciones de paneles solares en las columnas: "panel_id", "eficiencia", "horas_operacion".
+
+Agrega una nueva columna llamada "energia_generada" que es el producto de "eficiencia" y "horas_operacion".
+
+| panel_id | eficiencia | horas_operacion |
+|:---------|:-----------|:----------------|
+| P-01     | 0.85       | 6               |
+| P-02     | 0.80       | 5               |
+| P-03     | 0.88       | 7               |
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+------------------------------------------------------------------------
+
+## Ejercicio 4
+
+Se analiza la vibración de distintas piezas en un motor con los datos: "pieza", "frecuencia_vibracion", "amplitud".
+
+Selecciona todas las filas donde la frecuencia de vibración sea mayor a 50 Hz y muéstralas junto con su amplitud.
+
+| pieza | frecuencia_vibracion | amplitud |
+|:------|:---------------------|:---------|
+| A     | 45                   | 0.002    |
+| B     | 55                   | 0.0035   |
+| C     | 60                   | 0.0040   |
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 5
+
+Una base de datos de tráfico vehicular contiene: "vehiculo", "velocidad_kmh", "hora_registro".
+
+Elimina la columna "hora_registro" para enfocarte solo en velocidades.
+
+| vehiculo | velocidad_kmh | hora_registro |
+|:---------|:--------------|:--------------|
+| Auto1    | 65            | 08:30         |
+| Auto2    | 72            | 09:45         |
+| Auto3    | 58            | 10:15         |
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 6
+
+En un análisis estructural, un data frame almacena: "elemento", "fuerza_aplicada", "deformacion_permitida", "material".
+
+Elimina todas las filas donde el material sea "plástico". Posteriormente, modifica todas las fuerzas aplicadas que excedan 5000 N para que se registren como 5000 N exactamente.
+
+| elemento | fuerza_aplicada | deformacion_permitida | material |
+|:---------|:----------------|:----------------------|:---------|
+| Viga A   | 4000            | 0.005                 | Acero    |
+| Viga B   | 6000            | 0.004                 | Aluminio |
+| Viga C   | 3500            | 0.006                 | Plástico |
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 7
+
+Un laboratorio ambiental tiene registros de emisiones industriales: "empresa", "emision_co2", "emision_so2", "zona".
+
+Filtra todas las filas donde las emisiones de CO₂ superen 300 ppm y la zona sea "urbana". Después, cambia el nombre de la columna "emision_so2" a "emision_dioxido_azufre".
+
+| empresa  | emision_co2 | emision_so2 | zona   |
+|:---------|:------------|:------------|:-------|
+| InduTec  | 280         | 45          | urbana |
+| Quimicor | 350         | 30          | urbana |
+| Agrosol  | 310         | 40          | rural  |
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 8
+
+Una compañía de dispositivos electrónicos analiza fallas registradas en los siguientes campos: "dispositivo", "hora_falla", "tipo_falla", "duracion_operacion_hr".
+
+Elimina todas las filas en las que la duración de operación sea menor a 100 horas. Posteriormente, agrega una fila nueva con dispositivo = "Sensor-X7", hora_falla = "14:23", tipo_falla = "descalibracion", duracion_operacion_hr = 310.
+
+| dispositivo | hora_falla | tipo_falla         | duracion_operacion_hr |
+|:------------|:-----------|:-------------------|:----------------------|
+| Modulo-A    | 12:00      | sobrecalentamiento | 95                    |
+| Modulo-B    | 16:30      | falla_circuito     | 120                   |
+| Modulo-C    | 09:15      | desconexion        | 85                    |
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------

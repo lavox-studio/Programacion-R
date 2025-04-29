@@ -1,29 +1,385 @@
 ---
-title: "Scripts"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías y Ciencias"
+author: "La Academia"
+subtitle: "Tema 15 - Teoría"
+output:
+  html_document:
+    df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Estructuras de datos: Data frames
+
+Un **data frame** es una estructura de datos bidimensional muy utilizada en **R**, que representa datos en **forma de tabla**, similar a una hoja de cálculo o una tabla de base de datos.
+
+Cada columna puede contener un tipo de dato diferente (números, texto, factores, etc.), pero **todos los elementos de una misma columna deben ser del mismo tipo**.
+
+![Características de un Data frame.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2015%20-%20Estructuras%20de%20datos%20-%20Data%20frames/1.png?raw=true){width="671"}
+
+En resumen: un *data frame* es como una **matriz más flexible**, donde cada columna puede tener un tipo distinto.
+
+> Los *data frames* son la **columna vertebral del análisis de datos en R**. Permiten trabajar con datos tabulares de forma eficiente, estructurada y compatible con múltiples herramientas de análisis, lo que los hace fundamentales en **ingeniería aplicada y científica**.
+
+## Crear data frames
+
+### Función `data.frame()`
+
+Un *data frame* se puede crear utilizando la función **`data.frame()`**, que toma como argumentos uno o más vectores (cada uno representando una columna), los cuales deben tener la misma longitud (misma cantidad de elementos).
+
+``` r
+# Sintaxis
+nuevo_df <- data.frame(nombre_columna1 = vector1,
+                       nombre_columna2 = vector2,
+                       ...)
 ```
 
-## R Markdown
+-   Cada argumento define una **columna** del *data frame*.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+-   Los vectores deben ser del mismo largo para formar filas completas.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+``` r
+sensor <- data.frame(
+    id = c(101, 102, 103),
+    ubicacion = c("Norte", "Centro", "Sur"),
+    temperatura = c(22.5, 23.0, 21.8),
+    humedad = c(55, 60, 58)
+)
 ```
 
-## Including Plots
+Este *data frame* contiene:
 
-You can also embed plots, for example:
+-   Una columna `id` con identificadores numéricos
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+-   Una columna `ubicacion` con texto
+
+-   Dos columnas numéricas: `temperatura` y `humedad`
+
+Cada fila representa un sensor diferente.
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+### Función `as.data.frame()`
+
+La función **`as.data.frame()`** en **R** se utiliza para **convertir otras estructuras de datos a formato *data frame***.
+
+Esto es útil cuando tienes listas, matrices, vectores nombrados u otras estructuras que deseas organizar como tabla para análisis más avanzados o visualización.
+
+``` r
+# Sintaxis
+nuevo_df <- as.data.frame(x, row.names = NULL, optional = FALSE, ...)
+```
+
+-   `x`: objeto que se desea convertir.
+
+-   `row.names`: puedes asignar nombres a las filas.
+
+-   `optional`: si es `TRUE`, evita que los nombres de las variables se conviertan en nombres válidos de R.
+
+``` r
+datos_lista <- list(
+  componente = c("Resistor", "Capacitor", "Inductor"),
+  valor = c(100, 0.01, 0.001),
+  unidad = c("Ohm", "Farad", "Henry")
+)
+
+componentes <- as.data.frame(datos_lista)
+componentes
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Algunas consideraciones importantes son:
+
+-   El objeto a convertir debe tener una **estructura coherente** (misma longitud en vectores, dimensiones compatibles).
+
+-   En matrices, los datos se convierten **por columnas**, no por filas.
+
+-   Si el objeto original tiene nombres, estos se **conservan como nombres de columnas o filas**.
+
+> La función `as.data.frame()` es una herramienta **fundamental en la limpieza y transformación de datos**. Te permite convertir diversas estructuras en un formato estandarizado, esencial para casi cualquier flujo de trabajo de análisis en **R**, especialmente en aplicaciones de ingeniería donde los datos provienen de múltiples fuentes.
+
+------------------------------------------------------------------------
+
+## Modificar los nombres de las columnas
+
+Al trabajar con *data frames*, es común que los nombres de las columnas no sean descriptivos, estén en otro idioma, incluyan caracteres especiales o simplemente necesiten una actualización para facilitar el análisis.
+
+Modificar los nombres mejora la **claridad, legibilidad y utilidad del conjunto de datos**.
+
+``` r
+# Sintaxis
+colnames(data_frame) <- c("nuevo_nombre1", "nuevo_nombre2", ...)
+```
+
+Esta sintaxis **reemplaza todos los nombres de columna**. Para modificar solo uno, se puede usar su posición.
+
+``` r
+# Creación de Data frame
+ensayo <- data.frame(
+  V1 = c(250, 300, 280),
+  V2 = c(0.01, 0.02, 0.015)
+)
+
+# Renombrar columnas
+colnames(ensayo) <- c("resistencia", "deformacion")
+ensayo
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Algunas consideraciones importantes son:
+
+-   Evita nombres duplicados.
+
+-   No uses caracteres especiales (como `@`, `#`, `%`) si luego vas a acceder a las columnas con `$`.
+
+------------------------------------------------------------------------
+
+## Indexar data frames
+
+Indexar un *data frame* en **R** significa **acceder a elementos específicos**: filas, columnas o celdas. Puedes hacerlo usando distintos métodos según lo que necesites: por posición, por nombre o mediante condiciones lógicas.
+
+``` r
+# Sintaxis general
+data_frame[fila, columna]
+```
+
+-   `fila`: número o condición lógica que indica qué filas seleccionar.
+
+-   `columna`: número o nombre que indica qué columnas seleccionar.
+
+``` r
+materiales <- data.frame(
+    tipo = c("Hormigón", "Acero", "Madera"),
+    resistencia = c(30, 250, 15),
+    peso = c(2400, 7850, 600)
+)
+materiales
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+La indexación y sus tipos es similar a la indexación de matrices. Por lo tanto, se puede seguir las mismas reglas y recomendaciones estudiadas previamente.
+
+Se debe considerar que se puede indexar:
+
+-   **Un elemento.** El resultado de la indexación es del tipo de dato del elemento indexado.
+
+``` r
+materiales[1, 1]
+```
+
+-   **Una fila.** El resultado de la indexación es un data frame.
+
+``` r
+materiales[2, ]
+```
+
+-   **Una columna.** El resultado de la indexación es un vector.
+
+``` r
+materiales[, 3]
+```
+
+-   **Un subdataframe.** El resultado de la indexación es un data frame.
+
+``` r
+materiales[c(1,3), 2:3]
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Indexar correctamente un *data frame* te permite **explorar, transformar y analizar tus datos con precisión**. Es una habilidad clave en el flujo de trabajo con **R**, especialmente en entornos de ingeniería donde los datos suelen tener múltiples variables y estructuras complejas.
+
+------------------------------------------------------------------------
+
+## Modificar data frames
+
+Modificar un *data frame* implica **cambiar su contenido o estructura**: agregar o eliminar columnas/filas, actualizar valores, renombrar elementos o transformar datos. Esta capacidad es esencial para preparar los datos antes del análisis.
+
+``` r
+datos <- data.frame(
+    nombre = c("Isacc", "Joseph", "Úrsula"),
+    edad = c(26, 21, 23),
+    perfil_profesional = c("Ingeniero civil", "Médico", "Actriz")
+)
+datos
+```
+
+### Agregar columnas
+
+``` r
+# Forma 1
+datos$cantidad_hermanos <- c(1, 0, 3)
+
+# Forma 2
+datos <- cbind(datos, cantidad_hermanos = c(1, 0, 3))
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Eliminar columnas
+
+``` r
+# Forma 1
+datos$perfil_profesional <- NULL
+
+# Forma 2
+datos <- datos[, -3]        # Todas las columnas excepto la 3ra (perfil profesional).
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Modificar valores específicos
+
+``` r
+# Modificar un único valor
+datos[1, 2] <- 19
+
+# Modificar múltiples valores
+datos[2:3, 2] <- 19
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Agregar filas
+
+Se debe utilizar `rbind()` siempre y cuando las columnas coincidan:
+
+``` r
+nueva_persona <- data.frame(
+    nombre = "Mónica",
+    edad = 28,
+    cantidad_hermanos = 4
+)
+datos <- rbind(datos, nueva_persona)
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Eliminar filas
+
+``` r
+datos <- datos[-1, ]        # Todas las filas expceto la 1ra.
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Aplicando lo mencionado anteriormente se tiene lo siguiente:
+
+``` r
+produccion <- data.frame(
+  maquina = c("M1", "M2", "M3"),
+  piezas = c(100, 150, 120)
+)
+
+# Añadir una columna de eficiencia
+produccion$eficiencia <- c(0.95, 0.89, 0.92)
+
+# Cambiar el número de piezas de la máquina 2
+produccion[2, "piezas"] <- 160
+
+# Eliminar la máquina 1
+produccion <- produccion[-1, ]
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Se debe considerar lo siguiente:
+
+-   Verifica que las longitudes de nuevas columnas o filas sean compatibles.
+
+-   Verifica que las longitudes de nuevas columnas o filas sean compatibles.
+
+-   Evita sobrescribir accidentalmente columnas con nombres repetidos.
+
+> Modificar *data frames* es una herramienta poderosa para adaptar los datos a tus necesidades analíticas. Es especialmente crucial en proyectos de ingeniería donde la calidad, integridad y relevancia de los datos impactan directamente en las decisiones que se tomarán a partir de ellos.
+
+------------------------------------------------------------------------
+
+### Ejemplo
+
+Una empresa de ingeniería eléctrica registra fallas en transformadores. Los datos contienen: "transformador_id", "tipo_falla", "hora_falla", "dias_en_servicio".
+
+Elimina todas las filas donde el tipo de falla sea "sobrecarga". Luego, agrega una nueva columna llamada "estado", donde transformadores con menos de 1000 días en servicio se clasifiquen como "nuevo" y los demás como "antiguo".
+
+| transformador_id | tipo_falla    | hora_falla | dias_en_servicio |
+|:-----------------|:--------------|:-----------|:-----------------|
+| T001             | cortocircuito | 12:15      | 850              |
+| T002             | sobrecarga    | 14:30      | 1200             |
+| T003             | aislante      | 16:45      | 700              |
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 2
+
+Una empresa de manufactura de maquinaria registra defectos detectados. Datos: "codigo_pieza", "defecto", "lote", "dias_fabricacion".
+
+Selecciona las filas donde el defecto sea "fisura" y el lote sea mayor a 100. Modifica el nombre de la columna "dias_fabricacion" a "dias_produccion".
+
+| codigo_pieza | defecto  | lote | dias_fabricacion |
+|:-------------|:---------|:-----|:-----------------|
+| PZ-1001      | fisura   | 120  | 5                |
+| PZ-1002      | desgaste | 95   | 7                |
+| PZ-1003      | fisura   | 130  | 4                |
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 3
+
+Una planta de procesos químicos registra eficiencia de reactores. Columnas: "reactor_id", "eficiencia_reaccion", "temperatura_operacion", "presion_operacion".
+
+Elimina todas las filas con eficiencia menor al 85%. Luego, añade una columna nueva llamada "condicion_operacion" que clasifique como "alta" si la temperatura supera los 350 °C y la presión supera los 30 atmósferas; en caso contrario, "normal".
+
+| reactor_id | eficiencia_reaccion | temperatura_operacion | presion_operacion |
+|:-----------|:--------------------|:----------------------|:------------------|
+| R-01       | 90                  | 340                   | 28                |
+| R-02       | 80                  | 360                   | 32                |
+| R-03       | 88                  | 370                   | 35                |
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
