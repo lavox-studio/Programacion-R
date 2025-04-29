@@ -1,0 +1,5 @@
+**** Fuentes:
+
+- Kaggle: https://www.kaggle.com/
+
+- Datos Abiertos Ecuador: https://datosabiertos.gob.ec/

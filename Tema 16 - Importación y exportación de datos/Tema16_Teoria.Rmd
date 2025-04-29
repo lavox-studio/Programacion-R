@@ -1,29 +1,273 @@
 ---
-title: "Creación de funciones"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías y Ciencias"
+author: "La Academia"
+subtitle: "Tema 16 - Teoría"
+output:
+  html_document:
+    df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Importación y exportación de datos
+
+En el trabajo con datos reales dentro de la ingeniería, es común que los conjuntos de datos provengan de fuentes externas o necesiten compartirse. Por ello, es fundamental aprender a **importar datos (leer archivos)** desde fuentes como archivos CSV, TXT, Excel, entre otros, y **exportar datos (guardar archivos)** desde **R** hacia esos mismos formatos.
+
+Este proceso permite la interoperabilidad entre **R** y otras herramientas utilizadas frecuentemente por ingenieros, como hojas de cálculo, software de simulación o bases de datos.
+
+| Tipo de archivo | Ejemplos           | Formato en R         |
+|-----------------|--------------------|----------------------|
+| Texto plano     | `.csv`, `.txt`     | `data.frame`         |
+| Excel           | `.xls`, `.xlsx`    | `data.frame`         |
+| R interno       | `.RData`, `.rds`   | objetos de R         |
+| Otros           | `.json`, bases SQL | estructuras variadas |
+
+> **Importar un archivo en R** es como **conectar un sensor de medición externa a tu sistema de monitoreo**: estás trayendo información externa para trabajar con ella en tu entorno.
+>
+> **Exportar un archivo desde R** es como **enviar los resultados de una simulación a un informe técnico o a otro sistema de análisis**.
+
+------------------------------------------------------------------------
+
+## Importar datos
+
+Antes de empezar, se debe considerar lo siguiente al realizar la importación de datos:
+
+-   Siempre verifica la **ruta del archivo**: si el archivo no está en el directorio actual de trabajo, deberás especificar la ruta completa. **Sin embargo, se recomienda siempre tener el archivo en el directorio actual de trabajo.**
+
+### Archivo con valores separados con comas (.csv)
+
+Uno de los métodos más comunes para introducir datos en **R** es mediante la **importación de archivos CSV** (Comma-Separated Values). Un archivo CSV almacena información en formato de texto, donde los valores de cada fila están separados por comas.
+
+La función más usada para importar este tipo de archivos en **R** es `read.csv()`.
+
+``` r
+# Sintaxis
+nombre_objeto <- read.csv(file = "ruta/archivo.csv")
 ```
 
-## R Markdown
+-   **`file`**: Ruta y nombre del archivo CSV a importar.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+-   Se puede usar rutas relativas (dentro del directorio de trabajo) o rutas absolutas (completas desde la raíz del sistema).
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+-   Otros argumentos opcionales permiten controlar aspectos como el tipo de separador, encabezados, codificación, etc.
 
-```{r cars}
-summary(cars)
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## Including Plots
+Algunas consideraciones importantes son las siguientes:
 
-You can also embed plots, for example:
+-   R asume que los valores están **separados por comas** (`,`). Si tu CSV usa otro separador, como punto y coma (`;`), se debe usar `read.csv2()`.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+-   Si el archivo no se encuentra en el directorio actual, debes indicar su **ruta completa**.
+
+-   Los nombres de las columnas se ajustan automáticamente si contienen espacios o caracteres no válidos.
+
+### Archivo de texto (.txt)
+
+Los archivos de texto plano (.txt) son un formato común para almacenar datos de manera simple, especialmente en aplicaciones de ingeniería donde los reportes o registros automáticos se generan de esta forma.
+
+Un archivo `.txt` puede contener datos tabulados separados por espacios, tabuladores, comas u otros caracteres.
+
+En **R**, para importar datos desde archivos `.txt` usamos principalmente la función `read.table()`. Esta función es **más general** que `read.csv()`, ya que permite especificar de manera flexible el separador que delimita los datos.
+
+``` r
+# Sintaxis
+nombre_objeto <- read.table(file = "ruta/archivo.txt", sep = "separador", header = TRUE)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+-   **`file`**: Ruta y nombre del archivo `.txt` a importar.
+
+-   **`sep`**: Carácter que separa los valores. Puede ser espacio `" "`, tabulador `"\t"`, coma `","`, etc.
+
+-   **`header`**: Indica si la primera fila contiene los nombres de las columnas (`TRUE`) o no (`FALSE`).
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Algunas consideraciones importantes son las siguientes:
+
+-   Si el separador no se especifica correctamente, los datos pueden importarse mal (por ejemplo, todo en una sola columna).
+
+-   Para archivos muy grandes, existen funciones optimizadas en otros paquetes como `readr` (`read_delim()`), pero aquí nos enfocamos en el método base.
+
+### Archivo Excel (.xlsx)
+
+Además de archivos de texto o CSV, en ingeniería es muy común recibir y trabajar datos en archivos de **Excel** (`.xls` o `.xlsx`). Estos archivos pueden contener múltiples hojas (pestañas), celdas con formatos especiales o incluso fórmulas.
+
+Para importar datos desde archivos Excel en R, se utilizan funciones de paquetes especializados, ya que **R base** no tiene funciones nativas para leer Excel.
+
+Uno de los paquetes más utilizados y eficientes es **`readxl`**. La función principal que utilizamos es `read_excel()`.
+
+``` r
+# Instalación y carga del paquete
+install.packages("readxl")
+library(readxl)
+```
+
+``` r
+# Sitanxis
+nombre_objeto <- read_excel(path = "ruta/archivo.xlsx", sheet = "nombre_hoja")
+```
+
+-   **`path`**: Ruta y nombre del archivo Excel.
+
+-   **`sheet`**: (Opcional) Nombre o número de la hoja a importar. Si no se especifica `sheet`, por defecto importa la primera hoja.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Algunas consideraciones importantes son las siguientes:
+
+-   `read_excel()` **no ejecuta fórmulas** que pueda tener el archivo; importa el último valor guardado.
+
+-   La función puede leer tanto archivos `.xls` como `.xlsx` sin cambios adicionales.
+
+-   Si el archivo tiene celdas combinadas o vacías, deberás limpiar los datos después de importarlos.
+
+------------------------------------------------------------------------
+
+## Trabajar con datos importados
+
+Una vez importados los datos, el siguiente paso es trabajar con ellos. Los procesos o cálculos dependerán de tu necesidad. Por lo tanto, aquí se requiere el dominio de todo lo aprendido previamente, especialmebnte del tema de **data frames**.
+
+### Ejemplo 1
+
+Cargar el archivo `Tema16_Auxiliar_screen_time.txt` y analiza su información. ¿Qué cálculos y conclusiones se podrían obtener a partir de su información?
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 2
+
+Cargar el archivo `Tema16_Auxiliar_student_lifestyle_dataset.xlsx` y analiza su información. ¿Qué cálculos y conclusiones se podrían obtener a partir de su información?
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 3
+
+Cargar el archivo `Tema16_Auxiliar_global_cancer_patients_2015_2024.csv` y analiza su información. ¿Qué cálculos y conclusiones se podrían obtener a partir de su información?
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Exportar datos
+
+Así como es importante importar datos, en ingeniería también es crucial **exportar resultados, reportes o transformaciones** a archivos que puedan compartirse o integrarse con otros sistemas.
+
+### Archivo con valores separados con comas (.csv)
+
+En **R**, para exportar datos a archivos CSV usamos principalmente la función `write.csv()`.
+
+``` r
+# Sintaxis
+write.csv(x = objeto, file = "ruta/archivo.csv", row.names = FALSE)
+```
+
+-   **`x`**: El objeto que deseas exportar, normalmente un data frame.
+
+-   **`file`**: La ruta y nombre del archivo CSV de destino.
+
+-   **`row.names`**: Indica si quieres exportar los nombres de fila (`TRUE`) o no (`FALSE`).
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Algunas consideraciones importantes son las siguientes:
+
+-   Si `row.names = TRUE` y el objeto no tiene nombres explícitos de filas, R agregará una columna llamada "row.names".
+
+-   Si no especificas un path completo, el archivo se guardará en el **directorio de trabajo actual**.
+
+-   El archivo creado usará coma `,` como separador de valores. Si necesitas un formato diferente (por ejemplo punto y coma), se puede usar `write.csv2()`.
+
+### Archivo de texto (.txt)
+
+Al igual que los archivos CSV, los **archivos de texto (.txt)** son un formato sencillo y común para almacenar datos. Sin embargo, los archivos `.txt` son más flexibles en cuanto a cómo organizar los datos, ya que no tienen una estructura predefinida como el CSV.
+
+Cuando exportamos datos a un archivo `.txt`, el proceso de delimitación (cómo separar los valores) puede ser controlado completamente, utilizando espacios, tabuladores u otros caracteres como delimitadores. Esto es útil en casos donde los datos necesitan ser legibles por otros sistemas o humanos, y no requieren una estructura compleja.
+
+En **R**, para exportar datos a archivos de texto utilizamos principalmente la función `write.table()`, que permite un control detallado sobre el formato del archivo.
+
+``` r
+# Sintaxis
+write.table(x = objeto, file = "ruta/archivo.txt", sep = " ", row.names = FALSE)
+```
+
+-   **`x`**: El objeto que deseas exportar, generalmente un data frame o matriz.
+
+-   **`file`**: La ruta y nombre del archivo de texto de destino.
+
+-   **`sep`**: Especifica el separador de los datos. Puede ser un espacio `" "`, tabulador `"\t"`, coma `","`, o cualquier otro carácter.
+
+-   **`row.names`**: Indica si quieres exportar los nombres de las filas (`TRUE`) o no (`FALSE`).
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Algunas consideraciones importantes son las siguientes:
+
+-   Al exportar con `write.table()`, siempre puedes ajustar el separador con `sep`. Usualmente, se usa el tabulador (`\t`) o espacios, pero también puedes usar comas si lo prefieres.
+
+-   Al igual que con `write.csv()`, si no deseas incluir los nombres de fila, debes especificar `row.names = FALSE`. Si no lo haces, se incluirán automáticamente.
+
+-   Si el archivo tiene caracteres especiales o codificación distinta (por ejemplo, UTF-8), puedes ajustar la codificación con el argumento `fileEncoding`.
+
+### Archivo Excel (.xlsx)
+
+Al igual que CSV o TXT, **Excel** es uno de los formatos más utilizados para compartir, almacenar y trabajar con datos, especialmente en contextos donde se requiere interacción visual o análisis avanzado. Los archivos Excel permiten tener múltiples hojas dentro de un solo archivo y ofrecen una estructura mucho más flexible que el CSV o TXT, permitiendo tipos de datos más complejos, como celdas combinadas, colores o formatos numéricos especiales.
+
+Para exportar datos a un archivo Excel en **R**, usamos el paquete **`writexl`** o **`openxlsx`**. El paquete **`writexl`** es más sencillo y permite exportar sin necesidad de depender de Excel instalado en el sistema. La función principal de este paquete es `write_xlsx()`.
+
+``` r
+# Instalación y carga del paquete
+install.packages("writexl")
+library(writexl)
+```
+
+``` r
+# Sintaxis
+write_xlsx(x = objeto, path = "ruta/archivo.xlsx")
+```
+
+-   **`x`**: El objeto que deseas exportar, típicamente un data frame.
+
+-   **`path`**: Ruta y nombre del archivo Excel de destino.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+Algunas consideraciones importantes son las siguientes:
+
+-   El paquete `writexl` no requiere que tengas Excel instalado, lo cual es útil si deseas compartir datos con usuarios que no necesariamente tienen acceso a Excel.
+
+-   Los datos exportados a Excel se almacenan en **.xlsx**, lo que asegura la compatibilidad con las versiones modernas de Excel.
+
+-   Si necesitas más control sobre el formato de la hoja, como cambiar estilos de celda, agregar gráficos, etc., puedes considerar el uso del paquete `openxlsx`, que es más avanzado.
+
+------------------------------------------------------------------------

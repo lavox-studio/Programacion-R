@@ -1,29 +1,136 @@
 ---
-title: "Creación de funciones"
-author: "Ingenecia"
-output: html_document
+title: "R para Ingenierías y Ciencias"
+author: "La Academia"
+subtitle: "Tema 16 - Práctica"
+output:
+  html_document:
+    df_print: paged
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Importación y exportación de datos
+
+## Ejercicio 1
+
+Carga el archivo `Tema13_Auxiliar_BankChurners.csv`. Visualiza su información y familiarízate con ella.
+
+En base a lo anterior, responde las siguientes preguntas:
+
+-   ¿Cuál es la edad más pequeña y grande registrada de los clientes?
+
+-   ¿Cuántos clientes tienen la edad entre 40 y 50 años?
+
+-   ¿Cuántos clientes tienen una tarjeta de tipo **Gold**?
+
+-   ¿Cuántos clientes son mujeres (**F**), están casadas (**Married**) y su crédito límite es superior a \$10.000 USD?
+
+-   Añade una nueva columna donde se categorice a los clientes en función de su crédito límite. Si el crédito límite es mayor a \$20.000 USD la categoría es "Cliente A", si el crédito límite está entre \$10.000 USD y \$20.000 USD la categoría es "Cliente B", y si el crédito es menor a \$10.000 USD la categoría es "Cliente C".
+
+Finalmente, exporta el archivo (en el formato que desees).
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## R Markdown
+------------------------------------------------------------------------
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Ejercicio 2
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+asd
 
-```{r cars}
-summary(cars)
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-## Including Plots
+------------------------------------------------------------------------
 
-You can also embed plots, for example:
+## Ejercicio 3
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+asd
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+------------------------------------------------------------------------
+
+## Ejercicio 4
+
+asd
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 5
+
+asd
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 6
+
+asd
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 7
+
+asd
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 8
+
+asd
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------

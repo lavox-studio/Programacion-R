@@ -1,0 +1,199 @@
+Age	Gender	Screen Time Type	Day Type	Average Screen Time (hours)
+5	Male	Educational	Weekday	0.44
+5	Male	Recreational	Weekday	1.11
+5	Male	Total	Weekday	1.55
+5	Male	Educational	Weekend	0.5
+5	Male	Recreational	Weekend	1.44
+5	Male	Total	Weekend	1.93
+5	Female	Educational	Weekday	0.49
+5	Female	Recreational	Weekday	0.96
+5	Female	Total	Weekday	1.45
+5	Female	Educational	Weekend	0.5
+5	Female	Recreational	Weekend	1.4
+5	Female	Total	Weekend	1.9
+5	Other/Prefer not to say	Educational	Weekday	0.52
+5	Other/Prefer not to say	Recreational	Weekday	0.98
+5	Other/Prefer not to say	Total	Weekday	1.5
+5	Other/Prefer not to say	Educational	Weekend	0.44
+5	Other/Prefer not to say	Recreational	Weekend	1.51
+5	Other/Prefer not to say	Total	Weekend	1.95
+6	Male	Educational	Weekday	0.64
+6	Male	Recreational	Weekday	1.39
+6	Male	Total	Weekday	2.02
+6	Male	Educational	Weekend	0.74
+6	Male	Recreational	Weekend	1.75
+6	Male	Total	Weekend	2.49
+6	Female	Educational	Weekday	0.57
+6	Female	Recreational	Weekday	1.37
+6	Female	Total	Weekday	1.95
+6	Female	Educational	Weekend	0.83
+6	Female	Recreational	Weekend	1.63
+6	Female	Total	Weekend	2.46
+6	Other/Prefer not to say	Educational	Weekday	0.59
+6	Other/Prefer not to say	Recreational	Weekday	1.41
+6	Other/Prefer not to say	Total	Weekday	2
+6	Other/Prefer not to say	Educational	Weekend	0.58
+6	Other/Prefer not to say	Recreational	Weekend	1.91
+6	Other/Prefer not to say	Total	Weekend	2.49
+7	Male	Educational	Weekday	0.8
+7	Male	Recreational	Weekday	1.75
+7	Male	Total	Weekday	2.55
+7	Male	Educational	Weekend	1.08
+7	Male	Recreational	Weekend	2.14
+7	Male	Total	Weekend	3.22
+7	Female	Educational	Weekday	0.81
+7	Female	Recreational	Weekday	1.61
+7	Female	Total	Weekday	2.42
+7	Female	Educational	Weekend	0.66
+7	Female	Recreational	Weekend	2.53
+7	Female	Total	Weekend	3.19
+7	Other/Prefer not to say	Educational	Weekday	0.76
+7	Other/Prefer not to say	Recreational	Weekday	1.74
+7	Other/Prefer not to say	Total	Weekday	2.5
+7	Other/Prefer not to say	Educational	Weekend	0.75
+7	Other/Prefer not to say	Recreational	Weekend	2.28
+7	Other/Prefer not to say	Total	Weekend	3.02
+8	Male	Educational	Weekday	0.85
+8	Male	Recreational	Weekday	2.18
+8	Male	Total	Weekday	3.03
+8	Male	Educational	Weekend	1.29
+8	Male	Recreational	Weekend	2.57
+8	Male	Total	Weekend	3.86
+8	Female	Educational	Weekday	0.93
+8	Female	Recreational	Weekday	2.02
+8	Female	Total	Weekday	2.95
+8	Female	Educational	Weekend	1
+8	Female	Recreational	Weekend	2.61
+8	Female	Total	Weekend	3.62
+8	Other/Prefer not to say	Educational	Weekday	0.97
+8	Other/Prefer not to say	Recreational	Weekday	2.03
+8	Other/Prefer not to say	Total	Weekday	3
+8	Other/Prefer not to say	Educational	Weekend	0.91
+8	Other/Prefer not to say	Recreational	Weekend	2.98
+8	Other/Prefer not to say	Total	Weekend	3.89
+9	Male	Educational	Weekday	0.73
+9	Male	Recreational	Weekday	2.9
+9	Male	Total	Weekday	3.63
+9	Male	Educational	Weekend	0.93
+9	Male	Recreational	Weekend	3.52
+9	Male	Total	Weekend	4.46
+9	Female	Educational	Weekday	1.12
+9	Female	Recreational	Weekday	2.26
+9	Female	Total	Weekday	3.39
+9	Female	Educational	Weekend	1.26
+9	Female	Recreational	Weekend	2.94
+9	Female	Total	Weekend	4.19
+9	Other/Prefer not to say	Educational	Weekday	0.79
+9	Other/Prefer not to say	Recreational	Weekday	2.71
+9	Other/Prefer not to say	Total	Weekday	3.5
+9	Other/Prefer not to say	Educational	Weekend	1.33
+9	Other/Prefer not to say	Recreational	Weekend	2.99
+9	Other/Prefer not to say	Total	Weekend	4.32
+10	Male	Educational	Weekday	1.07
+10	Male	Recreational	Weekday	2.97
+10	Male	Total	Weekday	4.05
+10	Male	Educational	Weekend	1.74
+10	Male	Recreational	Weekend	3.55
+10	Male	Total	Weekend	5.29
+10	Female	Educational	Weekday	0.94
+10	Female	Recreational	Weekday	2.93
+10	Female	Total	Weekday	3.87
+10	Female	Educational	Weekend	1.09
+10	Female	Recreational	Weekend	3.63
+10	Female	Total	Weekend	4.72
+10	Other/Prefer not to say	Educational	Weekday	0.96
+10	Other/Prefer not to say	Recreational	Weekday	3.04
+10	Other/Prefer not to say	Total	Weekday	4
+10	Other/Prefer not to say	Educational	Weekend	1.73
+10	Other/Prefer not to say	Recreational	Weekend	3.38
+10	Other/Prefer not to say	Total	Weekend	5.11
+11	Male	Educational	Weekday	1.33
+11	Male	Recreational	Weekday	3.21
+11	Male	Total	Weekday	4.55
+11	Male	Educational	Weekend	1.48
+11	Male	Recreational	Weekend	4.4
+11	Male	Total	Weekend	5.89
+11	Female	Educational	Weekday	1.53
+11	Female	Recreational	Weekday	2.86
+11	Female	Total	Weekday	4.39
+11	Female	Educational	Weekend	1.33
+11	Female	Recreational	Weekend	4.11
+11	Female	Total	Weekend	5.44
+11	Other/Prefer not to say	Educational	Weekday	0.98
+11	Other/Prefer not to say	Recreational	Weekday	3.52
+11	Other/Prefer not to say	Total	Weekday	4.5
+11	Other/Prefer not to say	Educational	Weekend	1.86
+11	Other/Prefer not to say	Recreational	Weekend	3.75
+11	Other/Prefer not to say	Total	Weekend	5.61
+12	Male	Educational	Weekday	1.22
+12	Male	Recreational	Weekday	3.94
+12	Male	Total	Weekday	5.15
+12	Male	Educational	Weekend	1.47
+12	Male	Recreational	Weekend	4.95
+12	Male	Total	Weekend	6.42
+12	Female	Educational	Weekday	1.36
+12	Female	Recreational	Weekday	3.52
+12	Female	Total	Weekday	4.88
+12	Female	Educational	Weekend	2.01
+12	Female	Recreational	Weekend	3.81
+12	Female	Total	Weekend	5.82
+12	Other/Prefer not to say	Educational	Weekday	1.27
+12	Other/Prefer not to say	Recreational	Weekday	3.73
+12	Other/Prefer not to say	Total	Weekday	5
+12	Other/Prefer not to say	Educational	Weekend	1.69
+12	Other/Prefer not to say	Recreational	Weekend	4.47
+12	Other/Prefer not to say	Total	Weekend	6.16
+13	Male	Educational	Weekday	1.18
+13	Male	Recreational	Weekday	4.41
+13	Male	Total	Weekday	5.59
+13	Male	Educational	Weekend	1.62
+13	Male	Recreational	Weekend	5.31
+13	Male	Total	Weekend	6.93
+13	Female	Educational	Weekday	1.86
+13	Female	Recreational	Weekday	3.5
+13	Female	Total	Weekday	5.36
+13	Female	Educational	Weekend	1.41
+13	Female	Recreational	Weekend	5.19
+13	Female	Total	Weekend	6.6
+13	Other/Prefer not to say	Educational	Weekday	1.4
+13	Other/Prefer not to say	Recreational	Weekday	4.1
+13	Other/Prefer not to say	Total	Weekday	5.5
+13	Other/Prefer not to say	Educational	Weekend	1.62
+13	Other/Prefer not to say	Recreational	Weekend	5.45
+13	Other/Prefer not to say	Total	Weekend	7.08
+14	Male	Educational	Weekday	1.93
+14	Male	Recreational	Weekday	4.25
+14	Male	Total	Weekday	6.19
+14	Male	Educational	Weekend	1.72
+14	Male	Recreational	Weekend	6.07
+14	Male	Total	Weekend	7.79
+14	Female	Educational	Weekday	1.81
+14	Female	Recreational	Weekday	4
+14	Female	Total	Weekday	5.81
+14	Female	Educational	Weekend	2.1
+14	Female	Recreational	Weekend	5.15
+14	Female	Total	Weekend	7.25
+14	Other/Prefer not to say	Educational	Weekday	1.33
+14	Other/Prefer not to say	Recreational	Weekday	4.67
+14	Other/Prefer not to say	Total	Weekday	6
+14	Other/Prefer not to say	Educational	Weekend	1.97
+14	Other/Prefer not to say	Recreational	Weekend	5.23
+14	Other/Prefer not to say	Total	Weekend	7.2
+15	Male	Educational	Weekday	1.87
+15	Male	Recreational	Weekday	4.72
+15	Male	Total	Weekday	6.59
+15	Male	Educational	Weekend	2.36
+15	Male	Recreational	Weekend	5.78
+15	Male	Total	Weekend	8.14
+15	Female	Educational	Weekday	1.96
+15	Female	Recreational	Weekday	4.41
+15	Female	Total	Weekday	6.37
+15	Female	Educational	Weekend	2.44
+15	Female	Recreational	Weekend	5.75
+15	Female	Total	Weekend	8.19
+15	Other/Prefer not to say	Educational	Weekday	1.34
+15	Other/Prefer not to say	Recreational	Weekday	5.16
+15	Other/Prefer not to say	Total	Weekday	6.5
+15	Other/Prefer not to say	Educational	Weekend	2.19
+15	Other/Prefer not to say	Recreational	Weekend	5.77
+15	Other/Prefer not to say	Total	Weekend	7.96
