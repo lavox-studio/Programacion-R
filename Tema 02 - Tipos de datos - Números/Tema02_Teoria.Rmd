@@ -1,7 +1,7 @@
 ---
 title: "R para Ingenierías y Ciencias"
 author: "La Academia"
-subtitle: "Tema 01 - Teoría"
+subtitle: "Tema 02 - Teoría"
 output:
   html_document:
     df_print: paged
