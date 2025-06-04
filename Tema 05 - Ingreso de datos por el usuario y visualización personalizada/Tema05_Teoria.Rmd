@@ -26,7 +26,7 @@ nombre <- readline("Ingrese su nombre: ")
 cat("Hola,", nombre, "¡Bienvenido!\n")
 ```
 
-La función `readline()` siempre devuelve un valor de tipo **carácter**. Si se necesita un número, debe convertirse con `as.numeric()` o `as.integer()`.
+La función `readline()` siempre devuelve un valor de tipo **caracter**. Si se necesita un número, debe convertirse con `as.numeric()` o `as.integer()`.
 
 ``` r
 edad <- as.numeric(readline("Ingrese su edad: "))
