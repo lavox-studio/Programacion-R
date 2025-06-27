@@ -484,7 +484,7 @@ v[c("A", "C")]
 | Ideal cuando sabes la **ubicación** de los elementos. | Ideal cuando los elementos tienen un **significado** y deseas identificarlos por su nombre. |
 | Ejemplo: `v[3]` para el tercer elemento. | Ejemplo: `v["C"]` para el elemento nombrado "C". |
 
-### Indexación lógica de vectores
+## Indexación lógica de vectores
 
 La **indexación lógica** es una forma avanzada de acceder a los elementos de un vector en **R**, utilizando valores lógicos (`TRUE` o `FALSE`) como condiciones para seleccionar elementos. En lugar de seleccionar elementos por su posición o nombre, utilizamos un **vector lógico** que tiene el mismo tamaño que el vector original y que indica, con `TRUE` o `FALSE`, si el valor en esa posición debe ser seleccionado.
 
@@ -549,7 +549,7 @@ Crea un vector de números y selecciona solo los números **positivos pares**.
 
 ### Ejemplo 2
 
-Un ingeniero está registrando la cantidad de productos fabricados por hora durante 24 horas en una fábrica. Los valores de producción por hora son los siguientes: **120, 150, 130, 140, 155, 160, 170, 165, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330.** Accede a las producciones de las horas 5, 10, 15, 20, 25 y 30.
+Un ingeniero está registrando la cantidad de productos fabricados por hora durante 24 horas en una fábrica. Los valores de producción por hora son los siguientes: **120, 150, 130, 140, 155, 160, 170, 165, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330.** Accede a las producciones de las horas 5, 10, 15 y 20.
 
 ### Solución
 
@@ -595,12 +595,6 @@ Interpretación: sólo *"aluminio"* y *"vidrio"* están en la lista de reutiliza
 
 ```{r}
 # Ingresa tu código aquí 👽
-```
-
-El operador `%in%` suele combinarse con indexación lógica para extraer subconjuntos.
-
-``` r
-materiales[materiales %in% materiales_reutilizables]
 ```
 
 ------------------------------------------------------------------------
