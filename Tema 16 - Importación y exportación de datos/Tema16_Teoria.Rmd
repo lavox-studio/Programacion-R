@@ -129,7 +129,7 @@ Algunas consideraciones importantes son las siguientes:
 
 ## Trabajar con datos importados
 
-Una vez importados los datos, el siguiente paso es trabajar con ellos. Los procesos o cálculos dependerán de tu necesidad. Por lo tanto, aquí se requiere el dominio de todo lo aprendido previamente, especialmebnte del tema de **data frames**.
+Una vez importados los datos, el siguiente paso es trabajar con ellos. Los procesos o cálculos dependerán de tu necesidad. Por lo tanto, aquí se requiere el dominio de todo lo aprendido previamente, especialmente del tema de **data frames**.
 
 ### Ejemplo 1
 

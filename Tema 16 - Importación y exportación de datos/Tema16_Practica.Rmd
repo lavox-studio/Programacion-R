@@ -11,7 +11,7 @@ output:
 
 ## Ejercicio 1
 
-Carga el archivo `Tema13_Auxiliar_BankChurners.csv`. Visualiza su información y familiarízate con ella.
+Carga el archivo `Tema16_Auxiliar_BankChurners.csv`. Visualiza su información y familiarízate con ella.
 
 En base a lo anterior, responde las siguientes preguntas:
 
@@ -39,7 +39,23 @@ Finalmente, exporta el archivo (en el formato que desees).
 
 ## Ejercicio 2
 
-asd
+Carga el archivo `Tema16_Auxiliar_EcommerceCustomers.csv`. Visualiza su información y familiarízate con ella.
+
+En base a lo anterior, responde las siguientes preguntas:
+
+-   ¿Cuántos clientes hay en el archivo?
+
+-   ¿Cuál es el tiempo promedio que los clientes están en la aplicación?
+
+-   ¿Cuál es el tiempo promedio que los cientes están en el sitio web?
+
+-   En base a las últimas 2 preguntas, ¿sería mejor dar prioridad a la aplicación o al sitio web? ¿Por qué?
+
+-   ¿Cuál es la cantidad anual gastada promedio? ¿Y cuál es la máxima y mínima?
+
+-   Añade una columna adicional considerando la siguiente fórmula: $\text{Nueva columna} = \frac{\text{Cantidad anual gastada promedio}}{\text{Cantidad anual gastada}} \times 100$. ¿Qué podemos concluir a través de los resultados de esta nueva columna? Además, modifica el nombre de la nueva columna al que creas necesario.
+
+Finalmente, exporta el archivo (en el formato que desees).
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -53,7 +69,7 @@ asd
 
 ## Ejercicio 3
 
-asd
+Cargar el archivo `Tema16_Auxiliar_INEC-Matrimonios2020.csv` y analiza su información. ¿Qué cálculos y conclusiones se podrían obtener a partir de su información?
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -67,7 +83,21 @@ asd
 
 ## Ejercicio 4
 
-asd
+Carga el archivo `Tema16_Auxiliar_SampleSuperstore.csv`. Visualiza su información y familiarízate con ella.
+
+En base a lo anterior, responde las siguientes preguntas:
+
+-   ¿En qué región hay más clientes: centro (Central), sur (South), este (East) u oeste(West)?
+
+-   ¿Qué categoría se ha vendido más (Sales): muebles (Furniture), herramientas de oficina (Office Supplies) o tecnología (Technology)?
+
+-   ¿Cuál es el descuento mayor que se ha dado y a qué categoría corresponde?
+
+-   La columna de ganancias (Profit) tiene algunos valores negativos. ¿Qué significan esos valores?
+
+-   ¿Cuál es la ganancia, sin considerar pérdidas, que ha habido para cada modo de envío (Ship Mode)? Te proporciono una pista: en total son 4 modos de envío.
+
+-   ¿Ha habido más pérdidas o ganancias? Calcula cada una para dar respuesta a esta pregunta.
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -81,7 +111,19 @@ asd
 
 ## Ejercicio 5
 
-asd
+Carga el archivo `Tema16_Auxiliar_disney_princess_popularity_dataset_300_rows.csv`. Visualiza su información y familiarízate con ella.
+
+En base a lo anterior, responde las siguientes preguntas y realiza las actividades:
+
+-   El archivo contiene información de 15 princesas de Disney: Pocahontas, Mulan, Raya, Anna, Jasmine, Snow White, Rapunzel, Belle, Cinderella, Ariel, Elsa, Aurora, Moana, Tiana y Merida. Determina el porcentaje de aparición de cada princesa en el conjunto de datos. Por ejemplo, si Mulan aparece 36 veces y la cantidad de datos es 200, entonces el porcentaje de aparición de Mulan es $\frac{36}{200} \times 100$.
+
+-   ¿Cuál es el número de mercancía en Amazon (NumMerchItemsOnAmazon) total de Moana?
+
+-   ¿Cuál es el número de fanpages en Instagram (InstagramFanPages) total de Anna?
+
+-   ¿Cuál es la princesa que tiene el mayor número de vistas, utilizando hashtag, por millón en TikTok (TikTokHashtagViewsMillions)?
+
+-   ¿Cuál es el promedio del puntaje de popularidad (PopularityScore) de cada princesa? En base a los resultados obtenidos, ¿cuál es la princesa más popular?
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -95,35 +137,39 @@ asd
 
 ## Ejercicio 6
 
-asd
+Carga el archivo `Tema16_Auxiliar_student_depression_dataset.txt`. Visualiza su información y familiarízate con ella.
 
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+En base a lo anterior, responde las siguientes preguntas y realiza las actividades:
 
-## Solución
+-   ¿Cuántas mujeres y cuántos hombres hay la base de datos? ¿Cuánto sería en porcentaje?
 
-```{r}
-# Ingresa tu código aquí 👽
-```
+-   ¿Cuál es el promedio de edad de hombres y de mujeres?
 
-------------------------------------------------------------------------
+-   El nivel de presión académica es de 0 a 5. Añade una nueva columna, a la derecha de la columna de presión académica, donde:
 
-## Ejercicio 7
+    -   Si la presión académica es 0, 1 o 2, el valor en la nueva columna es "Bajo".
 
-asd
+    -   Si la presión académica es 3, el valor en la nueva columna es "Regular".
 
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+    -   Si la presión académica es 4 o 5, el valor en la nueva columna es "Alto".
 
-## Solución
+Además, modifica el nombre de la columna al que consideres necesario. No es necesario utiliza bucles ni condicionales, de todas maneras todavía no se los ha estudiado. Este literal se puede completar con indexación.
 
-```{r}
-# Ingresa tu código aquí 👽
-```
+-   El nivel de satisfacción de estudio es de 0 a 5. Añade una nueva columna, a la derecha de la columna de satisfacción de estudio, donde:
 
-------------------------------------------------------------------------
+    -   Si la satisfacción de estudio es 0, 1 o 2, el valor en la nueva columna es "Bajo".
 
-## Ejercicio 8
+    -   Si la satisfacción de estudio es 3, el valor en la nueva columna es "Regular".
 
-asd
+    -   Si la satisfacción de estudio es 4 o 5, el valor en la nueva columna es "Alto".
+
+Además, modifica el nombre de la columna al que consideres necesario.
+
+-   ¿Cuántas personas tienen depresión? Analiza la columna **Depression** y responde la pregunta. Luego, ¿cuánto sería en porcentaje?
+
+-   ¿Hay más hombres o más mujeres con depresión?
+
+Finalmente, exporta el archivo (en el formato que desees).
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 

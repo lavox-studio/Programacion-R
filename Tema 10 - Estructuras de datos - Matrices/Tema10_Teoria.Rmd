@@ -152,7 +152,7 @@ print(voltajes)
 
 ### Ejemplo 1
 
-Un ingeniero eléctrico registra las tensiones en tres líneas de transmisión durante dos turnos del día (mañana y tarde). Las lecturas se tomaron en el siguiente orden: 220, 215, 210, 225, 230, 220.\
+Un ingeniero eléctrico registra las tensiones en tres líneas de transmisión durante dos turnos del día (mañana y tarde). Las lecturas se tomaron en el siguiente orden: 220, 215, 210, 225, 230, 220.
 
 Organiza estos valores en una matriz con dos filas, de modo que cada fila represente un turno y cada columna una línea de transmisión.
 
@@ -366,7 +366,7 @@ mediciones["SensorB", "Mañana"]
 
 ### Indexación múltiple
 
-Puedes acceder a **varios elementos a la vez** usando vectores de índices utilizando la posición posicional y la posición nominal al mismo tiempo.
+Puedes acceder a **varios elementos a la vez** usando vectores de índices utilizando la indexación posicional y la indexación nominal al mismo tiempo.
 
 ``` r
 # Sintaxis
@@ -588,7 +588,9 @@ La estación meteorológica no cuenta con las herramientas adecuadas, por lo que
 
 Por lo tanto, reemplaza todas las precipitaciones que tienen un valor negativo con cero. Luego determina en qué año se produjo la mayor precipitación registrada en toda la serie de tiempo.
 
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+> [**Nota 1:**]{.underline} Recuerda utilizar el enfoque EPS.
+>
+> [**Nota 2:**]{.underline} Utiliza la función `max()` para completar el ejemplo. Si es necesario, consulta la documentación.
 
 ### Solución
 
