@@ -1,13 +1,13 @@
 ---
 title: "R para Ingenierías y Ciencias"
 author: "La Academia"
-subtitle: "Tema 21 - Práctica"
+subtitle: "Tema 17 - Práctica"
 output:
   html_document:
     df_print: paged
 ---
 
-# Gráficas
+# Creación de funciones personalizadas
 
 ## Ejercicio 1
 

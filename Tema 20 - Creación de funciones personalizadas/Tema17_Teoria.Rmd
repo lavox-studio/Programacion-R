@@ -1,0 +1,42 @@
+---
+title: "R para Ingenierías y Ciencias"
+author: "La Academia"
+subtitle: "Tema 17 - Teoría"
+output:
+  html_document:
+    df_print: paged
+---
+
+# Creación de funciones personalizadas
+
+asd
+
+## Estructura de una función
+
+asd
+
+------------------------------------------------------------------------
+
+## Argumentos y valor de resultado de una función
+
+asd
+
+------------------------------------------------------------------------
+
+## Revisión de los argumentos de una función
+
+asd
+
+------------------------------------------------------------------------
+
+## El argumento especial `"..."`
+
+asd
+
+------------------------------------------------------------------------
+
+## Contenido de los ambientes de las funciones
+
+asd
+
+------------------------------------------------------------------------

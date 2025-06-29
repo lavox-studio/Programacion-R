@@ -1,13 +1,13 @@
 ---
 title: "R para Ingenierías y Ciencias"
 author: "La Academia"
-subtitle: "Tema 21 - Práctica"
+subtitle: "Tema 20 - Práctica"
 output:
   html_document:
     df_print: paged
 ---
 
-# Gráficas
+# Estructuras de repetición o bucles
 
 ## Ejercicio 1
 

@@ -1,12 +1,12 @@
 ---
 title: "R para Ingenierías y Ciencias"
 author: "La Academia"
-subtitle: "Tema 21 - Teoría"
+subtitle: "Tema 20 - Teoría"
 output:
   html_document:
     df_print: paged
 ---
 
-# Gráficas
+# Estructuras de repetición o bucles
 
 asd

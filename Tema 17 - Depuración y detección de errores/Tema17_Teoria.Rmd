@@ -1,0 +1,76 @@
+---
+title: "R para Ingenierías y Ciencias"
+author: "La Academia"
+subtitle: "Tema 17 - Teoría"
+output:
+  html_document:
+    df_print: paged
+---
+
+# Depuración y detección de errores
+
+asd
+
+## Depuración y puntos de interrupción (breakpoints)
+
+asd
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 1
+
+asd
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 2
+
+asd
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 3
+
+asd
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## No modificar el código durante la depuración
+
+asd
+
+------------------------------------------------------------------------
+
+## Más adelante...
+
+asd
+
+------------------------------------------------------------------------
