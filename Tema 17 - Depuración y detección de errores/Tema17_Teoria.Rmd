@@ -9,23 +9,51 @@ output:
 
 # Depuración y detección de errores
 
-asd
+En programación, **depurar** significa identificar, analizar y corregir errores (bugs) en el código. Aunque escribir código sin errores es ideal, en la práctica es común cometer fallos, ya sea de lógica, de sintaxis o de ejecución. Por eso, dominar herramientas de depuración es fundamental.
+
+![Ciclo de depuración.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2017%20-%20Depuraci%C3%B3n%20y%20detecci%C3%B3n%20de%20errores/1.png?raw=true){width="793"}
 
 ## Depuración y puntos de interrupción (breakpoints)
 
-asd
+Una de las herramientas más útiles durante la depuración son los **puntos de interrupción** o **breakpoints**. Estos permiten **pausar la ejecución del programa** en un punto específico para examinar el estado del entorno: variables, estructuras de datos, flujo del programa, etc.
+
+Sin embargo, la depuración en RStudio tiene un detalle muy importante: **sólo se puede depurar en archivos de código plano (.R), no se puede depurar en archivos R Markdown (.rmd)**.
 
 ```{r}
 # Ingresa tu código aquí 👽
 ```
 
+> Imagina que eres un ingeniero mecánico revisando una máquina que dejó de funcionar. No puedes verla completa funcionando, pero decides **detenerla en ciertos puntos clave** para inspeccionar engranajes, presión, temperatura, etc.
+>
+> Eso es exactamente lo que hace un **breakpoint**: detener la ejecución del programa en momentos precisos para que puedas revisar cómo va todo por dentro.
+
 ------------------------------------------------------------------------
 
 ### Ejemplo 1
 
-asd
+El siguiente código crea dos vectores con edades de personas, los combina en una matriz y calcula el promedio por persona. Después se debe añadir los resultados a la matriz adecuadamente tal que se visualicen las edades y sus promedios.
 
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+Sin embargo, el código no ejecuta. ¿Cuál es el problema? Una vez lo hayas identificado, corrígelo.
+
+Una vez corregidos los problemas de sintaxis, ¿el resultado es el adecuado? Si no lo es, también corrígelo.
+
+```         
+# Entradas
+grupo1 <- c(22, 25, 28, 30)
+grupo2 <- c(24, 27, 29, 31)
+
+# Procedimiento
+edades <- cbind(grupo1 grupo2)
+promedios <- colMeans(edades)
+
+nombres <- c("Grupo A" "Grupo B")
+colnames(Edades) <- nombres
+
+resultado <- cbind(edades, promedio = promedio)
+
+# Salidas
+print(resultados)
+```
 
 ### Solución
 
@@ -37,23 +65,25 @@ asd
 
 ### Ejemplo 2
 
-asd
+El siguiente código calcula el total de ventas de 3 productos en 4 días. Sin embargo, no funciona. ¿Qué se debe corregir? Una vez lo identifiques, corrígelo.
 
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+```         
+# Entradas
+prod1 <- c(100, 110, 105, 120)
+prod2 <- c(95, 100, 98, 102)
+prod3 <- c(130, 125, 140, 135)
 
-### Solución
+# Procedimiento
+ventas <- cbind(prod1, prod2, prod3)
+colnames(ventas) <- c("Lun", "Mar", "Mié", "Jue")
 
-```{r}
-# Ingresa tu código aquí 👽
+total <- colSums(ventas)
+resumen <- rbind(ventas, Total = totales)
+
+# Salidas
+print("Ventas Totales")
+print(resumen)
 ```
-
-------------------------------------------------------------------------
-
-### Ejemplo 3
-
-asd
-
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
 ### Solución
 
@@ -65,12 +95,18 @@ asd
 
 ## No modificar el código durante la depuración
 
-asd
+Es una buena práctica evitar modificar el código mientras estás depurando. Los cambios que se realizan mientras se realiza la depuración no tienen efecto hasta que se finaliza la depuración del código y se vuelve a ejecutar.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
 
 ------------------------------------------------------------------------
 
 ## Más adelante...
 
-asd
+También es posible depurar dentro de funciones que hayamos creado previamente y estemos utilizando en el código que se está depurando.
+
+No obstante, dado que todavía no hemos estudiado funciones de este tipo, este punto se lo retomará más adelante.
 
 ------------------------------------------------------------------------

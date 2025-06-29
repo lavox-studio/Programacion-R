@@ -11,9 +11,27 @@ output:
 
 ## Ejercicio 1
 
-Añadir enunciado.
+El siguiente código crea una matriz de temperaturas. El objetivo es identificar los días y ciudades donde la temperatura es superior a 27.5º.
 
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+Depura el código para cumplir el objetivo.
+
+```         
+# Entradas
+c1 <- c(28, 31, 29, 32)
+c2 <- c(26, 30, 27, 33)
+c3 <- c(25, 28, 26, 29)
+
+# Procedimiento
+temps <- matrix(c(c1, c2, c3), nrow = 3, byrow = TRUE)
+colnames(temps) <- c("Lun", "Mar", "Mié", "Jue")
+rownames(temps) <- c("Ciudad 1", "Ciudad 2", "Ciudad 3")
+
+alertas <- temps(temps >= 28)
+indices_alerta <- which(alertas, arr.ind = TRUE)
+
+# Salidas
+print(indices_alerta)
+```
 
 ## Solución
 
@@ -25,9 +43,27 @@ Añadir enunciado.
 
 ## Ejercicio 2
 
-Añadir enunciado.
+El siguiente código tiene las calificaciones de algunas materias de 2 estudiantes. El objetivo es obtener la cantidad de materias aprobadas por cada estudiante y añadir esa información a la matriz de calificaciones. El criterio de aprobación es \>= 7.
 
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+Depura el código para cumplir el objetivo.
+
+```         
+# Entradas
+n1 <- c(5, 6, 7, 8)
+n2 <- c(4, 5, 6, 7)
+
+# Procedimiento
+notas <- rbind(n1, n2)
+colnames(notas) <- c("Mat", "Fis", "Qca", "Bio")
+rownames(notas) <- c("Est1", "Est2")
+
+aprobado <- notas >= 7
+num_aprobadas <- rowSums(notas)
+resultado <- rbind(notas, Aprobadas = num_aprobadas)
+
+# Salidas
+print(resultado)
+```
 
 ## Solución
 
@@ -39,9 +75,26 @@ Añadir enunciado.
 
 ## Ejercicio 3
 
-Añadir enunciado.
+El siguiente código genera una matriz de inventario (items - almacén). El objetivo es identificar el artículo y su almacén en donde la cantidad de items está por debajo de 50 unidades.
 
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+Depura el código para cumplir el objetivo.
+
+```         
+# Entradas
+inv1 <- c(45, 60, 55, 50)
+inv2 <- c(48, 49, 52, 47)
+
+# Procedimiento
+inventario <- rbind(inv1, inv2)
+colnames(inventario) <- c("Item 1", "Item 2", "Item 3", "Item 4")
+rownames(inventario) <- c("Almacén 1", "Almacén 2")
+
+bajo_minimo <- inventario < 60
+criticos <- which(bajos_minimo, arr.ind = TRUE)
+
+# Salidas
+print(resultados)
+```
 
 ## Solución
 
@@ -53,91 +106,24 @@ Añadir enunciado.
 
 ## Ejercicio 4
 
-Añadir enunciado.
+A continuación se tiene los datos de encuestas, `v1` y `v2`. El siguiente código devuelve un resumen de la cantidad de personas que dijeron "Si".
 
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+Depura el código para cumplir el objetivo.
 
-## Solución
+```         
+# Entradas
+v1 <- c("Sí", "No", "Sí", "Sí")
+v2 <- c("No", "No", "Sí", "No")
 
-```{r}
-# Ingresa tu código aquí 👽
+# Procedimiento
+respuestas <- rbind[v1, v2]
+conteo <- rowSums(respuestas = "Sí")
+colnames(respuestas) <- c("P1", "P2", "P3", "P4")
+rownames(respuestas) <- c("Zona A", "Zona B")
+
+# Salidas
+print(conteo)
 ```
-
-------------------------------------------------------------------------
-
-## Ejercicio 5
-
-Añadir enunciado.
-
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
-
-## Solución
-
-```{r}
-# Ingresa tu código aquí 👽
-```
-
-------------------------------------------------------------------------
-
-## Ejercicio 6
-
-Añadir enunciado.
-
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
-
-## Solución
-
-```{r}
-# Ingresa tu código aquí 👽
-```
-
-------------------------------------------------------------------------
-
-## Ejercicio 7
-
-Añadir enunciado.
-
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
-
-## Solución
-
-```{r}
-# Ingresa tu código aquí 👽
-```
-
-------------------------------------------------------------------------
-
-## Ejercicio 8
-
-Añadir enunciado.
-
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
-
-## Solución
-
-```{r}
-# Ingresa tu código aquí 👽
-```
-
-------------------------------------------------------------------------
-
-## Ejercicio 9
-
-Añadir enunciado.
-
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
-
-## Solución
-
-```{r}
-# Ingresa tu código aquí 👽
-```
-
-## Ejercicio 10
-
-Añadir enunciado.
-
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
 ## Solución
 
