@@ -259,7 +259,7 @@ Esto nos da los valores de $x$ y $y$ que satisfacen el sistema.
 
 ### Ejemplo 1
 
-Un aspecto importante en el estudio de la transferencia de calor es determinar la distribución de la temperatura en estado estable sobre una placa delgada cuando se conoce la temperatura presente alrededor de los bordes. Suponga que la placa mostrada en la figura representa la sección transversal de una viga de metal, con un flujo de calor insignifi cante en la dirección perpendicular a la placa. Sean $T_1, \dots, T_4$ las temperaturas en los cuatro nodos interiores de la malla que se muestra en la figura. En un nodo, la temperatura es aproximadamente igual al promedio de los cuatro nodos más cercanos —a la izquierda, arriba, a la derecha y abajo. Por ejemplo,
+Un aspecto importante en el estudio de la transferencia de calor es determinar la distribución de la temperatura en estado estable sobre una placa delgada cuando se conoce la temperatura presente alrededor de los bordes. Suponga que la placa mostrada en la figura representa la sección transversal de una viga de metal, con un flujo de calor insignificante en la dirección perpendicular a la placa. Sean $T_1, \dots, T_4$ las temperaturas en los cuatro nodos interiores de la malla que se muestra en la figura. En un nodo, la temperatura es aproximadamente igual al promedio de los cuatro nodos más cercanos —a la izquierda, arriba, a la derecha y abajo. Por ejemplo,
 
 $$
 T_1 = (10 + 20 + T_2 + T_4)/4, \\ \text{ o } \\4T_1 - T_2 - T_4 = 30
