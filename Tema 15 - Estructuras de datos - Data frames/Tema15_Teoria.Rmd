@@ -186,6 +186,7 @@ materiales[2, ]
 
 ``` r
 materiales[, 3]
+materiales$peso
 ```
 
 -   **Un subdataframe.** El resultado de la indexación es un data frame.
