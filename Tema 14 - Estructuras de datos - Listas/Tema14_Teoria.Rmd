@@ -199,7 +199,7 @@ Es decir, puedes combinar las indexaciones estudiadas previamente para indexar e
 Si se te dificulta comprender fácilmente la aplicación y uso de la indexación de indexación, entonces te recomiendo que indexes por partes. Primero indexa el vector y guarda el resultado en un variable. Luego, con la variable creada, indexa nuevamente el elemento que sea de tu interés.
 
 ``` r
-motores <- list(motor1 = c("A", 90), motor2 = c("B", 85))
+motores <- list(motor1 = list("A", 90), motor2 = list("B", 85))
 
 # Indexación por partes
 motor_indexado <- motores$motor2

@@ -267,7 +267,7 @@ Esto indica cuántas veces aparece cada tipo de falla.
 En síntesis se tiene lo siguiente:
 
 | Función     | ¿Para qué se usa?                                            |
-|-------------|--------------------------------------------------------------|
+|----------------|--------------------------------------------------------|
 | `unclass()` | Ver la estructura interna de objetos como factores           |
 | `table()`   | Contar frecuencias de elementos (resúmenes rápidos y claros) |
 
