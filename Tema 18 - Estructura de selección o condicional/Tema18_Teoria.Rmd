@@ -9,4 +9,254 @@ output:
 
 # Estructura de selección o condicional
 
-asd
+Los **condicionales** permiten a un programa **tomar decisiones**. En vez de ejecutar todas las instrucciones de forma lineal, el flujo del programa puede **dividirse** y ejecutar solo ciertas partes del código, dependiendo de si se cumple o no una **condición lógica**.
+
+Un condicional se basa en **expresiones lógicas** que evalúan a `TRUE` o `FALSE`. Según ese resultado, se ejecuta uno u otro bloque de código.
+
+![Condicional.](https://github.com/aisacc/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2018%20-%20Estructura%20de%20selecci%C3%B3n%20o%20condicional/1.png?raw=true){width="857"}
+
+## Estructura `if`
+
+La estructura `if` es la forma más simple de control condicional en R. Permite que el programa **evalúe una condición lógica** y ejecute un bloque de código **solo si** la condición es verdadera (`TRUE`).\
+Si la condición es falsa (`FALSE`), simplemente **no se ejecuta** ese bloque y el programa continúa.
+
+Esta estructura es fundamental para **introducir lógica y toma de decisiones**.
+
+``` r
+if (condición) {
+  # instrucciones si la condición es TRUE
+}
+```
+
+-   `condición`: debe ser una expresión lógica que evalúe a `TRUE` o `FALSE`.
+
+<!-- -->
+
+-   El bloque de código se encierra entre llaves `{}` y solo se ejecuta si la condición es verdadera.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Imagina que tienes un sensor de temperatura en un motor. Si la temperatura supera un umbral crítico, entonces se activa el sistema de enfriamiento.
+
+------------------------------------------------------------------------
+
+### Ejemplo 1
+
+Activar la alarma de presión es baja, es decir, si la presión es menor a 45 m.c.a.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r} # Ingresa tu código aquí 👽}
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 2
+
+Encender el generador si no hay voltaje, es decir, si el voltaje es menor o igual a 0.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r} # Ingresa tu código aquí 👽}
+```
+
+------------------------------------------------------------------------
+
+## Estructura `if`-`else`
+
+La estructura `if-else` en R permite ejecutar **uno de dos bloques de código**, dependiendo del resultado de una **condición lógica**.\
+Si la condición es verdadera (`TRUE`), se ejecuta el primer bloque. Si es falsa (`FALSE`), se ejecuta el segundo.
+
+Es útil cuando se requiere **una bifurcación lógica clara**: hacer una cosa **o** hacer otra, pero no ambas.
+
+``` r
+# Sintaxis
+if (condición) {
+  # instrucciones si la condición es TRUE
+} else {
+  # instrucciones si la condición es FALSE
+}
+```
+
+-   `condición`: una expresión lógica que se evalúa como `TRUE` o `FALSE`.
+
+<!-- -->
+
+-   Se ejecuta **uno solo** de los bloques, **nunca ambos**.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> Un sistema puede operar con energía de la red principal, pero si esta falla, se conecta a un generador de respaldo.
+>
+> -    Si hay energía de red → usar red.
+>
+> -   Si no hay energía → usar generador.
+>
+> Este razonamiento se expresa con `if-else`.
+
+------------------------------------------------------------------------
+
+### Ejemplo 1
+
+Controlar el nivel de agua. Si el nivel es mayor o igual a 50 m desplegar por pantalla "Nivel adecuado", caso contrario "Advertencia: nivel de agua bajo".
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 2
+
+Validar la temperatura para un sistema de refrigeración. Si la temperatura es mayor a 80 ºC desplegar por pantalla "Activar enfriamiento", caso contrario "Temperatura dentro de rango".
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Estructura `if`-`else if`-`else`
+
+Cuando hay **más de dos posibilidades** en la toma de decisiones, se puede utilizar una cadena de condicionales mediante `if`, `else if`, y `else`.\
+Esta estructura permite evaluar **múltiples condiciones en orden**, y ejecutar **solo el bloque correspondiente a la primera condición verdadera**.
+
+Si ninguna condición se cumple, se ejecuta el bloque del `else` final (si se incluye).
+
+``` r
+# Sintaxis
+if (condición_1) {
+  # instrucciones si condición_1 es TRUE
+} else if (condición_2) {
+  # instrucciones si condición_2 es TRUE
+} else if (condición_3) {
+  # y así sucesivamente
+} else {
+  # si ninguna condición es verdadera
+}
+```
+
+-   Las condiciones se evalúan en orden.
+
+<!-- -->
+
+-   Se ejecuta solo el **primer bloque** cuya condición sea verdadera.
+
+<!-- -->
+
+-   El bloque `else` es **opcional**, pero útil como "caso por defecto".
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> **Sistema de climatización automático**:
+>
+> -   Si la temperatura es menor a 18°C → activar calefacción.
+>
+> -   Si la temperatura está entre 18°C y 26°C → mantener en espera.
+>
+> -   Si la temperatura es mayor a 26°C → activar aire acondicionado.
+>
+> Esta lógica múltiple se expresa fácilmente con `if - else if - else`.
+
+------------------------------------------------------------------------
+
+### Ejemplo 1
+
+A continuación se realiza una evaluación de voltaje. Si el voltaje es menor a 200 V, el voltaje es insuficiente, si el voltaje es mayor o igual a 200 V y menor a 230 V, el voltaje es normal, y si el voltaje es mayor a 230 V entonces se tiene una sobretensión detectada.
+
+Dado un voltaje, mostrar por pantalla el caso al que corresponde.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 2
+
+A continuación se realiza un control de velocidad de un motor. Si la velocidad es menor a 1000 rpm, la velocidad es baja, si la velocidad es mayor o igual a 1000 rpm y menor a 2000 rpm la velocidad es media, y si la velocidad es mayor a 2000 rpm entonces se tiene una velocidad alta.
+
+Dado un velocidad, mostrar por pantalla el caso al que corresponde.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Función `ifelse()`
+
+La función `ifelse()` permite realizar **evaluaciones condicionales vectorizadas**, lo que significa que puede aplicar condiciones **a cada elemento** de un vector (o estructura similar) de forma **eficiente y compacta**.
+
+A diferencia de las estructuras `if`, `if-else`, o `if-else if`, que trabajan con condiciones individuales, `ifelse()` es ideal para **operaciones en vectores completos**, como clasificar, etiquetar, validar, transformar, entre otros.
+
+``` r
+# Sintaxis
+ifelse(condición, valor_si_TRUE, valor_si_FALSE)
+```
+
+La función retorna un vector con los resultados correspondientes. Esta función se puede entender como la combinación de **indexación lógica + vectorización = función `ifelse()`**.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+> En una línea de producción, se mide la longitud de múltiples piezas. Si la longitud está dentro del rango aceptado, se marca como "Aprobada", de lo contrario como "Rechazada".
+>
+> Esto puede hacerse en una sola línea de código usando `ifelse()` sobre el vector de mediciones.
+
+------------------------------------------------------------------------
+
+### Ejemplo 1
+
+Se tienen los registros de temperatura: 15, 22, 30, 18, 23, 33, 12. Clasificar cada temperatura: mayor a 25 ºC es caliente, caso contrario es templado.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 2
+
+Se tiene un etiquetado de sensores por falla: 1, 0, 1, 0, 0, 0 1. Representar esta información como un vector lógico: 1 es verdadero y 0 es falso. Luego, utilizando el vector anterior, crear otro vector donde se representa "Funcional" si es verdadero y "Falla detectada" si es falso.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
