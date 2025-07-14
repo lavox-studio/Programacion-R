@@ -349,7 +349,7 @@ Selecciona las filas donde el defecto sea "fisura" y el lote sea mayor a 100. Mo
 
 | codigo_pieza | defecto  | lote | dias_fabricacion |
 |:-------------|:---------|:-----|:-----------------|
-| PZ-1001      | fisura   | 120  | 5                |
+| PZ-1001      | fisura   | 90   | 5                |
 | PZ-1002      | desgaste | 95   | 7                |
 | PZ-1003      | fisura   | 130  | 4                |
 
