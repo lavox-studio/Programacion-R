@@ -1,7 +1,7 @@
 ---
 title: "R para Ingenierías y Ciencias"
 author: "La Academia"
-subtitle: "Tema 20 - Teoría"
+subtitle: "Tema 19 - Teoría"
 output:
   html_document:
     df_print: paged
@@ -9,4 +9,220 @@ output:
 
 # Estructuras de repetición o bucles
 
-asd
+Los bucles permiten repetir un conjunto de instrucciones múltiples veces. En R, son fundamentales para automatizar tareas repetitivas, como iterar sobre elementos de vectores, listas, o cálculos que dependen de condiciones.
+
+![](https://github.com/lavox-studio/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2019%20-%20Estructuras%20de%20repetici%C3%B3n%20o%20bucles/1.png?raw=true){width="863"}
+
+En este tema aprenderás sobre los dos bucles principales en R:
+
+-   `for` (bucle definido)
+
+-   `while` (bucle condicional)
+
+## Estructura `for`
+
+El bucle `for` en R permite **iterar sobre una secuencia de elementos**, ejecutando un bloque de código una vez por cada elemento de la secuencia. Es útil cuando se conoce de antemano cuántas veces se necesita repetir una tarea.
+
+Este tipo de bucle es común en cálculos iterativos, automatización de procesos repetitivos, y recorridos de estructuras de datos como vectores, matrices o listas.
+
+``` r
+# Sintaxis
+for (variable in secuencia) {
+    # instrucciones a ejecutar
+}
+```
+
+-   `variable`: nombre temporal que tomará cada valor de la `secuencia`.
+
+-   `secuencia`: vector, lista o rango sobre el cual se itera.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Iterar por elemento
+
+Es posible utilizar un bucle `for` e ir iterando directamente sobre cada elemento de la secuencia.
+
+``` r
+# Sintaxis
+for (elemento in secuencia) {
+    # instrucciones a ejecutar
+}
+```
+
+### Iterar por índice
+
+Asimismo, es posible utilizar un bucle `for` e ir iterando sobre cada elemento de la secuencia a través de su índice posicional. Esta forma es bastante útil cuando no se requiere únicamente el elemento de la secuencia, o se requiere trabajar con múltiples elementos de la secuencias de forma dinámica.
+
+``` r
+# Sintaxis
+for (i in length(secuencia)) {
+    # instrucciones a ejecutar
+}
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 1
+
+Un conjunto de 3 sensores registró los siguientes voltajes (en voltios) en distintas mediciones:
+
+-   Sensor 1: 5.1, 5.0, 10.3, 10.4, 4.9
+
+-   Sensor 2: 3.3, 3.4, 9.0, 9.2, 9.1
+
+-   Sensor 3: 4.2, 4.1, 4.2, 4.3, 4.4
+
+Detecta para cada sensor los índices donde la diferencia entre valores consecutivos supera los 5 voltios.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 2
+
+Se tiene una lista de 4 perfiles estructurales con sus dimensiones y cargas (en kN):
+
+-   Perfil A (tipo I): `base=20`, `altura=40`, `carga_max=100`, `carga_aplicada=90`
+
+-   Perfil B (tipo L): `base=15`, `altura=30`, `carga_max=70`, `carga_aplicada=80`
+
+-   Perfil C (tipo T): `base=25`, `altura=50`, `carga_max=120`, `carga_aplicada=110`
+
+-   Perfil D (tipo H): `base=30`, `altura=60`, `carga_max=150`, `carga_aplicada=140`
+
+Determina cuáles perfiles soportan la carga aplicada sin superar su carga máxima.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 3
+
+Un portafolio tiene 5 activos con precios diarios durante 10 días:
+
+-   Activo 1: 100, 102, 101, 105, 107, 110, 111, 113, 115, 117
+
+-   Activo 2: 50, 51, 50, 52, 53, 55, 54, 56, 57, 58
+
+-   Activo 3: 80, 82, 81, 83, 85, 87, 86, 88, 90, 92
+
+-   Activo 4: 120, 118, 119, 121, 123, 124, 125, 127, 128, 130
+
+-   Activo 5: 60, 61, 62, 63, 64, 65, 66, 67, 68, 69
+
+Determina para cada activo los días donde el precio aumentó respecto al día anterior y cuántos días consecutivos tuvo incrementos.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Estructura `while`
+
+El **bucle `while`** es una estructura de control que permite ejecutar repetidamente un bloque de código mientras una condición lógica se mantenga verdadera.
+
+A diferencia del bucle `for`, que generalmente itera un número conocido de veces, el bucle `while` es útil cuando no se sabe cuántas veces será necesario repetir la operación y se depende de que una condición cambie durante la ejecución.
+
+``` r
+# Sintaxis
+while (condición) {
+    # Código a ejecutar mientras la condición sea TRUE
+}
+```
+
+-   `condición`: expresión lógica que se evalúa antes de cada iteración.
+
+-   El bloque de código dentro de `{}` se ejecuta mientras la condición sea verdadera.
+
+-   Si la condición es falsa desde el inicio, el bloque no se ejecuta ni una vez.
+
+> Imagina un sistema de bombeo en una planta química que debe mantenerse activo **mientras** el nivel de un tanque sea menor a un valor crítico para evitar desbordes. No sabemos cuántas veces se deberá bombear, solo que se debe repetir el proceso mientras el nivel sea bajo.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 1
+
+Un medicamento se administra cada 6 horas. La concentración plasmática inicial es 50 mg/L y disminuye 12% cada hora. Determina cuántas horas pasan hasta que la concentración sea menor a 5 mg/L.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 2
+
+La población de una especie invasora se multiplica un 10% diario, pero cada día muere un número fijo de 5 individuos por control biológico. Si la población inicial es 50, calcula cuántos días pasan hasta que la población supere los 500 individuos.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 3
+
+Un fondo de inversión inicia con \$15 000 y crece 1.2% mensual. Sin embargo, se retiran \$200 mensuales. Calcula cuántos meses pasan hasta que el fondo alcance al menos \$25,000.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Recomendaciones
+
+-   Siempre que una tarea sea repetitiva se puede utilizar un bucle `for` o un bucle `while`.
+
+-   La elección de cuál se debería utilizar se basa en la pregunta: **¿conozco cuántas veces debe repetirse el código?**
+
+    -   Si la respuesta es **sí**, entonces se recomienda un bucle `for`.
+
+    -   Si la respuesta es **no**, entonces se recomienda un bucle `while`.
+
+    -   No obstante, éstas son solo recomendaciones. En la práctica, un buen programador puede trabajar con cualquier bucle en cualquier situación.
+
+-   ¿Es posible utilizar un bucle `for` dentro otro bucle `for`? Claro que sí. A esto se le conoce como **bucles anidados** (bucles dentro de bucles). También es posible hacerlo con el bucle `while` e incluso se puede combinar el uso del bucle `for` con el bucle `while`, según la necesidad.
+
+    -   No obstante, **NO se recomienda utilizar bucles anidados**. Estos bucles requieren de un nivel alto de compresión y abstracción de código. Son muy útiles siempre y cuando se sepa exactamente cómo se los está utilizando. Caso contrario, se debe evitar su uso.
+
+-   ¿Es posible utilizar un bucle (`for` o `while`) con el condicional `if`? Por supuesto que sí. Según tu necesidad, puedes tener bucles dentro del `if` o viceversa, tener condicionales dentro de bucles.
+
+    -   De aquí en adelante tienes el **control total del flujo del código** y puedes adaptarlo a un sinnúmero de situaciones.
+
+-   Y lo más importante: **los bucles SIEMPRE deben ser tu ÚLTIMA OPCIÓN**. Un ingeniero, o científico, que sabe programar domina la **vectorización de código**: operaciones arreglo (elemento a elemento), operaciones matriciales, indexación de estructuras de datos (listas, data frames, ...), etc. Por lo tanto, en situaciones donde no es posible vectorizar el código se utilizan bucles.
