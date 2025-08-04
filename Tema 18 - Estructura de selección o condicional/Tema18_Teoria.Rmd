@@ -1,7 +1,7 @@
 ---
 title: "R para Ingenierías y Ciencias"
 author: "La Academia"
-subtitle: "Tema 19 - Teoría"
+subtitle: "Tema 18 - Teoría"
 output:
   html_document:
     df_print: paged
@@ -24,14 +24,11 @@ Esta estructura es fundamental para **introducir lógica y toma de decisiones**.
 
 ``` r
 if (condición) {
-  # instrucciones si la condición es TRUE
+    # instrucciones si la condición es TRUE
 }
 ```
 
 -   `condición`: debe ser una expresión lógica que evalúe a `TRUE` o `FALSE`.
-
-<!-- -->
-
 -   El bloque de código se encierra entre llaves `{}` y solo se ejecuta si la condición es verdadera.
 
 ```{r}
@@ -50,7 +47,8 @@ Activar la alarma de presión es baja, es decir, si la presión es menor a 45 m.
 
 ### Solución
 
-```{r} # Ingresa tu código aquí 👽}
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
 ------------------------------------------------------------------------
@@ -63,7 +61,8 @@ Encender el generador si no hay voltaje, es decir, si el voltaje es menor o igua
 
 ### Solución
 
-```{r} # Ingresa tu código aquí 👽}
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
 ------------------------------------------------------------------------
@@ -78,16 +77,13 @@ Es útil cuando se requiere **una bifurcación lógica clara**: hacer una cosa *
 ``` r
 # Sintaxis
 if (condición) {
-  # instrucciones si la condición es TRUE
+    # instrucciones si la condición es TRUE
 } else {
-  # instrucciones si la condición es FALSE
+    # instrucciones si la condición es FALSE
 }
 ```
 
 -   `condición`: una expresión lógica que se evalúa como `TRUE` o `FALSE`.
-
-<!-- -->
-
 -   Se ejecuta **uno solo** de los bloques, **nunca ambos**.
 
 ```{r}
@@ -96,7 +92,7 @@ if (condición) {
 
 > Un sistema puede operar con energía de la red principal, pero si esta falla, se conecta a un generador de respaldo.
 >
-> -    Si hay energía de red → usar red.
+> -   Si hay energía de red → usar red.
 >
 > -   Si no hay energía → usar generador.
 >
@@ -142,24 +138,18 @@ Si ninguna condición se cumple, se ejecuta el bloque del `else` final (si se in
 ``` r
 # Sintaxis
 if (condición_1) {
-  # instrucciones si condición_1 es TRUE
+    # instrucciones si condición_1 es TRUE
 } else if (condición_2) {
-  # instrucciones si condición_2 es TRUE
+    # instrucciones si condición_2 es TRUE
 } else if (condición_3) {
-  # y así sucesivamente
+    # y así sucesivamente
 } else {
-  # si ninguna condición es verdadera
+    # si ninguna condición es verdadera
 }
 ```
 
 -   Las condiciones se evalúan en orden.
-
-<!-- -->
-
 -   Se ejecuta solo el **primer bloque** cuya condición sea verdadera.
-
-<!-- -->
-
 -   El bloque `else` es **opcional**, pero útil como "caso por defecto".
 
 ```{r}
