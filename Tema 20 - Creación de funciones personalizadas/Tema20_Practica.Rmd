@@ -1,7 +1,7 @@
 ---
 title: "R para Ingenierías y Ciencias"
 author: "La Academia"
-subtitle: "Tema 17 - Práctica"
+subtitle: "Tema 20 - Práctica"
 output:
   html_document:
     df_print: paged
@@ -11,7 +11,27 @@ output:
 
 ## Ejercicio 1
 
-Añadir enunciado.
+Crea una función que simule la acumulación de un contaminante en un embalse, considerando entrada diaria variable y eliminación proporcional diaria. Utilice
+
+$$
+C_{t+1} = (C_t + E_t)(1 - r)
+$$
+
+donde:
+
+-   $C_t$: concentración del día $t$
+
+-   $E_t$: entrada diaria
+
+-   $r$: tasa de eliminación diaria (en decimal)
+
+Realice una prueba con estos datos:
+
+-   Entradas: `c(10, 12, 8, 11, 9)` kg/día
+
+-   Tasa de eliminación: 15%
+
+-   Concentración inicial = 0
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -25,7 +45,15 @@ Añadir enunciado.
 
 ## Ejercicio 2
 
-Añadir enunciado.
+Define una función que analice un vector de tiempos de ejecución de distintas funciones y calcule el promedio móvil de orden 3 (centrado) para suavizar variaciones. Utilice
+
+$$
+PM_i = \frac{t_{i-1} + t_i + t_{i+1}}{3}
+$$
+
+Realice una prueba con estos datos:
+
+-   Tiempos de ejecución (ms): `c(120, 130, 110, 160, 150, 140, 135)`
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -39,7 +67,21 @@ Añadir enunciado.
 
 ## Ejercicio 3
 
-Añadir enunciado.
+Escribe una función que calcule el índice de Gini de una población a partir de los ingresos ordenados crecientemente. Utilice
+
+$$
+G = \frac{\sum_{i=1}^n (2i - n - 1) x_i}{n \sum_{i=1}^n x_i}
+$$
+
+donde:
+
+-   $x_i$: ingreso del individuo $i$
+
+-   $n$: número total de individuos
+
+Realice una prueba con estos datos:
+
+-   Ingresos: `c(1000, 1200, 1500, 2000, 3500, 5000)`
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -53,7 +95,17 @@ Añadir enunciado.
 
 ## Ejercicio 4
 
-Añadir enunciado.
+Define una función que calcule la frecuencia cardíaca promedio durante un ejercicio, tomando como entrada los tiempos entre latidos (intervalos RR en milisegundos). Utilice
+
+$$
+\text{Frecuencia (bpm)} = \frac{60000}{RR}
+$$
+
+Promediar todas las frecuencias resultantes.
+
+Realice una prueba con estos datos:
+
+-   Intervalos RR: `c(800, 750, 780, 790, 770, 760)` ms
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -67,75 +119,29 @@ Añadir enunciado.
 
 ## Ejercicio 5
 
-Añadir enunciado.
+Crea una función que simule una tabla de amortización de un préstamo con el sistema francés (cuotas fijas). Utilice
 
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+$$
+C = P \frac{i (1 + i)^n}{(1 + i)^n - 1}
+$$
 
-## Solución
+donde:
 
-```{r}
-# Ingresa tu código aquí 👽
-```
+-   $P$: capital
 
-------------------------------------------------------------------------
+-   $i$: tasa mensual
 
-## Ejercicio 6
+-   $n$: número de cuotas
 
-Añadir enunciado.
+Devuelve una tabla con: cuota, interés del mes, capital amortizado y saldo.
 
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+Realice una prueba con estos datos:
 
-## Solución
+-   Capital: \$50,000
 
-```{r}
-# Ingresa tu código aquí 👽
-```
+-   Tasa mensual: 1%
 
-------------------------------------------------------------------------
-
-## Ejercicio 7
-
-Añadir enunciado.
-
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
-
-## Solución
-
-```{r}
-# Ingresa tu código aquí 👽
-```
-
-------------------------------------------------------------------------
-
-## Ejercicio 8
-
-Añadir enunciado.
-
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
-
-## Solución
-
-```{r}
-# Ingresa tu código aquí 👽
-```
-
-------------------------------------------------------------------------
-
-## Ejercicio 9
-
-Añadir enunciado.
-
-> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
-
-## Solución
-
-```{r}
-# Ingresa tu código aquí 👽
-```
-
-## Ejercicio 10
-
-Añadir enunciado.
+-   Cuotas: 12
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 

@@ -1,7 +1,7 @@
 ---
 title: "R para Ingenierías y Ciencias"
 author: "La Academia"
-subtitle: "Tema 17 - Teoría"
+subtitle: "Tema 20 - Teoría"
 output:
   html_document:
     df_print: paged
@@ -9,34 +9,220 @@ output:
 
 # Creación de funciones personalizadas
 
-asd
+Una función personalizada en R es un bloque reutilizable de código definido por el usuario. Permite encapsular una operación o algoritmo bajo un nombre, lo que facilita la organización del código, la reutilización y el mantenimiento de programas complejos.
 
-## Estructura de una función
+![](https://github.com/lavox-studio/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2020%20-%20Creaci%C3%B3n%20de%20funciones%20personalizadas/2.png?raw=true){width="532"}
 
-asd
+> Crear funciones es fundamental en contextos ingenieriles y científicos donde se deben aplicar procedimientos similares a múltiples conjuntos de datos o realizar simulaciones repetidas.
+
+## Crear funciones
+
+Crear funciones en R es una habilidad esencial para estructurar código eficiente, modular y reutilizable. Permite encapsular lógica compleja bajo un nombre específico y usarla múltiples veces, simplemente llamándola con diferentes argumentos.
+
+> En ingeniería y ciencias, crear funciones permite implementar modelos, cálculos o simulaciones que pueden aplicarse a distintos escenarios sin reescribir el código cada vez.
+
+### Proceso para crear una función
+
+1.  Definir el propósito de la función.
+2.  Identificar los argumentos de entrada necesarios.
+3.  Escribir las instrucciones que procesan esos argumentos.
+4.  Incluir un valor de retorno (si se requiere).
+5.  Probar la función con distintos valores.
+
+``` r
+# Sintaxis
+nombre_funcion <- function(argumento1, argumento2, ...) {
+    # cuerpo de la función
+    return(resultado)
+}
+```
+
+-   Los nombres deben ser descriptivos y no usar palabras reservadas.
+
+-   El uso de `return()` es opcional si el último valor evaluado debe devolverse.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
 
 ------------------------------------------------------------------------
 
-## Argumentos y valor de resultado de una función
+### Ejemplo 1
 
-asd
+Define una función que calcule el valor futuro ajustado de una inversión que recibe aportes mensuales variables. Utilice
+
+$$
+V_F = \sum_{i=1}^n A_i (1 + r)^{n-i}
+$$
+
+donde:
+
+-   $A_i$: aporte en el mes $i$
+
+-   $r$: tasa mensual
+
+-   $n$: cantidad total de meses
+
+Realice una prueba con estos datos:
+
+-   Aportes: `c(500, 600, 550, 700, 650)`
+
+-   Tasa mensual: 1.5%
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
 
 ------------------------------------------------------------------------
 
-## Revisión de los argumentos de una función
+### Ejemplo 2
 
-asd
+Crea una función que calcule la energía total perdida por conducción a través de una pared compuesta por múltiples capas, cada una con su espesor (m) y conductividad térmica (W/m·K). Utilice
+
+$$
+Q = \frac{\Delta T}{\sum_{i=1}^n \left( \frac{L_i}{k_i} \right)}
+$$
+
+donde:
+
+-   $L_i$: aporte de la capa $i$
+
+-   $k_i$: conductividad de la capa $i$
+
+-   $\Delta T$: diferencia de temperatura entre caras (ºC)
+
+Realice una prueba con estos datos:
+
+-   Capas:
+
+    -   Espesores: `c(0.1, 0.05, 0.2)` m
+
+    -   Conductividades: `c(0.8, 0.04, 1.5)` W/m·K
+
+-   ΔT: 25 °C
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
 
 ------------------------------------------------------------------------
 
-## El argumento especial `"..."`
+### Ejemplo 3
 
-asd
+Crea una función que clasifique el tipo de pandeo de columnas bajo carga axial, según su esbeltez $\lambda$. Utilice
+
+$$
+\lambda = \frac{L}{r} \quad \text{donde} \quad r = \sqrt{\frac{I}{A}}
+$$
+
+donde:
+
+-   $L$: longitud
+
+-   $I$: momento de inercia
+
+-   $A$: área
+
+-   Clasificación:
+
+    -   $\lambda < 50$: Pandeo corto
+
+    -   $50 \le \lambda \le 120$: Pandeo intermedio
+
+    -   $\lambda > 120$: Pandeo largo
+
+Realice una prueba con estos datos:
+
+-   Longitudes: `c(1.5, 2.0, 3.0)` m
+
+-   Inercias: `c(8e-6, 1.2e-5, 9e-6)` m⁴
+
+-   Áreas: `c(0.004, 0.005, 0.0045)` m²
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
 
 ------------------------------------------------------------------------
 
-## Contenido de los ambientes de las funciones
+### Ejemplo 4
 
-asd
+Escribe una función que reciba un vector de valores y devuelva el valor atípico más extremo, si existe, usando la regla de los cuartiles.
+
+Un valor $x$ es extremo si: $x > Q_3 + 3 IQR \quad \text{o} \quad x < Q_1 - 3 IQR$, donde:
+
+-   $Q_1$: Primer cuartil
+
+-   $Q_3$: Tercer cuartil
+
+-   $IQR = Q_3 - Q_1$
+
+Realice una prueba con estos datos:
+
+-   Valores: `c(12, 15, 14, 16, 15, 17, 13, 19, 22, 90)`
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 5
+
+Define una función que calcule el valor presente neto (VPN) de un proyecto con flujos de caja variables y una tasa de descuento dada. Utilice
+
+$$
+VPN = \sum_{i=0}^n \frac{F_i}{(1 + r)^i}
+$$
+
+donde:
+
+-   $F_i$: flujo en el año $i$
+
+-   $r$: tasa de descuento
+
+Realice una prueba con estos datos:
+
+-   Flujos: `c(-10000, 3000, 4000, 3500, 2500)`
+
+-   Tasa de descuento: 8%
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ambientes
+
+Los **ambientes**, o **espacios de trabajo de código**, son una de las más grandes diferencias entre un cuaderno de código R Markdown y una función. Es evidente que podemos crear un cuaderno de código que haga cualquier cosa que pensemos y podamos programar, pero una función lo hace más rápido.
+
+![Tomado de la documentación oficial de MATLAB.](https://github.com/lavox-studio/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2020%20-%20Creaci%C3%B3n%20de%20funciones%20personalizadas/1.png?raw=true){width="566"}
+
+El **ambiente base** es con el que hemos estado trabajando por defecto. En cuanto creamos una variable, realizamos cálculos, etc., todo esto se guarda en el **ambiente base**. No obstante, el **ambiente de funciones** se crea cuando se llama a una función, por lo que estará totalmente vacío y únicamente tendrá las entradas que se le dé a la función. Una vez la función termine la serie de instrucciones dentro de ella y devuelva las salidas, el **ambiente de la función** se elimina y se retorna al **ambiente base**.
+
+La ventaja de que las funciones tengan su propio ambiente es que no necesitan espacio (memoria) para guardar variables, funciones, clases o lo que se haya creado previamente. Esto no pasa en el ambiente base, puesto que debe reservar memoria para todo lo que programemos. He ahí la diferencia y la ventaja de crear funciones frente a utilizar código dentro de un cuaderno de código únicamente.
+
+Cabe destacar que los ambientes están aislados uno del otro. La única conexión que tienen es cuando se llama a una función, entonces la función crea su ambiente obteniendo del ambiente base las entradas y luego devolviendo las salidas.
 
 ------------------------------------------------------------------------
