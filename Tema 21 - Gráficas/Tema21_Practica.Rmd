@@ -11,7 +11,13 @@ output:
 
 ## Ejercicio 1
 
-Añadir enunciado.
+Representa en una gráfica los precios promedio del dólar en los primeros seis meses del año.
+
+Datos:
+
+-   Meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun"]
+
+-   Precios = [17.5, 17.8, 17.6, 18.0, 18.2, 18.4]
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -25,7 +31,11 @@ Añadir enunciado.
 
 ## Ejercicio 2
 
-Añadir enunciado.
+Dibuja un gráfico de líneas con los valores de cierre de una acción durante una semana.
+
+-   Días = ["Lun", "Mar", "Mié", "Jue", "Vie"]
+
+-   Cierres = [102, 104, 101, 105, 107]
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -39,7 +49,11 @@ Añadir enunciado.
 
 ## Ejercicio 3
 
-Añadir enunciado.
+Muestra en un gráfico los datos de temperatura de un motor medidos cada 5 minutos.
+
+-   Tiempo (min) = [0, 5, 10, 15, 20, 25]
+
+-   Temperatura (°C) = [25, 50, 68, 80, 95, 110]
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -53,7 +67,7 @@ Añadir enunciado.
 
 ## Ejercicio 4
 
-Añadir enunciado.
+Grafica el comportamiento de la función cuadrática $y = \sqrt{x}$ para $x = 0$ hasta $x = 10$, usando puntos en lugar de líneas.
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -67,7 +81,13 @@ Añadir enunciado.
 
 ## Ejercicio 5
 
-Añadir enunciado.
+Muestra en un mismo gráfico la inflación mensual de dos países durante 6 meses:
+
+-   País A: [4.1, 4.3, 4.2, 4.5, 4.4, 4.6]
+
+-   País B: [5.0, 4.8, 4.9, 5.1, 5.2, 5.3]
+
+Usa tipos de línea distintos y colores diferentes. Añade leyenda.
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -81,7 +101,15 @@ Añadir enunciado.
 
 ## Ejercicio 6
 
-Añadir enunciado.
+Representa la concentración de dos soluciones en función del tiempo.
+
+-   Tiempo (min) = [0, 10, 20, 30, 40, 50]
+
+-   Solución A: [0.1, 0.3, 0.5, 0.7, 0.9, 1.0]
+
+-   Solución B: [0.2, 0.4, 0.55, 0.6, 0.7, 0.75]
+
+Muestra ambos trazos con diferentes símbolos y superpuestos.
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -95,7 +123,19 @@ Añadir enunciado.
 
 ## Ejercicio 7
 
-Añadir enunciado.
+Crea una visualización con 4 gráficos (2 filas x 2 columnas) que muestren el número de defectos por lote en 4 líneas de producción.
+
+-   Lote = 1:5
+
+<!-- -->
+
+-   Defectos Línea 1 = [2, 3, 1, 4, 2]
+
+-   Defectos Línea 2 = [1, 1, 2, 2, 1]
+
+-   Defectos Línea 3 = [3, 4, 3, 5, 4]
+
+-   Defectos Línea 4 = [2, 2, 1, 3, 2]
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -109,7 +149,17 @@ Añadir enunciado.
 
 ## Ejercicio 8
 
-Añadir enunciado.
+Grafica en una sola figura los niveles de concentración de CO₂ (ppm) durante 24 horas en 3 sensores distintos.
+
+-   Horas = 0:23
+
+-   Sensor A: secuencia aleatoria con media 400 y sd 20
+
+-   Sensor B: igual que A pero con picos a las 8 h y 17 h
+
+-   Sensor C: tendencia creciente desde 390 hasta 450
+
+-   Coloca leyenda, colores y tipos de línea distintos.
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -123,7 +173,19 @@ Añadir enunciado.
 
 ## Ejercicio 9
 
-Añadir enunciado.
+Grafica la velocidad promedio (km/h) de 4 rutas de autobús desde las 6:00 a.m. hasta las 10:00 p.m. (cada hora).
+
+-   Horas = 6:00 a 22:00 (17 valores)
+
+-   Ruta A (constante): [40] repetido 17 veces
+
+-   Ruta B (creciente): secuencia de 30 a 60 en 17 pasos
+
+-   Ruta C (decreciente): secuencia de 60 a 30 en 17 pasos
+
+-   Ruta D (irregular): [35, 40, 45, 50, 55, 60, 55, 50, 45, 40, 35, 30, 35, 40, 45, 50, 55]
+
+Usa diferentes estilos de línea, colores y añade una leyenda.
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
@@ -135,7 +197,61 @@ Añadir enunciado.
 
 ## Ejercicio 10
 
-Añadir enunciado.
+Representa en un mismo gráfico el rendimiento mensual (%) de 3 fondos de inversión durante un año.
+
+-   Meses = ["Ene", "Feb", ..., "Dic"]
+
+-   Fondo A (crecimiento constante): [1, 2, 3, ..., 12]
+
+-   Fondo B (cíclico): [2, 3, 4, 3, 2, 1, 2, 3, 4, 3, 2, 1]
+
+-   Fondo C (crece y cae): [1, 2, 4, 6, 8, 10, 9, 8, 6, 4, 2, 1]
+
+Exporta el gráfico a PDF con leyenda, colores y tipos de línea distintos.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 11
+
+Superpone dos curvas que representan la pérdida de masa de un alimento en porcentaje durante 10 horas.
+
+-   Tiempo (h): 0 a 10
+
+-   Evaporación: $E(t) = 30 e^{-0.3t}$
+
+-   Oxidación: $O(t) = 2t$
+
+Calcula ambos valores para cada hora $t = 0, 1, 2, , \dots, 10$, grafícalos en la misma figura con distintos colores y líneas, y añade una leyenda.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+## Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Ejercicio 12
+
+Comparación de viscosidad de dos aceites:
+
+-   Temperatura (°C): [30, 50, 70, 90, 110, 130]
+
+-   Aceite A: [0.9, 0.8, 0.7, 0.6, 0.5, 0.4]
+
+-   Aceite B: [0.95, 0.85, 0.75, 0.65, 0.55, 0.45]
+
+Grafica ambas curvas en una sola figura, añade leyenda y exporta como imagen PNG.
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 

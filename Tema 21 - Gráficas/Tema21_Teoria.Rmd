@@ -9,4 +9,426 @@ output:
 
 # Gráficas
 
-asd
+R incluye un **sistema de gráficos base** que permite crear representaciones visuales de datos numéricos y categóricos sin necesidad de paquetes externos. Este sistema se basa en funciones específicas que **dibujan directamente sobre una ventana gráfica activa** y permiten agregar múltiples capas de elementos gráficos.
+
+![](https://github.com/lavox-studio/Programacion-R/blob/main/_Im%C3%A1genes/Tema%2021%20-%20Gr%C3%A1ficas/1.png?raw=true){width="837"}
+
+## Función `plot()`
+
+La función `plot()` pertenece al sistema gráfico base de R y permite crear diferentes tipos de visualizaciones, adaptándose a los datos ingresados. Su uso más común es el de graficar la relación entre dos variables numéricas mediante un **diagrama de dispersión** o **líneas**.
+
+Esta función es **genérica**, lo que significa que su comportamiento cambia según el tipo de datos que reciba como entrada.
+
+``` r
+# Sintaxis
+plot(x, y, 
+     type = "p", 
+     main = "Título", 
+     xlab = "Eje X", 
+     ylab = "Eje Y", 
+     col = "color", 
+     pch = número, 
+     lty = número, 
+     lwd = número)
+```
+
+-   `x`, `y`: vectores de datos
+
+-   `type`: tipo de gráfico (puntos, líneas, ambos, etc.)
+
+-   `main`: título del gráfico
+
+-   `xlab`, `ylab`: etiquetas para los ejes
+
+-   `col`: color de los puntos o líneas
+
+-   `pch`: tipo de punto
+
+-   `lty`: tipo de línea
+
+-   `lwd`: grosor de línea
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Tipos de gráficos con `plot()`
+
+La función `plot()` permite generar distintos **tipos de gráficos** según el valor que se asigne al argumento `type`. Este parámetro controla la forma en que se representan los datos: como puntos, líneas, combinaciones de ambos, líneas verticales, escalones, o sin representar los datos (solo la estructura del gráfico).
+
+Cada tipo de gráfico es útil para visualizar diferentes fenómenos en contextos de ingeniería o ciencias, como evolución temporal, relaciones funcionales o mediciones experimentales.
+
+``` r
+# Sintaxis
+plot(x, y, type = "valor")
+```
+
+Los valores posible para `valor`, junto con su descripción, se detallan en la siguiente tabla.
+
+| Valor | Descripción                         |
+|-------|-------------------------------------|
+| `"p"` | Solo puntos                         |
+| `"l"` | Solo líneas                         |
+| `"b"` | Puntos conectados por líneas        |
+| `"o"` | Líneas sobre puntos                 |
+| `"h"` | Líneas verticales (tipo histograma) |
+| `"s"` | Escalones hacia la derecha          |
+| `"S"` | Escalones hacia la izquierda        |
+| `"n"` | No mostrar puntos ni líneas         |
+
+: Opciones del argumento "type".
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Colores
+
+En el sistema gráfico base de R, los **colores** se utilizan para mejorar la legibilidad, distinguir categorías o resaltar información clave en los gráficos. R permite especificar colores a través de **nombres**, **códigos hexadecimales** o **índices numéricos**.
+
+``` r
+# Sintaxis
+## Forma 1
+plot(x, y, col = "color")
+
+## Forma 2
+plot(x, y, col = "#RRGGBB")
+```
+
+-   `"color"` es un nombre predefinido (por ejemplo, "red", "blue").
+
+-   `"#RRGGBB"` es un código hexadecimal para RGB.
+
+El código hexadecimal para RBG es la forma que permita abarcar cualquier color posible. No obstante, a través de `"color"` hay una gama de colores preestablecidos que suelen ser suficientes en la mayoría de los casos.
+
+| Color       | Visual | Color      | Visual |
+|-------------|--------|------------|--------|
+| `"black"`   | ⚫     | `"white"`  | ⚪     |
+| `"red"`     | 🔴     | `"blue"`   | 🔵     |
+| `"green"`   | 🟢     | `"yellow"` | 🟡     |
+| `"orange"`  | 🟠     | `"purple"` | 🟣     |
+| `"pink"`    | 🌸     | `"brown"`  | 🟤     |
+| `"gray"`    | ⚫     | `"cyan"`   | 🟦     |
+| `"magenta"` | 🟣     | `"gold"`   | 🟡     |
+
+: Algunas opciones del argumento "color".
+
+Para ver la lista completa de nombres de colores reconocidos por R, puedes ejecutar este comando:
+
+``` r
+colors()
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Tipo de línea
+
+El argumento `lty` se usa para definir el **tipo de línea** que se dibuja. Es útil para distinguir diferentes series, variables o condiciones cuando se trazan múltiples líneas en un mismo gráfico, especialmente en contextos donde los colores no son suficientes (por ejemplo, impresión en blanco y negro o gráficos científicos con estándares formales).
+
+R permite especificar el tipo de línea mediante **números del 1 al 6** o mediante **cadenas de texto** como `"solid"`, `"dashed"`, etc.
+
+``` r
+# Sintaxis
+plot(x, y, type = "l", lty = valor)
+```
+
+Donde `valor` puede ser:
+
+| Índice | Nombre       | Descripción                 |
+|--------|--------------|-----------------------------|
+| 1      | `"solid"`    | Línea sólida                |
+| 2      | `"dashed"`   | Línea discontinua (guiones) |
+| 3      | `"dotted"`   | Punteada                    |
+| 4      | `"dotdash"`  | Guiones y puntos            |
+| 5      | `"longdash"` | Larga con puntos            |
+| 6      | `"twodash"`  | Dos puntos y guión          |
+
+: Opciones para el argumento "lty".
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Rango de ejes
+
+El **rango de ejes** determina los valores mínimos y máximos que se mostrarán en los ejes `x` y `y` de un gráfico. Ajustar el rango es fundamental para enfocar el análisis visual en una sección relevante de los datos, mejorar la legibilidad o mantener una escala consistente entre gráficos.
+
+R permite controlar el rango de los ejes usando los argumentos:
+
+-   `xlim`: para el eje horizontal (x).
+
+-   `ylim`: para el eje vertical (y).
+
+Cada uno debe recibir un **vector numérico de dos elementos**: el mínimo y el máximo del eje.
+
+``` r
+# Sintaxis
+plot(x, y, xlim = c(minX, maxX), ylim = c(minY, maxY))
+```
+
+-   `minX` y `maxX`: valores mínimo y máximo para el eje **x**.
+
+-   `minY` y `maxY`: valores mínimo y máximo para el eje **y**.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Título del gráfico y ejes
+
+Los **títulos** ayudan a contextualizar el contenido del gráfico. Esto incluye:
+
+-   Un título principal del gráfico.
+
+-   Etiquetas del eje horizontal (**x**) y del eje vertical (**y**).
+
+Estos elementos son fundamentales para que cualquier lector pueda interpretar correctamente el propósito del gráfico, especialmente en aplicaciones técnicas o científicas.
+
+En R, los títulos se agregan usando los siguientes argumentos dentro de la función `plot()`:
+
+-   `main`: título principal del gráfico.
+
+-   `xlab`: etiqueta del eje **x**.
+
+-   `ylab`: etiqueta del eje **y**.
+
+``` r
+# Sintaxis
+plot(x, y, main = "Título", xlab = "Eje X", ylab = "Eje Y")
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Múltiples gráficos
+
+### Función `par()`
+
+En muchas situaciones de ingeniería, ciencias o economía, es útil visualizar **varios gráficos relacionados** en un solo espacio para comparar datos, mostrar diferentes variables o distintas perspectivas de un mismo fenómeno. En R base, esto se logra con la función `par()` y su argumento `mfrow` o `mfcol`, que permiten dividir la ventana gráfica en una matriz de gráficos.
+
+-   `mfrow = c(nfilas, ncol)` organiza los gráficos por filas.
+
+-   `mfcol = c(nfilas, ncol)` organiza los gráficos por columnas.
+
+De esta manera, puedes crear desde dos hasta muchas gráficas en una sola figura para facilitar el análisis comparativo.
+
+``` r
+# Sintaxis
+par(mfrow = c(2, 2))  # 2 filas y 2 columnas (4 gráficos en total)
+```
+
+Luego, cada llamada a una función gráfica (`plot()`, `barplot()`, etc.) llenará uno de esos espacios, siguiendo el orden por filas o columnas según la opción elegida.
+
+Siempre que uses `par(mfrow=...)` o `par(mfcol=...)` para múltiples gráficos, es recomendable **restaurar la configuración gráfica** a su estado original después para evitar afectar otros gráficos.
+
+``` r
+# Sintaxis
+par(mfrow = c(2, 2))
+
+plot(...)
+plot(...)
+plot(...)
+plot(...)
+
+par(mfrow = c(1, 1))  # Restaurar a 1 gráfico por ventana
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+### Funciones `lines()` y `points()`
+
+En muchos análisis de ingeniería, ciencias o economía es común **comparar varias series de datos dentro del mismo gráfico** para observar relaciones, tendencias o diferencias entre ellas. En R base, esto se logra inicialmente creando un gráfico base con `plot()` y luego añadiendo nuevos trazos o puntos con funciones como `lines()` o `points()`.
+
+Esto permite superponer múltiples curvas, puntos o líneas sobre un mismo sistema de coordenadas sin sobrescribir lo ya dibujado.
+
+``` r
+# Sintaxis
+plot(...)           # Gráfico base
+
+lines(x, y, ...)    # Gráfico adicional de líneas en el gráfico base
+points(x, y, ...)   # Gráfico adicional de puntos en el gráfico base
+```
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Leyenda
+
+En gráficos complejos con múltiples series o grupos, es fundamental identificar qué representa cada línea, punto o barra. Para esto, R base ofrece la función `legend()`, que permite añadir una **leyenda** que explica los símbolos, colores, tipos de línea o cualquier otro elemento visual presente.
+
+La leyenda mejora la comprensión y evita confusiones en la interpretación de los datos, especialmente en ámbitos de ingeniería, ciencias, economía o finanzas.
+
+``` r
+# Sintaxis
+legend(x, y,
+       legend = c("Etiqueta1", "Etiqueta2"),
+       col = c("color1", "color2"),
+       lty = c(1,2))
+```
+
+-   `x`, `y`: posición en el gráfico donde se colocará la leyenda. Puede ser un par de coordenadas o palabras clave como `"topright"`, `"bottomleft"`, etc.
+
+-   `legend`: vector con textos que describen cada elemento.
+
+-   `col`: colores asociados a cada etiqueta.
+
+-   `lty`: tipo de línea para cada etiqueta.
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+## Exportar gráficos
+
+Después de generar gráficos en R, especialmente en contextos de ingeniería o ciencias aplicadas, es frecuente que se necesite **exportarlos a archivos externos** para informes, presentaciones o documentación técnica. R base permite guardar gráficos en distintos formatos (como PNG, PDF, JPEG, entre otros) mediante funciones específicas.
+
+El procedimiento general consiste en:
+
+-   Abrir un dispositivo gráfico (por ejemplo, `png()`, `pdf()`, etc.).
+
+-   Generar el gráfico (usando `plot()`, `lines()`, etc.).
+
+-   Cerrar el dispositivo gráfico con `dev.off()` para finalizar y guardar el archivo.
+
+``` r
+# Sintaxis
+formato("nombre_archivo.extensión", opciones)
+# Código del gráfico aquí
+dev.off()
+```
+
+Las principales funciones de exportación son:
+
+| Formato | Función base R | Ejemplo de nombre y extensión |
+|---------|----------------|-------------------------------|
+| PNG     | `png()`        | "grafico.png"                 |
+| JPEG    | `jpeg()`       | "grafico.jpg"                 |
+| PDF     | `pdf()`        | "grafico.pdf"                 |
+| BMP     | `bmp()`        | "grafico.bmp"                 |
+| TIFF    | `tiff()`       | "grafico.tiff"                |
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 1
+
+Grafica la relación entre la carga aplicada (kN) y el alargamiento (mm) de una viga de concreto.
+
+Datos:
+
+-   Carga = [0, 10, 20, 30, 40, 50]
+
+-   Alargamiento = [0, 0.5, 1.0, 1.6, 2.1, 2.8]
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 2
+
+Grafica el comportamiento de la función cuadrática $y = x^2$ para $x = -5$ hasta $x = 5$, usando puntos en lugar de líneas.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 3
+
+Grafica dos señales de voltaje en el mismo sistema de coordenadas:
+
+-   Señal A: Voltaje = [0, 2, 4, 6, 8], Tiempo = [0, 1, 2, 3, 4]
+
+-   Señal B: Voltaje = [0, -1, -2, -1, 0], Tiempo = [0, 1, 2, 3, 4]
+
+Incluye una leyenda con colores distintos.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 4
+
+Grafica dos funciones matemáticas superpuestas en el intervalo $[0, 2\pi]$:
+
+-   $f(x) = \sin(x)$
+
+-   $g(x) = \cos(x)$
+
+Incluye colores distintos, tipo de línea, y leyenda.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
+
+### Ejemplo 5
+
+Grafica el momento flector en una viga simplemente apoyada de 10 m con carga puntual en el centro.
+
+Fórmulas:
+
+-   Si $x \le 5$: $M(x) = \frac{FL}{4} - \frac{Fx}{2}$
+
+-   Si $x > 5$: $M(x) = \frac{FL}{4} - \frac{F(L-x)}{2}$
+
+Usar $F = 1000 \text{ N}$, $L = 10 \text{ m}$, $x = 0, 0.5, \dots, 10$.
+
+Exporta a PNG, incluye etiquetas de ejes y título.
+
+> [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
+
+### Solución
+
+```{r}
+# Ingresa tu código aquí 👽
+```
+
+------------------------------------------------------------------------
