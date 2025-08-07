@@ -51,15 +51,23 @@ for (elemento in secuencia) {
 }
 ```
 
+```{r}
+# Ingresa tu código aquí 👽
+```
+
 ### Iterar por índice
 
 Asimismo, es posible utilizar un bucle `for` e ir iterando sobre cada elemento de la secuencia a través de su índice posicional. Esta forma es bastante útil cuando no se requiere únicamente el elemento de la secuencia, o se requiere trabajar con múltiples elementos de la secuencias de forma dinámica.
 
 ``` r
 # Sintaxis
-for (i in length(secuencia)) {
+for (i in 1:length(secuencia)) {
     # instrucciones a ejecutar
 }
+```
+
+```{r}
+# Ingresa tu código aquí 👽
 ```
 
 ------------------------------------------------------------------------

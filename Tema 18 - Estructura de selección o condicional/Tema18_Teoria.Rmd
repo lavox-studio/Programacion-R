@@ -239,7 +239,7 @@ Se tienen los registros de temperatura: 15, 22, 30, 18, 23, 33, 12. Clasificar c
 
 ### Ejemplo 2
 
-Se tiene un etiquetado de sensores por falla: 1, 0, 1, 0, 0, 0 1. Representar esta información como un vector lógico: 1 es verdadero y 0 es falso. Luego, utilizando el vector anterior, crear otro vector donde se representa "Funcional" si es verdadero y "Falla detectada" si es falso.
+Se tiene un etiquetado de sensores por falla: 1, 0, 1, 0, 0, 0, 1. Representar esta información como un vector lógico: 1 es verdadero y 0 es falso. Luego, utilizando el vector anterior, crear otro vector donde se representa "Funcional" si es verdadero y "Falla detectada" si es falso.
 
 > [**Nota:**]{.underline} Recuerda utilizar el enfoque EPS.
 
